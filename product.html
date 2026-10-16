@@ -79,87 +79,89 @@
   <div id="site-footer"></div>
 
   <script src="data.js"></script>
-  <script>
-    // 메뉴 밑줄: 이 상품이 속한 마켓
-    const g = findGoods(new URLSearchParams(location.search).get('no'));
-    if (g) document.body.dataset.current = g.market;
-  </script>
   <script src="common.js"></script>
   <script>
-    const page = document.getElementById('page');
+    onData(function () {
+      // 메뉴 밑줄: 이 상품이 속한 마켓
+      const g = findGoods(new URLSearchParams(location.search).get('no'));
+      if (g) document.body.dataset.current = g.market;
+      renderHeader();   // 메뉴 밑줄(data-current)을 반영해서 헤더 다시 그리기
 
-    // ---------------------------------------------------------
-    // 상품이 없을 때
-    // ---------------------------------------------------------
-    if (!g) {
-      page.innerHTML = '<div class="empty"><div class="big">🤔</div><p>찾으시는 상품이 없어요.</p><a class="btn btn-primary" href="index.html">메인으로</a></div>';
-    } else {
-      const m = MARKETS[g.market];
-      const st = STATUS[goodsStatus(g)];                       // 판매 상태
-      document.title = g.name + ' | 소울푸드';
+      const page = document.getElementById('page');
 
-      // 태그
-      let tags = '';
-      g.tags.forEach(function (t) {
-        let cls = 'tag';
-        if (t === 'HACCP') cls += ' haccp';
-        else if (t !== 'BOX') cls += ' origin';
-        tags += '<span class="' + cls + '">' + esc(t) + '</span>';
-      });
+      // ---------------------------------------------------------
+      // 상품이 없을 때
+      // ---------------------------------------------------------
+      if (!g) {
+        page.innerHTML = '<div class="empty"><div class="big">🤔</div><p>찾으시는 상품이 없어요.</p><a class="btn btn-primary" href="index.html">메인으로</a></div>';
+      } else {
+        const m = MARKETS[g.market];
+        const st = STATUS[goodsStatus(g)];                       // 판매 상태
+        document.title = g.name + ' | 소울푸드';
 
-      // 가격 (data.js 의 SHOW_PRICE 가 true 일 때만 보임)
-      let price = '';
-      if (SHOW_PRICE) {
-        price = '<div class="price-box"><p class="now">';
-        if (g.rate) price += '<em class="rate">' + g.rate + '%</em>';
-        price += won(g.price) + '<small>원</small>';
-        if (g.was) price += '<del>' + won(g.was) + '원</del>';
-        price += '</p>';
-        if (g.box && g.boxUnit === '봉') price += '<p class="unit">1봉당 약 ' + won(Math.round(g.price / g.box)) + '원</p>';
-        price += '</div>';
-      }
+        // 태그
+        let tags = '';
+        g.tags.forEach(function (t) {
+          let cls = 'tag';
+          if (t === 'HACCP') cls += ' haccp';
+          else if (t !== 'BOX') cls += ' origin';
+          tags += '<span class="' + cls + '">' + esc(t) + '</span>';
+        });
 
-      // 상품 정보 줄
-      let rows = '';
-      if (g.box) rows += '<div><dt>포장</dt><dd>1박스 ' + g.box + g.boxUnit + (g.ice ? ' (아이스박스)' : '') + '</dd></div>';
-      if (g.ice) rows += '<div><dt>보관</dt><dd>❄ 냉동 · 냉장 (아이스박스 포장)</dd></div>';
+        // 가격 (data.js 의 SHOW_PRICE 가 true 일 때만 보임)
+        let price = '';
+        if (SHOW_PRICE) {
+          price = '<div class="price-box"><p class="now">';
+          if (g.rate) price += '<em class="rate">' + g.rate + '%</em>';
+          price += won(g.price) + '<small>원</small>';
+          if (g.was) price += '<del>' + won(g.was) + '원</del>';
+          price += '</p>';
+          if (g.box && g.boxUnit === '봉') price += '<p class="unit">1봉당 약 ' + won(Math.round(g.price / g.box)) + '원</p>';
+          price += '</div>';
+        }
 
-      // 같은 마켓 다른 상품 4개
-      const related = m.goods.filter(function (x) { return x.no !== g.no && isListed(x); }).slice(0, 4);
+        // 상품 정보 줄
+        let rows = '';
+        if (g.box) rows += '<div><dt>포장</dt><dd>1박스 ' + g.box + g.boxUnit + (g.ice ? ' (아이스박스)' : '') + '</dd></div>';
+        if (g.ice) rows += '<div><dt>보관</dt><dd>❄ 냉동 · 냉장 (아이스박스 포장)</dd></div>';
 
-      const mailHref = 'mailto:lys3888@soulfd.co.kr?subject=' + encodeURIComponent('[상품 문의] ' + g.name) +
-        '&body=' + encodeURIComponent('상품명: ' + g.name + '\n상품번호: ' + g.no + '\n\n문의 내용:\n');
+        // 같은 마켓 다른 상품 4개
+        const related = m.goods.filter(function (x) { return x.no !== g.no && isListed(x); }).slice(0, 4);
 
-      page.innerHTML =
-        '<p class="breadcrumb"><a href="index.html">홈</a> › <a href="catalog.html?market=' + g.market + '">' + m.name + '</a> › <b>' + esc(g.brand || m.name) + '</b></p>' +
-        '<section class="detail">' +
-          '<div class="photo"><img src="' + imgUrl(g) + '" alt="' + esc(g.name) + '" data-ph="' + m.icon + '" onerror="imgFail(this)">' +
-            (st.buy ? '' : '<div class="status-cover ' + st.cls + '"><span>' + st.text + '</span></div>') + '</div>' +
-          '<div class="buy">' +
-            '<a class="market-link" href="catalog.html?market=' + g.market + '">' + m.icon + ' ' + m.name + ' ›</a>' +
-            '<h1>' + (g.brand ? '[' + esc(g.brand) + '] ' : '') + esc(g.name) + '</h1>' +
-            '<div class="tags">' + tags + '</div>' +
-            (g.desc ? '<p class="desc">' + esc(g.desc) + '</p>' : '') +
-            (st.buy ? '' : '<p class="state-note ' + st.cls + '">' + (st.cls === 'restock' ? '🔄 ' : '⛔ ') + st.msg + '</p>') +
-            price +
-            '<dl class="rows">' + rows + '</dl>' +
-            '<div class="actions">' +
-              '<a class="btn btn-primary" href="tel:053-311-1980">📞 전화 문의 053-311-1980</a>' +
-              '<a class="btn" href="' + mailHref + '">✉️ 이메일 문의</a>' +
+        const mailHref = 'mailto:lys3888@soulfd.co.kr?subject=' + encodeURIComponent('[상품 문의] ' + g.name) +
+          '&body=' + encodeURIComponent('상품명: ' + g.name + '\n상품번호: ' + g.no + '\n\n문의 내용:\n');
+
+        page.innerHTML =
+          '<p class="breadcrumb"><a href="index.html">홈</a> › <a href="catalog.html?market=' + g.market + '">' + m.name + '</a> › <b>' + esc(g.brand || m.name) + '</b></p>' +
+          '<section class="detail">' +
+            '<div class="photo"><img src="' + imgUrl(g) + '" alt="' + esc(g.name) + '" data-ph="' + m.icon + '" onerror="imgFail(this)">' +
+              (st.buy ? '' : '<div class="status-cover ' + st.cls + '"><span>' + st.text + '</span></div>') + '</div>' +
+            '<div class="buy">' +
+              '<a class="market-link" href="catalog.html?market=' + g.market + '">' + m.icon + ' ' + m.name + ' ›</a>' +
+              '<h1>' + (g.brand ? '[' + esc(g.brand) + '] ' : '') + esc(g.name) + '</h1>' +
+              '<div class="tags">' + tags + '</div>' +
+              (g.desc ? '<p class="desc">' + esc(g.desc) + '</p>' : '') +
+              (st.buy ? '' : '<p class="state-note ' + st.cls + '">' + (st.cls === 'restock' ? '🔄 ' : '⛔ ') + st.msg + '</p>') +
+              price +
+              '<dl class="rows">' + rows + '</dl>' +
+              '<div class="actions">' +
+                '<a class="btn btn-primary" href="tel:053-311-1980">📞 전화 문의 053-311-1980</a>' +
+                '<a class="btn" href="' + mailHref + '">✉️ 이메일 문의</a>' +
+              '</div>' +
+              '<p class="inquiry-note">거래 조건과 가격은 문의해 주세요. 평일 10:00 ~ 18:00 (주말·공휴일 휴무)</p>' +
             '</div>' +
-            '<p class="inquiry-note">거래 조건과 가격은 문의해 주세요. 평일 10:00 ~ 18:00 (주말·공휴일 휴무)</p>' +
-          '</div>' +
-        '</section>' +
+          '</section>' +
 
-        '<section class="tab-panel on" id="tab-info">' +
-          '<h4>상품명</h4><p>' + esc(g.name) + '</p>' +
-          (g.desc ? '<h4>생산 · 인증 정보</h4><p>' + esc(g.desc) + '</p>' : '') +
-        '</section>' +
+          '<section class="tab-panel on" id="tab-info">' +
+            '<h4>상품명</h4><p>' + esc(g.name) + '</p>' +
+            (g.desc ? '<h4>생산 · 인증 정보</h4><p>' + esc(g.desc) + '</p>' : '') +
+          '</section>' +
 
-        (related.length ?
-          '<section class="section"><div class="section-head"><h3>' + m.name + '의 <em>다른 상품</em></h3><a href="catalog.html?market=' + g.market + '">전체보기 ›</a></div>' +
-          '<ul class="goods">' + related.map(function (x) { return goodsCardHTML(x); }).join('') + '</ul></section>' : '');
-    }
+          (related.length ?
+            '<section class="section"><div class="section-head"><h3>' + m.name + '의 <em>다른 상품</em></h3><a href="catalog.html?market=' + g.market + '">전체보기 ›</a></div>' +
+            '<ul class="goods">' + related.map(function (x) { return goodsCardHTML(x); }).join('') + '</ul></section>' : '');
+      }
+    });
   </script>
 </body>
 </html>

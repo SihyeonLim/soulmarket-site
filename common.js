@@ -4,6 +4,7 @@
      → 각 페이지에는 <div id="site-header"></div>, <div id="site-footer"></div>
        빈 자리만 두면 돼요. 메뉴를 고칠 때 이 파일 한 곳만 고치면 끝!
    - 반드시 data.js 다음에 불러와야 해요.
+   - 데이터(JSON)를 다 불러온 뒤에 할 일은 onData(function () { ... }) 안에 적어요.
    ========================================================= */
 
 // ---------------------------------------------------------
@@ -23,7 +24,12 @@ function esc(text) {
 function param(name) { return new URLSearchParams(location.search).get(name); }
 
 // 상품 사진 주소
-function imgUrl(g) { return 'images/goods/' + g.img; }
+// (관리자 페이지에서 올린 사진은 images/goods/파일명 으로 저장돼요)
+function imgUrl(g) {
+  const p = String(g.img || '').replace(/^\/+/, '');
+  if (/^https?:/.test(p) || p.indexOf('images/') === 0) return p;
+  return 'images/goods/' + p;
+}
 
 // 사진을 못 불러오면 마켓 이모지로 바꾸기 (img 태그의 onerror에서 호출)
 function imgFail(img) {
@@ -234,7 +240,27 @@ document.addEventListener('submit', function (e) {
 });
 
 // ---------------------------------------------------------
-// 8. 페이지가 열리면 헤더·푸터 그리기
+// 8. 데이터를 다 불러온 뒤 실행하기
+//    onData(function () { ... })  ← 각 페이지의 상품 그리기 코드
 // ---------------------------------------------------------
-renderHeader();
+function showDataError(err) {
+  console.error(err);
+  const box = document.createElement('div');
+  box.className = 'inner';
+  box.innerHTML = '<div class="empty"><div class="big">⚠️</div><p>상품 정보를 불러오지 못했어요. 잠시 후 새로고침해 주세요.</p>' +
+    '<p style="font-size:13px;color:var(--text-sub)">문의 : <a href="tel:053-311-1980">053-311-1980</a></p></div>';
+  const footer = document.getElementById('site-footer');
+  if (footer) footer.parentNode.insertBefore(box, footer); else document.body.appendChild(box);
+}
+let dataErrorShown = false;
+function onData(fn) {
+  return DATA_READY.then(fn).catch(function (err) {
+    if (!dataErrorShown) { dataErrorShown = true; showDataError(err); }
+  });
+}
+
+// ---------------------------------------------------------
+// 9. 페이지가 열리면 푸터는 바로, 헤더(마켓 메뉴)는 데이터를 불러온 뒤 그리기
+// ---------------------------------------------------------
 renderFooter();
+onData(renderHeader);

@@ -215,64 +215,66 @@
   <script src="data.js"></script>
   <script src="common.js"></script>
   <script>
-    // ---------------------------------------------------------
-    // 1. 상품 칸 채우기
-    // ---------------------------------------------------------
-    const goods = listedGoods();   // 판매중지 상품은 빼고
+    onData(function () {
+      // ---------------------------------------------------------
+      // 1. 상품 칸 채우기
+      // ---------------------------------------------------------
+      const goods = listedGoods();   // 판매중지 상품은 빼고
 
-    // 신상품: 상품 번호가 클수록 최근에 등록된 상품
-    const newest = goods.slice().sort(function (a, b) { return b.no - a.no; }).slice(0, 5);
-    document.getElementById('new-goods').innerHTML = newest.map(function (g) { return goodsCardHTML(g); }).join('');
+      // 신상품: 상품 번호가 클수록 최근에 등록된 상품
+      const newest = goods.slice().sort(function (a, b) { return b.no - a.no; }).slice(0, 5);
+      document.getElementById('new-goods').innerHTML = newest.map(function (g) { return goodsCardHTML(g); }).join('');
 
-    // 베스트: 구매 수가 많은 순
-    const best = goods.slice().sort(function (a, b) { return (b.sold || 0) - (a.sold || 0); }).slice(0, 5);
-    document.getElementById('best-goods').innerHTML = best.map(function (g, i) { return goodsCardHTML(g, i + 1); }).join('');
+      // 베스트: 구매 수가 많은 순
+      const best = goods.slice().sort(function (a, b) { return (b.sold || 0) - (a.sold || 0); }).slice(0, 5);
+      document.getElementById('best-goods').innerHTML = best.map(function (g, i) { return goodsCardHTML(g, i + 1); }).join('');
 
-    // 업소용 BOX: 아이스박스 박스 상품 중 8개
-    const boxes = goods.filter(function (g) { return g.box && g.ice && canBuy(g); }).slice(0, 8);
-    document.getElementById('box-goods').innerHTML = boxes.map(function (g) { return goodsCardHTML(g); }).join('');
+      // 업소용 BOX: 아이스박스 박스 상품 중 8개
+      const boxes = goods.filter(function (g) { return g.box && g.ice && canBuy(g); }).slice(0, 8);
+      document.getElementById('box-goods').innerHTML = boxes.map(function (g) { return goodsCardHTML(g); }).join('');
 
-    // ---------------------------------------------------------
-    // 2. 배너 슬라이드: 화살표, 점, 자동 넘김
-    // ---------------------------------------------------------
-    const track = document.getElementById('hero-track');
-    const slides = track.querySelectorAll('.slide');
-    const dots = document.getElementById('hero-dots');
-    let index = 0;
+      // ---------------------------------------------------------
+      // 2. 배너 슬라이드: 화살표, 점, 자동 넘김
+      // ---------------------------------------------------------
+      const track = document.getElementById('hero-track');
+      const slides = track.querySelectorAll('.slide');
+      const dots = document.getElementById('hero-dots');
+      let index = 0;
 
-    // 슬라이드 수만큼 점 만들기
-    slides.forEach(function (s, i) {
-      const dot = document.createElement('button');
-      dot.setAttribute('aria-label', (i + 1) + '번째 배너');
-      dot.addEventListener('click', function () { goTo(i); });
-      dots.appendChild(dot);
-    });
+      // 슬라이드 수만큼 점 만들기
+      slides.forEach(function (s, i) {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', (i + 1) + '번째 배너');
+        dot.addEventListener('click', function () { goTo(i); });
+        dots.appendChild(dot);
+      });
 
-    function goTo(i) {
-      index = (i + slides.length) % slides.length;   // 끝에서 다음 → 처음으로
-      track.scrollTo({ left: track.clientWidth * index });
+      function goTo(i) {
+        index = (i + slides.length) % slides.length;   // 끝에서 다음 → 처음으로
+        track.scrollTo({ left: track.clientWidth * index });
+        paintDots();
+      }
+      function paintDots() {
+        dots.querySelectorAll('button').forEach(function (d, i) { d.classList.toggle('on', i === index); });
+      }
+
+      document.getElementById('hero-prev').addEventListener('click', function () { goTo(index - 1); });
+      document.getElementById('hero-next').addEventListener('click', function () { goTo(index + 1); });
+
+      // 손가락으로 밀었을 때도 점 맞추기
+      track.addEventListener('scroll', function () {
+        const i = Math.round(track.scrollLeft / track.clientWidth);
+        if (i !== index) { index = i; paintDots(); }
+      });
+
+      // 5초마다 자동으로 다음 배너 (마우스를 올리면 멈춤)
+      let auto = setInterval(function () { goTo(index + 1); }, 5000);
+      const hero = track.parentElement;
+      hero.addEventListener('mouseenter', function () { clearInterval(auto); });
+      hero.addEventListener('mouseleave', function () { auto = setInterval(function () { goTo(index + 1); }, 5000); });
+
       paintDots();
-    }
-    function paintDots() {
-      dots.querySelectorAll('button').forEach(function (d, i) { d.classList.toggle('on', i === index); });
-    }
-
-    document.getElementById('hero-prev').addEventListener('click', function () { goTo(index - 1); });
-    document.getElementById('hero-next').addEventListener('click', function () { goTo(index + 1); });
-
-    // 손가락으로 밀었을 때도 점 맞추기
-    track.addEventListener('scroll', function () {
-      const i = Math.round(track.scrollLeft / track.clientWidth);
-      if (i !== index) { index = i; paintDots(); }
     });
-
-    // 5초마다 자동으로 다음 배너 (마우스를 올리면 멈춤)
-    let auto = setInterval(function () { goTo(index + 1); }, 5000);
-    const hero = track.parentElement;
-    hero.addEventListener('mouseenter', function () { clearInterval(auto); });
-    hero.addEventListener('mouseleave', function () { auto = setInterval(function () { goTo(index + 1); }, 5000); });
-
-    paintDots();
   </script>
 </body>
 </html>

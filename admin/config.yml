@@ -1,0 +1,192 @@
+# =========================================================
+#  소울푸드 관리자 페이지 설정 (Sveltia CMS)
+#  - 주소: https://soulmarket.co.kr/admin/
+#  - 로그인: "Sign In with Token" + GitHub 토큰 (README.md 참고)
+#  - 저장하면 GitHub 저장소에 바로 커밋되고, 1~2분 뒤 사이트에 반영돼요.
+# =========================================================
+backend:
+  name: github
+  repo: SihyeonLim/soulmarket-site
+  branch: main
+  commit_messages:
+    create: "관리자: {{collection}} {{slug}} 추가"
+    update: "관리자: {{collection}} {{slug}} 수정"
+    delete: "관리자: {{collection}} {{slug}} 삭제"
+    uploadMedia: "관리자: 사진 업로드 {{path}}"
+    deleteMedia: "관리자: 사진 삭제 {{path}}"
+
+site_url: https://soulmarket.co.kr
+display_url: https://soulmarket.co.kr
+
+# 업로드한 사진이 저장되는 곳 (사이트에서는 images/goods/파일명 으로 불러와요)
+media_folder: images/goods
+public_folder: images/goods
+
+collections:
+  - name: catalog
+    label: 상품 · 마켓 관리
+    editor:
+      preview: false
+    files:
+      # ---------------------------------------------------- 상품
+      - name: goods
+        label: 상품 목록
+        file: data/goods.json
+        format: json
+        fields:
+          - name: goods
+            label: 상품
+            label_singular: 상품
+            widget: list
+            add_to_top: true
+            collapsed: true
+            summary: "{{fields.no}} · {{fields.name}}"
+            hint: "새 상품은 맨 위에 추가돼요. 목록에서 위에 있을수록 '랭킹순'에서 앞에 나와요."
+            fields:
+              - name: "no"
+                label: 상품 번호
+                widget: number
+                value_type: int
+                hint: "다른 상품과 겹치지 않는 숫자 (상품 주소에 쓰여요. 예: product.html?no=621)"
+              - name: market
+                label: 마켓
+                widget: select
+                options:
+                  - { label: "직수입마켓 (0001)", value: "0001" }
+                  - { label: "소울마켓 (0002)", value: "0002" }
+                  - { label: "까칠한홍여사마켓 (0004)", value: "0004" }
+                  - { label: "취화당 (0005)", value: "0005" }
+                  - { label: "허브마켓 (0003)", value: "0003" }
+                  - { label: "맛깔지기마켓 (0006)", value: "0006" }
+                  - { label: "상생마켓 (0007)", value: "0007" }
+                  - { label: "B2C마켓 (0008)", value: "0008" }
+              - name: name
+                label: 상품명
+                widget: string
+              - name: brand
+                label: 브랜드
+                widget: string
+                required: false
+              - name: img
+                label: 상품 사진
+                widget: image
+                required: false
+                choose_url: false
+                hint: "정사각형 사진이 가장 잘 보여요."
+              - name: tags
+                label: 태그
+                widget: list
+                required: false
+                hint: "쉼표로 구분해서 입력 (예: BOX, 베트남, HACCP)"
+              - name: desc
+                label: 생산지 · 인증 정보
+                widget: text
+                required: false
+              - name: box
+                label: 1박스 입수
+                widget: number
+                value_type: int
+                required: false
+                hint: "박스 판매 상품만 입력 (예: 12)"
+              - name: boxUnit
+                label: 입수 단위
+                widget: select
+                required: false
+                options: ["봉", "박스", "개", "팩", "kg"]
+              - name: ice
+                label: 아이스박스 포장 (냉동 · 냉장)
+                widget: boolean
+                required: false
+                default: false
+              - name: status
+                label: 상품 상태
+                widget: select
+                required: false
+                options: ["품절", "재고확보중", "판매중지"]
+                hint: "비워 두면 정상. 판매중지는 사이트 목록에서 숨겨져요."
+              - name: price
+                label: 가격 (원)
+                widget: number
+                value_type: int
+                required: false
+                hint: "'사이트 설정'에서 가격 표시를 켰을 때만 보여요."
+              - name: was
+                label: 할인 전 가격 (원)
+                widget: number
+                value_type: int
+                required: false
+              - name: rate
+                label: 할인율 (%)
+                widget: number
+                value_type: int
+                required: false
+              - name: sold
+                label: 판매량
+                widget: number
+                value_type: int
+                required: false
+                hint: "사이트에는 보이지 않고 '베스트' 순서에만 쓰여요."
+
+      # ---------------------------------------------------- 마켓
+      - name: markets
+        label: 마켓 (카테고리)
+        file: data/markets.json
+        format: json
+        fields:
+          - name: markets
+            label: 마켓
+            label_singular: 마켓
+            widget: list
+            collapsed: true
+            summary: "{{fields.code}} · {{fields.name}}"
+            hint: "목록 순서가 메뉴 순서예요. 새 마켓을 만들면 상품의 '마켓' 선택지에 나오도록 admin/config.yml 에도 한 줄 추가해야 해요."
+            fields:
+              - name: code
+                label: 마켓 코드
+                widget: string
+                hint: "겹치지 않는 4자리 숫자 (예: 0009)"
+              - name: name
+                label: 마켓 이름
+                widget: string
+              - name: label
+                label: 영문 라벨
+                widget: string
+                required: false
+              - name: desc
+                label: 설명
+                widget: string
+                required: false
+              - name: colors
+                label: 배너 색 (2개)
+                widget: list
+                min: 2
+                max: 2
+                field: { name: color, label: 색, widget: color }
+              - name: emoji
+                label: 배너 큰 그림 (이모지)
+                widget: string
+                required: false
+              - name: icon
+                label: 메뉴 아이콘 (이모지)
+                widget: string
+                required: false
+              - name: chips
+                label: 목록 위 필터 버튼
+                widget: list
+                required: false
+                summary: "{{fields.label}}"
+                fields:
+                  - { name: label, label: 버튼 이름, widget: string }
+                  - { name: words, label: 찾을 단어, widget: list, hint: "쉼표로 구분. 상품 이름 · 브랜드 · 태그에 하나라도 있으면 보여줘요." }
+
+      # ---------------------------------------------------- 사이트 설정
+      - name: site
+        label: 사이트 설정
+        file: data/site.json
+        format: json
+        fields:
+          - name: show_price
+            label: 가격 표시
+            widget: boolean
+            default: false
+            hint: "켜면 상품 카드 · 상세에 가격과 가격순 정렬이 나와요."

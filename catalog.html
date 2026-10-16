@@ -110,179 +110,181 @@
   <div id="site-footer"></div>
 
   <script src="data.js"></script>
-  <script>
-    // ---------------------------------------------------------
-    // 1. 어떤 목록인지 정하기 (common.js 보다 먼저: 메뉴 밑줄 표시용)
-    // ---------------------------------------------------------
-    const P = new URLSearchParams(location.search);
-    const q = (P.get('q') || '').trim();
-    const listType = P.get('list');
-    let code = P.get('market');
-
-    // 특별 목록(신상품·베스트·박스·검색)의 배너 정보
-    const SPECIAL = {
-      new:  { name: '신상품', label: 'NEW ARRIVALS', desc: '새로 들어온 상품을 가장 먼저 만나보세요', colors: ['#D7282F', '#8E1519'], emoji: '✨', sort: 'new' },
-      best: { name: '베스트', label: 'BEST', desc: '사장님들이 가장 많이 찾는 인기 상품', colors: ['#222222', '#444444'], emoji: '🏆', sort: 'sold' },
-      box:  { name: '업소용 BOX', label: 'BOX', desc: '박스 단위로 합리적인 대용량 상품', colors: ['#2F4A3A', '#1B2B21'], emoji: '📦', sort: 'rank' }
-    };
-
-    let mode, info;
-    if (q) {
-      mode = 'search';
-      info = { name: '‘' + q + '’ 검색 결과', label: 'SEARCH', desc: '', colors: ['#3B3B3B', '#1E1E1E'], emoji: '🔍', sort: 'rank' };
-    } else if (SPECIAL[listType]) {
-      mode = 'list';
-      info = SPECIAL[listType];
-      document.body.dataset.current = listType;
-    } else {
-      mode = 'market';
-      if (!MARKETS[code]) code = '0001';
-      info = MARKETS[code];
-      document.body.dataset.current = code;
-    }
-  </script>
   <script src="common.js"></script>
   <script>
-    // ---------------------------------------------------------
-    // 2. 보여줄 상품 고르기
-    // ---------------------------------------------------------
-    const everything = listedGoods();   // 판매중지 상품은 빼고
-    let goods;
-    if (mode === 'market') {
-      goods = info.goods.filter(isListed);
-    } else if (mode === 'search') {
-      // 띄어쓰기를 무시하고 브랜드·이름·마켓 이름에서 찾기
-      const key = q.replace(/\s/g, '').toLowerCase();
-      goods = everything.filter(function (g) {
-        const text = (g.brand + g.name + MARKETS[g.market].name + g.tags.join('')).replace(/\s/g, '').toLowerCase();
-        return text.indexOf(key) !== -1;
-      });
-      info.desc = goods.length ? goods.length + '개 상품을 찾았어요' : '';
-    } else if (listType === 'box') {
-      goods = everything.filter(function (g) { return g.box; });
-    } else {
-      goods = everything.slice();
-    }
+    onData(function () {
+      // ---------------------------------------------------------
+      // 1. 어떤 목록인지 정하기 (common.js 보다 먼저: 메뉴 밑줄 표시용)
+      // ---------------------------------------------------------
+      const P = new URLSearchParams(location.search);
+      const q = (P.get('q') || '').trim();
+      const listType = P.get('list');
+      let code = P.get('market');
 
-    // 필터 칩 (실제 상품이 있는 마켓만)
-    const chips = (mode === 'market' && goods.length) ? info.chips : [];
-    const chipIndex = parseInt(P.get('chip'));
-    const activeChip = chips[chipIndex];
-    if (activeChip) {
-      goods = goods.filter(function (g) {
-        const text = g.brand + g.name + g.tags.join('');
-        return activeChip.words.some(function (w) { return text.indexOf(w) !== -1; });
-      });
-    }
+      // 특별 목록(신상품·베스트·박스·검색)의 배너 정보
+      const SPECIAL = {
+        new:  { name: '신상품', label: 'NEW ARRIVALS', desc: '새로 들어온 상품을 가장 먼저 만나보세요', colors: ['#D7282F', '#8E1519'], emoji: '✨', sort: 'new' },
+        best: { name: '베스트', label: 'BEST', desc: '사장님들이 가장 많이 찾는 인기 상품', colors: ['#222222', '#444444'], emoji: '🏆', sort: 'sold' },
+        box:  { name: '업소용 BOX', label: 'BOX', desc: '박스 단위로 합리적인 대용량 상품', colors: ['#2F4A3A', '#1B2B21'], emoji: '📦', sort: 'rank' }
+      };
 
-    // 정렬
-    let sort = P.get('sort') || info.sort || 'rank';
-    if (!SHOW_PRICE && (sort === 'low' || sort === 'high')) sort = 'rank';   // 가격을 숨기면 가격순 정렬도 없음
-    const SORTERS = {
-      rank: null,   // 원래 순서 그대로
-      new:  function (a, b) { return b.no - a.no; },
-      low:  function (a, b) { return a.price - b.price; },
-      high: function (a, b) { return b.price - a.price; },
-      sold: function (a, b) { return (b.sold || 0) - (a.sold || 0) || b.no - a.no; }
-    };
-    if (SORTERS[sort]) goods.sort(SORTERS[sort]);
-    if (mode === 'list' && listType === 'new') goods = goods.slice(0, 24);   // 신상품은 최근 24개
-
-    // 전체 개수: 마켓은 실제 사이트 상품 수 (정보 없는 자리는 예시 카드)
-    let total = goods.length;
-    // (상품 정보가 아직 없는 마켓만 실제 개수만큼 예시 카드로 채워요)
-    if (mode === 'market' && !activeChip && info.goods.length === 0) total = info.count;
-
-    // ---------------------------------------------------------
-    // 3. 배너·제목·개수
-    // ---------------------------------------------------------
-    document.title = info.name + ' | 소울푸드';
-    document.getElementById('crumb').textContent = info.name;
-    document.getElementById('hero-label').textContent = info.label;
-    document.getElementById('hero-title').textContent = info.name;
-    document.getElementById('hero-desc').textContent = info.desc;
-    document.getElementById('hero-deco').textContent = info.emoji;
-    document.getElementById('hero').style.background = 'linear-gradient(120deg, ' + info.colors[0] + ', ' + info.colors[1] + ')';
-    document.getElementById('count').textContent = total;
-
-    // ---------------------------------------------------------
-    // 4. 주소 만들기 도우미: 지금 주소에서 값 몇 개만 바꾸기
-    //    urlWith({ sort: 'low', page: 1 })
-    // ---------------------------------------------------------
-    function urlWith(changes) {
-      const next = new URLSearchParams(location.search);
-      Object.keys(changes).forEach(function (k) {
-        if (changes[k] === null) next.delete(k);
-        else next.set(k, changes[k]);
-      });
-      return 'catalog.html?' + next.toString();
-    }
-
-    // 칩 그리기
-    if (chips.length) {
-      let html = '<a href="' + urlWith({ chip: null, page: 1 }) + '"' + (activeChip ? '' : ' class="on"') + '>전체</a>';
-      chips.forEach(function (c, i) {
-        html += '<a href="' + urlWith({ chip: i, page: 1 }) + '"' + (i === chipIndex ? ' class="on"' : '') + '>' + c.label + '</a>';
-      });
-      document.getElementById('chips').innerHTML = html;
-    }
-
-    // 정렬 버튼: 지금 정렬에 표시 + 누르면 주소 바꿔서 이동
-    document.querySelectorAll('#sort a.price-only').forEach(function (a) { a.hidden = !SHOW_PRICE; });
-    document.querySelectorAll('#sort a').forEach(function (a) {
-      a.href = urlWith({ sort: a.dataset.sort, page: 1 });
-      if (a.dataset.sort === sort) a.classList.add('on');
-    });
-
-    // 개수 선택
-    const per = [12, 24, 48].indexOf(parseInt(P.get('per'))) !== -1 ? parseInt(P.get('per')) : 12;
-    const perSelect = document.getElementById('per');
-    perSelect.value = per;
-    perSelect.addEventListener('change', function () {
-      location.href = urlWith({ per: perSelect.value, page: 1 });
-    });
-
-    // ---------------------------------------------------------
-    // 5. 이번 페이지의 카드 그리기
-    // ---------------------------------------------------------
-    const totalPages = Math.max(1, Math.ceil(total / per));
-    let page = parseInt(P.get('page')) || 1;
-    page = Math.min(Math.max(page, 1), totalPages);
-    const start = (page - 1) * per;
-    const end = Math.min(start + per, total);
-    const showRank = mode === 'list' && listType === 'best' && sort === 'sold';
-
-    let html = '';
-    for (let i = start; i < end; i++) {
-      if (i < goods.length) html += goodsCardHTML(goods[i], showRank ? i + 1 : 0);
-      else html += sampleCardHTML(info, i + 1);
-    }
-    document.getElementById('goods').innerHTML = html;
-
-    // 상품이 하나도 없을 때
-    if (total === 0) {
-      let msg;
-      if (mode === 'search') {
-        const words = ['어묵', '김말이', '감자튀김', '버섯', '치즈떡', '월남관'];
-        msg = '<div class="empty"><div class="big">🔍</div><p>‘' + esc(q) + '’에 맞는 상품이 없어요.<br>이런 검색어는 어떠세요?</p><div class="suggest">' +
-          words.map(function (w) { return '<a href="catalog.html?q=' + encodeURIComponent(w) + '">' + w + '</a>'; }).join('') + '</div></div>';
+      let mode, info;
+      if (q) {
+        mode = 'search';
+        info = { name: '‘' + q + '’ 검색 결과', label: 'SEARCH', desc: '', colors: ['#3B3B3B', '#1E1E1E'], emoji: '🔍', sort: 'rank' };
+      } else if (SPECIAL[listType]) {
+        mode = 'list';
+        info = SPECIAL[listType];
+        document.body.dataset.current = listType;
       } else {
-        msg = '<div class="empty"><div class="big">' + info.emoji + '</div><p>상품을 준비하고 있어요.<br>취급 여부와 거래 조건은 문의해 주세요.</p><a class="btn btn-primary" href="tel:053-311-1980">📞 053-311-1980</a> <a class="btn" href="cs.html">문의하기</a></div>';
+        mode = 'market';
+        if (!MARKETS[code]) code = '0001';
+        info = MARKETS[code];
+        document.body.dataset.current = code;
       }
-      document.getElementById('empty').innerHTML = msg;
-    }
+      renderHeader();   // 메뉴 밑줄(data-current)을 반영해서 헤더 다시 그리기
 
-    // ---------------------------------------------------------
-    // 6. 페이지 번호  ‹ 1 2 3 ›
-    // ---------------------------------------------------------
-    if (total > 0) {
-      let pg = '<a href="' + urlWith({ page: page - 1 }) + '"' + (page === 1 ? ' class="off"' : '') + ' aria-label="이전 페이지">‹</a>';
-      for (let p = 1; p <= totalPages; p++) {
-        pg += '<a href="' + urlWith({ page: p }) + '"' + (p === page ? ' class="on"' : '') + '>' + p + '</a>';
+      // ---------------------------------------------------------
+      // 2. 보여줄 상품 고르기
+      // ---------------------------------------------------------
+      const everything = listedGoods();   // 판매중지 상품은 빼고
+      let goods;
+      if (mode === 'market') {
+        goods = info.goods.filter(isListed);
+      } else if (mode === 'search') {
+        // 띄어쓰기를 무시하고 브랜드·이름·마켓 이름에서 찾기
+        const key = q.replace(/\s/g, '').toLowerCase();
+        goods = everything.filter(function (g) {
+          const text = (g.brand + g.name + MARKETS[g.market].name + g.tags.join('')).replace(/\s/g, '').toLowerCase();
+          return text.indexOf(key) !== -1;
+        });
+        info.desc = goods.length ? goods.length + '개 상품을 찾았어요' : '';
+      } else if (listType === 'box') {
+        goods = everything.filter(function (g) { return g.box; });
+      } else {
+        goods = everything.slice();
       }
-      pg += '<a href="' + urlWith({ page: page + 1 }) + '"' + (page === totalPages ? ' class="off"' : '') + ' aria-label="다음 페이지">›</a>';
-      document.getElementById('paging').innerHTML = pg;
-    }
+
+      // 필터 칩 (실제 상품이 있는 마켓만)
+      const chips = (mode === 'market' && goods.length) ? info.chips : [];
+      const chipIndex = parseInt(P.get('chip'));
+      const activeChip = chips[chipIndex];
+      if (activeChip) {
+        goods = goods.filter(function (g) {
+          const text = g.brand + g.name + g.tags.join('');
+          return activeChip.words.some(function (w) { return text.indexOf(w) !== -1; });
+        });
+      }
+
+      // 정렬
+      let sort = P.get('sort') || info.sort || 'rank';
+      if (!SHOW_PRICE && (sort === 'low' || sort === 'high')) sort = 'rank';   // 가격을 숨기면 가격순 정렬도 없음
+      const SORTERS = {
+        rank: null,   // 원래 순서 그대로
+        new:  function (a, b) { return b.no - a.no; },
+        low:  function (a, b) { return a.price - b.price; },
+        high: function (a, b) { return b.price - a.price; },
+        sold: function (a, b) { return (b.sold || 0) - (a.sold || 0) || b.no - a.no; }
+      };
+      if (SORTERS[sort]) goods.sort(SORTERS[sort]);
+      if (mode === 'list' && listType === 'new') goods = goods.slice(0, 24);   // 신상품은 최근 24개
+
+      // 전체 개수: 마켓은 실제 사이트 상품 수 (정보 없는 자리는 예시 카드)
+      let total = goods.length;
+      // (상품 정보가 아직 없는 마켓만 실제 개수만큼 예시 카드로 채워요)
+      if (mode === 'market' && !activeChip && info.goods.length === 0) total = info.count;
+
+      // ---------------------------------------------------------
+      // 3. 배너·제목·개수
+      // ---------------------------------------------------------
+      document.title = info.name + ' | 소울푸드';
+      document.getElementById('crumb').textContent = info.name;
+      document.getElementById('hero-label').textContent = info.label;
+      document.getElementById('hero-title').textContent = info.name;
+      document.getElementById('hero-desc').textContent = info.desc;
+      document.getElementById('hero-deco').textContent = info.emoji;
+      document.getElementById('hero').style.background = 'linear-gradient(120deg, ' + info.colors[0] + ', ' + info.colors[1] + ')';
+      document.getElementById('count').textContent = total;
+
+      // ---------------------------------------------------------
+      // 4. 주소 만들기 도우미: 지금 주소에서 값 몇 개만 바꾸기
+      //    urlWith({ sort: 'low', page: 1 })
+      // ---------------------------------------------------------
+      function urlWith(changes) {
+        const next = new URLSearchParams(location.search);
+        Object.keys(changes).forEach(function (k) {
+          if (changes[k] === null) next.delete(k);
+          else next.set(k, changes[k]);
+        });
+        return 'catalog.html?' + next.toString();
+      }
+
+      // 칩 그리기
+      if (chips.length) {
+        let html = '<a href="' + urlWith({ chip: null, page: 1 }) + '"' + (activeChip ? '' : ' class="on"') + '>전체</a>';
+        chips.forEach(function (c, i) {
+          html += '<a href="' + urlWith({ chip: i, page: 1 }) + '"' + (i === chipIndex ? ' class="on"' : '') + '>' + c.label + '</a>';
+        });
+        document.getElementById('chips').innerHTML = html;
+      }
+
+      // 정렬 버튼: 지금 정렬에 표시 + 누르면 주소 바꿔서 이동
+      document.querySelectorAll('#sort a.price-only').forEach(function (a) { a.hidden = !SHOW_PRICE; });
+      document.querySelectorAll('#sort a').forEach(function (a) {
+        a.href = urlWith({ sort: a.dataset.sort, page: 1 });
+        if (a.dataset.sort === sort) a.classList.add('on');
+      });
+
+      // 개수 선택
+      const per = [12, 24, 48].indexOf(parseInt(P.get('per'))) !== -1 ? parseInt(P.get('per')) : 12;
+      const perSelect = document.getElementById('per');
+      perSelect.value = per;
+      perSelect.addEventListener('change', function () {
+        location.href = urlWith({ per: perSelect.value, page: 1 });
+      });
+
+      // ---------------------------------------------------------
+      // 5. 이번 페이지의 카드 그리기
+      // ---------------------------------------------------------
+      const totalPages = Math.max(1, Math.ceil(total / per));
+      let page = parseInt(P.get('page')) || 1;
+      page = Math.min(Math.max(page, 1), totalPages);
+      const start = (page - 1) * per;
+      const end = Math.min(start + per, total);
+      const showRank = mode === 'list' && listType === 'best' && sort === 'sold';
+
+      let html = '';
+      for (let i = start; i < end; i++) {
+        if (i < goods.length) html += goodsCardHTML(goods[i], showRank ? i + 1 : 0);
+        else html += sampleCardHTML(info, i + 1);
+      }
+      document.getElementById('goods').innerHTML = html;
+
+      // 상품이 하나도 없을 때
+      if (total === 0) {
+        let msg;
+        if (mode === 'search') {
+          const words = ['어묵', '김말이', '감자튀김', '버섯', '치즈떡', '월남관'];
+          msg = '<div class="empty"><div class="big">🔍</div><p>‘' + esc(q) + '’에 맞는 상품이 없어요.<br>이런 검색어는 어떠세요?</p><div class="suggest">' +
+            words.map(function (w) { return '<a href="catalog.html?q=' + encodeURIComponent(w) + '">' + w + '</a>'; }).join('') + '</div></div>';
+        } else {
+          msg = '<div class="empty"><div class="big">' + info.emoji + '</div><p>상품을 준비하고 있어요.<br>취급 여부와 거래 조건은 문의해 주세요.</p><a class="btn btn-primary" href="tel:053-311-1980">📞 053-311-1980</a> <a class="btn" href="cs.html">문의하기</a></div>';
+        }
+        document.getElementById('empty').innerHTML = msg;
+      }
+
+      // ---------------------------------------------------------
+      // 6. 페이지 번호  ‹ 1 2 3 ›
+      // ---------------------------------------------------------
+      if (total > 0) {
+        let pg = '<a href="' + urlWith({ page: page - 1 }) + '"' + (page === 1 ? ' class="off"' : '') + ' aria-label="이전 페이지">‹</a>';
+        for (let p = 1; p <= totalPages; p++) {
+          pg += '<a href="' + urlWith({ page: p }) + '"' + (p === page ? ' class="on"' : '') + '>' + p + '</a>';
+        }
+        pg += '<a href="' + urlWith({ page: page + 1 }) + '"' + (page === totalPages ? ' class="off"' : '') + ' aria-label="다음 페이지">›</a>';
+        document.getElementById('paging').innerHTML = pg;
+      }
+    });
   </script>
 </body>
 </html>
