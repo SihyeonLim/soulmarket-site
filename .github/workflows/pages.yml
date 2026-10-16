@@ -1,0 +1,35 @@
+# 저장소에 변경이 올라올 때마다(관리자 페이지에서 저장할 때 포함)
+# 상품 목록(data/goods.json)을 다시 만들고 사이트를 배포합니다.
+# ※ 저장소 Settings → Pages → Source 를 "GitHub Actions" 로 바꿔야 동작해요.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 상품 목록 만들기
+        run: python3 tools/build_data.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

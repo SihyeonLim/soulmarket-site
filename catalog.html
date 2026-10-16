@@ -268,7 +268,7 @@
           msg = '<div class="empty"><div class="big">🔍</div><p>‘' + esc(q) + '’에 맞는 상품이 없어요.<br>이런 검색어는 어떠세요?</p><div class="suggest">' +
             words.map(function (w) { return '<a href="catalog.html?q=' + encodeURIComponent(w) + '">' + w + '</a>'; }).join('') + '</div></div>';
         } else {
-          msg = '<div class="empty"><div class="big">' + info.emoji + '</div><p>상품을 준비하고 있어요.<br>취급 여부와 거래 조건은 문의해 주세요.</p><a class="btn btn-primary" href="tel:053-311-1980">📞 053-311-1980</a> <a class="btn" href="cs.html">문의하기</a></div>';
+          msg = '<div class="empty"><div class="big">' + info.emoji + '</div><p>상품을 준비하고 있어요.<br>취급 여부와 거래 조건은 문의해 주세요.</p><a class="btn btn-primary" href="tel:' + CONTACT.phones[0] + '">📞 ' + CONTACT.phones[0] + '</a> <a class="btn btn-primary" href="tel:' + CONTACT.phones[1] + '">📱 ' + CONTACT.phones[1] + '</a> <a class="btn" href="cs.html">문의하기</a></div>';
         }
         document.getElementById('empty').innerHTML = msg;
       }

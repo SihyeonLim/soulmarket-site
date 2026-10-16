@@ -1,0 +1,17 @@
+{
+  "no": 600,
+  "market": "0001",
+  "order": 140,
+  "name": "고추튀김 1KG(개당59g/17ea이상)",
+  "brand": "월남관",
+  "img": "images/goods/2026/07/600_2026072419212228.PNG",
+  "tags": [
+    "BOX",
+    "베트남"
+  ],
+  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
+  "box": 12,
+  "boxUnit": "봉",
+  "ice": true,
+  "price": 13200
+}

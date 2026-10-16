@@ -6,8 +6,11 @@
 | 파일/폴더 | 설명 |
 |---|---|
 | `index.html`, `catalog.html`, `product.html`, `cs.html`, `info.html` | 메인 / 상품 목록 / 상품 상세 / 문의하기 / 회사소개 |
-| `data/goods.json` · `data/markets.json` · `data/site.json` | 상품 목록 / 마켓(카테고리) / 사이트 설정(가격 표시) |
-| `data.js` | 위 JSON 파일을 불러오는 코드 |
+| `data/goods/번호.json` | 상품 1개당 파일 1개 (관리자 페이지에서 편집) |
+| `data/markets.json` · `data/site.json` | 마켓(카테고리) / 사이트 설정(가격 표시) |
+| `data.js` | 위 데이터를 불러오는 코드 |
+| `tools/build_data.py` | 상품 파일들을 모아 `data/goods.json` 을 만드는 스크립트 (배포 때 자동 실행) |
+| `.github/workflows/pages.yml` | 저장할 때마다 자동 배포하는 설정 |
 | `admin/` | 관리자 페이지 (`/admin/`) |
 | `common.js`, `common.css` | 공통 헤더·푸터·상품 카드 / 공통 디자인 |
 | `images/goods/` | 상품 이미지 (아래 1번 참고) |
@@ -33,7 +36,7 @@
 
 ## 배포
 1. GitHub 저장소를 만들고 이 폴더의 **내용물 전체**를 올립니다 (`index.html` 이 저장소 맨 위에 있어야 합니다).
-2. 저장소 Settings → Pages → Source 를 `main` 브랜치 / `/ (root)` 로 지정합니다.
+2. 저장소 Settings → Pages → **Source 를 `GitHub Actions`** 로 지정합니다. (상품 목록을 자동으로 만들기 위해 꼭 필요)
 3. Custom domain 에 `soulmarket.co.kr` 을 입력합니다. (`CNAME` 파일은 이미 들어 있습니다.)
 4. 가비아 DNS 에서 A 레코드 4개와 www CNAME 을 GitHub 쪽으로 바꿉니다.
    IP 값은 GitHub Docs 의 "Managing a custom domain for your GitHub Pages site" 에서 최신 값을 확인하세요.
@@ -59,14 +62,20 @@
 - 토큰이 유출되면 GitHub 의 같은 화면에서 바로 삭제(Revoke)하세요.
 
 ### 사용 요령
-- **상품 · 마켓 관리 → 상품 목록**: 맨 위 "추가"로 새 상품을 넣습니다. 상품 번호는 다른 상품과 겹치지 않게 넣으세요.
-- 목록에서 위에 있는 상품일수록 '랭킹순'에서 앞에 나옵니다.
+- 왼쪽 **상품** 메뉴: 오른쪽 위 **새 상품**으로 추가하고, 목록에서 상품을 누르면 수정 화면이 열립니다.
+  상품명 · 마켓 · 사진 · 한 줄 소개 · 상세 설명 · 상세 이미지 · 포장 정보 · 상태를 입력할 수 있습니다.
+- 상품 번호는 다른 상품과 겹치지 않게 넣으세요. (겹치면 배포할 때 뒤의 것이 빠집니다)
+- **진열 순서** 숫자가 작을수록 '랭킹순'에서 앞에 나옵니다. 새 상품은 기본 0 이라 맨 앞에 나옵니다.
 - 상품 상태를 **판매중지**로 하면 사이트에서 숨겨집니다. (삭제하지 않고 숨기기)
 - 새 마켓을 만들면, 상품의 '마켓' 선택지에 나오도록 `admin/config.yml` 의 options 에 한 줄을 추가해야 합니다.
 
 ## 로컬에서 미리보기
 상품 정보를 JSON 으로 불러오기 때문에 html 파일을 더블클릭해서는 상품이 보이지 않습니다. 폴더에서 아래를 실행하세요.
 
+    python3 tools/build_data.py
     python3 -m http.server 8000
 
 브라우저에서 http://localhost:8000 을 엽니다.
+
+## 연락처 바꾸기
+전화번호 · 이메일 · 상담 시간은 `common.js` 맨 위 `CONTACT` 에서 바꿉니다. (`cs.html`, `index.html` 의 문의 안내 문구도 함께 고쳐 주세요)

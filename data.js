@@ -2,7 +2,7 @@
    data.js : 사이트 데이터 불러오기
    - 실제 데이터는 data 폴더의 JSON 파일에 있어요.
        data/markets.json  마켓(카테고리) 목록 · 순서 · 색 · 필터 버튼
-       data/goods.json    상품 목록 (위에 있을수록 "랭킹순" 앞쪽)
+       data/goods.json    상품 목록 (data/goods/번호.json 들을 배포 때 자동으로 모은 파일)
        data/site.json     사이트 설정 (가격 표시 여부)
    - 관리자 페이지(/admin)에서 고치면 이 JSON 파일들이 바뀌고,
      1~2분 뒤 사이트에 반영돼요. 직접 JSON 을 고쳐도 돼요.

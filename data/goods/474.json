@@ -1,0 +1,20 @@
+{
+  "no": 474,
+  "market": "0002",
+  "order": 370,
+  "name": "통통꼬마김말이 1KG(개당25g±5/40ea~41ea)",
+  "brand": "소울마켓",
+  "img": "images/goods/2024/09/474_2024092615035120.PNG",
+  "tags": [
+    "BOX",
+    "HACCP"
+  ],
+  "desc": "[경상남도 함안군] HACCP인증",
+  "box": 12,
+  "boxUnit": "봉",
+  "ice": true,
+  "price": 66000,
+  "was": 76000,
+  "rate": 14,
+  "sold": 5
+}

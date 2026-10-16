@@ -8,6 +8,19 @@
    ========================================================= */
 
 // ---------------------------------------------------------
+// 0. 연락처 (여기 한 곳만 고치면 헤더 · 푸터 · 상품 상세에 모두 반영돼요)
+// ---------------------------------------------------------
+const CONTACT = {
+  phones: ['053-311-1980', '010-8388-8823'],
+  email: 'soul1980@soulfd.co.kr',
+  hours: '평일 10:00 ~ 18:00 · 주말/공휴일 휴무'
+};
+// 전화번호 링크 묶음 (sep: 사이에 넣을 글자)
+function phoneLinks(sep) {
+  return CONTACT.phones.map(function (p) { return '<a href="tel:' + p + '">' + p + '</a>'; }).join(sep || ' / ');
+}
+
+// ---------------------------------------------------------
 // 2. 자주 쓰는 작은 도구들
 // ---------------------------------------------------------
 // 숫자에 쉼표: 69900 → "69,900"
@@ -82,6 +95,7 @@ function goodsCardHTML(g, rank) {
   const market = MARKETS[g.market] || {};
   let tags = rank ? '<span class="tag rank">BEST ' + rank + '</span>' : '';
   g.tags.forEach(function (t) {
+    if (t === 'BOX') return;   // BOX 는 박스 상품 분류용이라 사진 위에는 표시하지 않음
     let cls = 'tag';
     if (t === 'HACCP') cls += ' haccp';
     else if (t !== 'BOX') cls += ' origin';
@@ -155,7 +169,7 @@ function renderHeader() {
     '<div class="top-bar"><div class="inner">' +
       '<p>식자재 전문 제조 · 무역 · 유통 법인 (주)소울푸드</p>' +
       '<ul>' +
-        '<li><a href="tel:053-311-1980">☎ 053-311-1980</a></li>' +
+        '<li>☎ ' + phoneLinks(' · ') + '</li>' +
         '<li><a href="cs.html">문의하기</a></li>' +
       '</ul>' +
     '</div></div>' +
@@ -166,7 +180,7 @@ function renderHeader() {
         '<button type="submit">검색</button>' +
       '</form>' +
       '<nav class="header-icons">' +
-        '<a href="tel:053-311-1980"><span class="icon">📞</span><span class="label">전화 문의</span></a>' +
+        '<a href="tel:' + CONTACT.phones[0] + '"><span class="icon">📞</span><span class="label">전화 문의</span></a>' +
         '<a href="cs.html"><span class="icon">✉️</span><span class="label">문의하기</span></a>' +
       '</nav>' +
     '</div></header>' +
@@ -198,10 +212,10 @@ function renderFooter() {
         '<li>회사명 : (주)소울푸드</li>' +
         '<li>대표자 : 임양섭</li>' +
         '<li>주소 : 경상북도 칠곡군 지천면 칠곡대로 2233-45</li>' +
-        '<li>전화 : <a href="tel:053-311-1980">053-311-1980</a></li>' +
+        '<li>전화 : ' + phoneLinks() + '</li>' +
         '<li>사업자등록번호 : 504-81-82217</li>' +
         '<li>통신판매업신고 : 제2017 경북칠곡 0030호</li>' +
-        '<li>이메일 : <a href="mailto:lys3888@soulfd.co.kr">lys3888@soulfd.co.kr</a></li>' +
+        '<li>이메일 : <a href="mailto:' + CONTACT.email + '">' + CONTACT.email + '</a></li>' +
       '</ul>' +
       '<p class="copy">COPYRIGHT © (주)소울푸드 ALL RIGHTS RESERVED.</p>' +
     '</div></footer>';
@@ -248,7 +262,7 @@ function showDataError(err) {
   const box = document.createElement('div');
   box.className = 'inner';
   box.innerHTML = '<div class="empty"><div class="big">⚠️</div><p>상품 정보를 불러오지 못했어요. 잠시 후 새로고침해 주세요.</p>' +
-    '<p style="font-size:13px;color:var(--text-sub)">문의 : <a href="tel:053-311-1980">053-311-1980</a></p></div>';
+    '<p style="font-size:13px;color:var(--text-sub)">문의 : ' + phoneLinks() + '</p></div>';
   const footer = document.getElementById('site-footer');
   if (footer) footer.parentNode.insertBefore(box, footer); else document.body.appendChild(box);
 }

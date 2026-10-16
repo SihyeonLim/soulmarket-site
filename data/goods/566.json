@@ -1,0 +1,20 @@
+{
+  "no": 566,
+  "market": "0002",
+  "order": 320,
+  "name": "탱글콘치즈떡 1KG(18G/55ea~58ea)",
+  "brand": "소울마켓",
+  "img": "images/goods/2025/11/566_2025112415511921.PNG",
+  "tags": [
+    "BOX",
+    "HACCP"
+  ],
+  "desc": "[대구광역시 북구] HACCP인증",
+  "box": 8,
+  "boxUnit": "봉",
+  "ice": true,
+  "price": 44000,
+  "was": 55000,
+  "rate": 20,
+  "sold": 4
+}

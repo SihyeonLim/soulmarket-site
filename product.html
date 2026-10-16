@@ -47,6 +47,9 @@
 
     .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
     .actions .btn { text-align: center; }
+    .actions .mail { grid-column: 1 / -1; }
+    .detail-text { white-space: pre-line; color: #444; }
+    .detail-imgs img { display: block; width: 100%; max-width: 860px; margin: 16px auto 0; border-radius: 8px; }
     @media (max-width: 480px) { .actions { grid-template-columns: 1fr; } }
 
     /* 2. 아래쪽 탭 */
@@ -102,6 +105,7 @@
         // 태그
         let tags = '';
         g.tags.forEach(function (t) {
+          if (t === 'BOX') return;   // BOX 는 분류용이라 표시하지 않음 (포장 정보는 아래 '포장'에 나와요)
           let cls = 'tag';
           if (t === 'HACCP') cls += ' haccp';
           else if (t !== 'BOX') cls += ' origin';
@@ -128,7 +132,7 @@
         // 같은 마켓 다른 상품 4개
         const related = m.goods.filter(function (x) { return x.no !== g.no && isListed(x); }).slice(0, 4);
 
-        const mailHref = 'mailto:lys3888@soulfd.co.kr?subject=' + encodeURIComponent('[상품 문의] ' + g.name) +
+        const mailHref = 'mailto:' + CONTACT.email + '?subject=' + encodeURIComponent('[상품 문의] ' + g.name) +
           '&body=' + encodeURIComponent('상품명: ' + g.name + '\n상품번호: ' + g.no + '\n\n문의 내용:\n');
 
         page.innerHTML =
@@ -145,16 +149,21 @@
               price +
               '<dl class="rows">' + rows + '</dl>' +
               '<div class="actions">' +
-                '<a class="btn btn-primary" href="tel:053-311-1980">📞 전화 문의 053-311-1980</a>' +
-                '<a class="btn" href="' + mailHref + '">✉️ 이메일 문의</a>' +
+                '<a class="btn btn-primary" href="tel:' + CONTACT.phones[0] + '">📞 ' + CONTACT.phones[0] + '</a>' +
+                '<a class="btn btn-primary" href="tel:' + CONTACT.phones[1] + '">📱 ' + CONTACT.phones[1] + '</a>' +
+                '<a class="btn mail" href="' + mailHref + '">✉️ 이메일 문의 · ' + CONTACT.email + '</a>' +
               '</div>' +
-              '<p class="inquiry-note">거래 조건과 가격은 문의해 주세요. 평일 10:00 ~ 18:00 (주말·공휴일 휴무)</p>' +
+              '<p class="inquiry-note">거래 조건과 가격은 문의해 주세요. ' + CONTACT.hours + '</p>' +
             '</div>' +
           '</section>' +
 
           '<section class="tab-panel on" id="tab-info">' +
             '<h4>상품명</h4><p>' + esc(g.name) + '</p>' +
             (g.desc ? '<h4>생산 · 인증 정보</h4><p>' + esc(g.desc) + '</p>' : '') +
+            (g.detail ? '<h4>상세 설명</h4><p class="detail-text">' + esc(g.detail) + '</p>' : '') +
+            ((g.detail_images || []).length ? '<div class="detail-imgs">' + g.detail_images.map(function (src) {
+              return '<img src="' + esc(imgUrl({ img: src })) + '" alt="' + esc(g.name) + ' 상세 이미지" loading="lazy" onerror="this.remove()">';
+            }).join('') + '</div>' : '') +
           '</section>' +
 
           (related.length ?

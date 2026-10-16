@@ -1,0 +1,19 @@
+{
+  "no": 564,
+  "market": "0002",
+  "order": 340,
+  "name": "탱글고구마떡 1KG(14g/70ea~73ea)-직접 쌀을 불린후 제조",
+  "brand": "소울마켓",
+  "img": "images/goods/2025/11/564_2025112415504229.PNG",
+  "tags": [
+    "BOX",
+    "HACCP"
+  ],
+  "desc": "[부산광역시 사하구] HACCP인증,대기업 OEM생산업체,굳지않는 고구마떡볶이",
+  "box": 8,
+  "boxUnit": "봉",
+  "ice": true,
+  "price": 34500,
+  "was": 45000,
+  "rate": 24
+}
