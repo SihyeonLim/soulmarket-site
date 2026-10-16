@@ -1,0 +1,44 @@
+/* 관리자 미리보기 전용 (사이트 디자인은 common.css 를 그대로 사용) */
+body { background: #fff; }
+.pv { padding: 20px 24px 40px; }
+.pv-label { display: inline-block; margin: 8px 0 12px; padding: 4px 10px; border-radius: 999px; background: #F2F2F2; color: #767676; font-size: 12px; font-weight: 700; }
+.pv-label:not(:first-child) { margin-top: 36px; }
+.pv-warn { margin: 0 0 8px; padding: 10px 12px; border-radius: 8px; background: #FDEEEE; color: #B01E24; font-size: 13px; font-weight: 600; }
+.pv .breadcrumb { font-size: 13px; color: #767676; margin-bottom: 4px; }
+.pv-dim { opacity: .45; }
+.pv-cards { display: grid; grid-template-columns: 220px; }
+.pv-thumb { position: relative; width: 100%; height: 100%; }
+.pv-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---- 상품 상세 페이지 모양 (product.html 과 같은 규칙) ---- */
+.detail { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 12px; }
+.photo { aspect-ratio: 1 / 1; border-radius: 16px; overflow: hidden; background: var(--bg); position: relative; }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo .ph { width: 100%; height: 100%; display: grid; place-items: center; font-size: 96px; opacity: .5; }
+.buy .market-link { font-size: 13px; color: var(--text-sub); font-weight: 600; }
+.buy h1 { font-size: 22px; line-height: 1.4; font-weight: 700; margin: 6px 0 10px; letter-spacing: -.5px; }
+.buy .tags { display: flex; gap: 4px; flex-wrap: wrap; position: static; }
+.buy .desc { font-size: 13px; color: var(--text-sub); margin-top: 10px; }
+.state-note { margin-top: 14px; padding: 12px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; background: #EEF3FB; color: #2E5AA0; }
+.state-note.soldout, .state-note.stop { background: var(--bg); color: var(--text); }
+.price-box { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; margin: 18px 0; }
+.price-box .now { font-size: 28px; font-weight: 800; }
+.price-box .now small { font-size: 16px; }
+.price-box .rate { color: var(--brand); margin-right: 8px; font-style: normal; }
+.price-box del { color: #B5B5B5; font-size: 15px; margin-left: 8px; }
+.price-box .unit { color: var(--text-sub); font-size: 13px; margin-top: 4px; }
+.rows { font-size: 14px; margin-top: 16px; }
+.rows div { display: grid; grid-template-columns: 90px 1fr; padding: 6px 0; }
+.rows dt { color: var(--text-sub); }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
+.actions .btn { text-align: center; }
+.actions .mail { grid-column: 1 / -1; }
+.tab-panel { padding: 28px 0 0; font-size: 15px; border-top: 2px solid var(--text); margin-top: 32px; }
+.tab-panel h4 { font-size: 17px; margin: 20px 0 8px; }
+.tab-panel h4:first-child { margin-top: 0; }
+.tab-panel p { color: #444; }
+.detail-text { white-space: pre-line; }
+.detail-imgs img { display: block; width: 100%; margin: 16px auto 0; border-radius: 8px; }
+@media (max-width: 700px) {
+  .detail { grid-template-columns: 1fr; gap: 20px; }
+}

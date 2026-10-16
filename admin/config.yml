@@ -42,7 +42,7 @@ collections:
       - { label: 마켓, field: market }
       - { label: 상품 상태, field: status }
     editor:
-      preview: false
+      preview: true   # 입력 화면 오른쪽에 사이트 모양 미리보기 (admin/preview.js)
     fields:
       - name: name
         label: 상품명

@@ -174,7 +174,8 @@ button { cursor: pointer; background: none; border: 0; }
 .card.unavailable .price { color: #999; }
 .card .info { display: block; }
 .card .brand { font-size: 12px; color: var(--text-sub); margin-top: 12px; font-weight: 600; min-height: 18px; }
-.card .name { font-size: 15px; margin-top: 2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card .name { font-size: 15px; line-height: 1.45; margin-top: 2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  min-height: calc(1.45em * 2); /* 상품명이 1줄이어도 2줄 높이를 차지해서 가격 위치가 카드마다 같게 */ }
 .card .info:hover .name { text-decoration: underline; }
 .card .price { font-size: 18px; font-weight: 800; margin-top: 6px; }
 .card .price small { font-size: 13px; font-weight: 600; }
