@@ -112,7 +112,7 @@ function goodsCardHTML(g, rank) {
     if (g.box && g.boxUnit === '봉') unit = '<p class="unit">1봉당 약 ' + won(Math.round(g.price / g.box)) + '원</p>';
   }
   let ship = '';
-  if (g.box) ship = '<span class="ship">' + (g.ice ? '❄ 아이스박스 ' : '📦 ') + '1박스 ' + g.box + g.boxUnit + '</span>';
+  if (g.box) ship = '<span class="ship">1박스 ' + g.box + g.boxUnit + '</span>';
 
   const link = 'product.html?no=' + g.no;
   const st = STATUS[goodsStatus(g)];
