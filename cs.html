@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  소울푸드 : 문의하기 (전화·이메일 안내)
+  ============================================================
+-->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>문의하기 | 소울푸드</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="common.css">
+
+  <style>
+    /* 1. 연락처 3칸 */
+    .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .contact > a, .contact > div { border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: block; }
+    .contact a:hover { border-color: var(--brand); }
+    .contact .icon { font-size: 28px; }
+    .contact h3 { font-size: 15px; margin: 6px 0; }
+    .contact b { font-size: 20px; color: var(--brand); }
+    .contact p { font-size: 13px; color: var(--text-sub); }
+
+    /* 2. 바로가기 탭 */
+    .cs-tabs { display: flex; gap: 8px; margin: 32px 0 8px; flex-wrap: wrap; }
+    .cs-tabs a { border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px; font-weight: 600; font-size: 14px; }
+    .cs-tabs a:hover { border-color: var(--brand); color: var(--brand); }
+
+    .cs-section { scroll-margin-top: 70px; margin-top: 40px; }
+    .cs-section h2 { font-size: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--text); }
+
+    /* 3. FAQ: details 태그는 자바스크립트 없이도 열고 닫혀요 */
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq summary { padding: 18px 4px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::before { content: "Q"; color: var(--brand); font-weight: 800; margin-right: 10px; }
+    .faq summary span { flex: 1; }
+    .faq summary::after { content: "+"; color: var(--text-sub); font-size: 20px; line-height: 1; }
+    .faq details[open] summary::after { content: "−"; }
+    .faq .answer { background: var(--bg); padding: 16px 20px 16px 38px; font-size: 14px; color: #444; }
+
+    .faq-cats { display: flex; gap: 6px; margin: 16px 0; flex-wrap: wrap; }
+    .faq-cats button { padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; background: var(--bg); color: var(--text-sub); }
+    .faq-cats button.on { background: var(--text); color: var(--white); }
+
+    /* 4. 배송·반품 표 */
+    .table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+    .table th, .table td { border-bottom: 1px solid var(--line); padding: 14px 12px; text-align: left; vertical-align: top; }
+    .table th { width: 140px; background: var(--bg); font-weight: 600; }
+
+    /* 5. 1:1 문의 */
+    .ask-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
+    .my-asks .item { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 8px; font-size: 14px; }
+    .my-asks .item b { display: block; }
+    .my-asks .item small { color: var(--text-sub); }
+    .my-asks .wait { float: right; font-size: 12px; font-weight: 700; color: var(--brand); }
+
+    @media (max-width: 768px) {
+      .contact, .ask-layout { grid-template-columns: 1fr; }
+      .table th { width: 96px; }
+    }
+  </style>
+</head>
+
+<body data-live="off">
+  <div id="site-header"></div>
+
+  <main class="inner">
+    <h1 class="page-title">문의하기</h1>
+
+    <div class="contact">
+      <a href="tel:053-311-1980"><div class="icon">📞</div><h3>전화 상담</h3><b>053-311-1980</b><p>평일 10:00 ~ 18:00 · 주말/공휴일 휴무</p></a>
+      <a href="mailto:lys3888@soulfd.co.kr"><div class="icon">✉️</div><h3>이메일 문의</h3><b style="font-size:16px">lys3888@soulfd.co.kr</b><p>보내주시면 영업일 기준으로 답변드려요</p></a>
+      <div><div class="icon">📍</div><h3>오시는 길</h3><b style="font-size:16px">경북 칠곡군 지천면</b><p>칠곡대로 2233-45 (주)소울푸드</p></div>
+    </div>
+
+    <section class="cs-section" id="inquiry">
+      <h2>거래 · 제품 문의</h2>
+      <table class="table">
+        <tr><th>문의 방법</th><td>전화 또는 이메일로 문의해 주세요. 확인 후 영업일 기준으로 연락드립니다.</td></tr>
+        <tr><th>상담 시간</th><td>평일 10:00 ~ 18:00 (주말 · 공휴일 휴무)</td></tr>
+        <tr><th>회사명</th><td>(주)소울푸드 · 대표 임양섭</td></tr>
+        <tr><th>주소</th><td>(39867) 경상북도 칠곡군 지천면 칠곡대로 2233-45 (주)소울푸드</td></tr>
+      </table>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="common.js"></script>
+</body>
+</html>

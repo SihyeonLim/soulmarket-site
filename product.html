@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  소울푸드 리뉴얼 시안 : 상품 상세 페이지
+    product.html?no=617  → 617번 상품
+  ============================================================
+-->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>상품 상세 | 소울푸드</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="common.css">
+
+  <style>
+    /* 1. 위쪽: 사진(왼쪽) + 구매 정보(오른쪽) */
+    .detail { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 20px; }
+    .photo { aspect-ratio: 1 / 1; border-radius: 16px; overflow: hidden; background: var(--bg); position: relative; }
+    .photo img { width: 100%; height: 100%; object-fit: cover; }
+    .photo .ph { width: 100%; height: 100%; display: grid; place-items: center; font-size: 120px; opacity: .5; }
+
+    .buy .market-link { font-size: 13px; color: var(--text-sub); font-weight: 600; }
+    .buy .market-link:hover { color: var(--brand); }
+    .buy h1 { font-size: 24px; line-height: 1.4; font-weight: 700; margin: 6px 0 10px; letter-spacing: -.5px; }
+    .buy .tags { display: flex; gap: 4px; flex-wrap: wrap; }
+    .buy .desc { font-size: 13px; color: var(--text-sub); margin-top: 10px; }
+
+    /* 판매 상태 안내 (재고확보중 · 품절 · 판매중지) */
+    .state-note { margin-top: 14px; padding: 12px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; background: #EEF3FB; color: #2E5AA0; }
+    .state-note.soldout, .state-note.stop { background: var(--bg); color: var(--text); }
+    .price-box { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; margin: 18px 0; }
+    .price-box .now { font-size: 30px; font-weight: 800; }
+    .price-box .now small { font-size: 16px; }
+    .price-box .rate { color: var(--brand); margin-right: 8px; font-style: normal; }
+    .price-box del { color: #B5B5B5; font-size: 15px; margin-left: 8px; }
+    .price-box .unit { color: var(--text-sub); font-size: 13px; margin-top: 4px; }
+
+    .rows { font-size: 14px; margin-top: 16px; }
+    .rows div { display: grid; grid-template-columns: 90px 1fr; padding: 6px 0; }
+    .rows dt { color: var(--text-sub); }
+
+    .order-box { background: var(--bg); border-radius: 12px; padding: 16px; margin-top: 18px; display: flex; justify-content: space-between; align-items: center; }
+    .order-box .sum { text-align: right; }
+    .order-box .sum small { color: var(--text-sub); font-size: 13px; }
+    .order-box .sum b { font-size: 22px; color: var(--brand); }
+
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
+    .actions .btn { text-align: center; }
+    @media (max-width: 480px) { .actions { grid-template-columns: 1fr; } }
+
+    /* 2. 아래쪽 탭 */
+    .inquiry-note { margin-top: 12px; font-size: 13px; color: var(--text-sub); }
+    .tabs { display: flex; border-bottom: 2px solid var(--text); margin-top: 64px; position: sticky; top: 52px; background: var(--white); z-index: 5; }
+    .tabs button { flex: 1; height: 52px; font-size: 15px; font-weight: 600; color: var(--text-sub); }
+    .tabs button.on { color: var(--white); background: var(--text); }
+    .tab-panel { display: none; padding: 32px 0; font-size: 15px; }
+    .tab-panel.on { display: block; }
+    .tab-panel h4 { font-size: 17px; margin: 20px 0 8px; }
+    .tab-panel h4:first-child { margin-top: 0; }
+    .tab-panel p, .tab-panel li { color: #444; }
+    .tab-panel ul { list-style: disc; padding-left: 20px; }
+    .detail-img { background: var(--bg); border-radius: 12px; padding: 60px 20px; text-align: center; color: var(--text-sub); margin-top: 20px; }
+
+    @media (max-width: 768px) {
+      .detail { grid-template-columns: 1fr; gap: 20px; }
+      .buy h1 { font-size: 20px; }
+      .tabs { top: 52px; }
+      .tabs button { font-size: 13px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main class="inner" id="page"></main>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script>
+    // 메뉴 밑줄: 이 상품이 속한 마켓
+    const g = findGoods(new URLSearchParams(location.search).get('no'));
+    if (g) document.body.dataset.current = g.market;
+  </script>
+  <script src="common.js"></script>
+  <script>
+    const page = document.getElementById('page');
+
+    // ---------------------------------------------------------
+    // 상품이 없을 때
+    // ---------------------------------------------------------
+    if (!g) {
+      page.innerHTML = '<div class="empty"><div class="big">🤔</div><p>찾으시는 상품이 없어요.</p><a class="btn btn-primary" href="index.html">메인으로</a></div>';
+    } else {
+      const m = MARKETS[g.market];
+      const st = STATUS[goodsStatus(g)];                       // 판매 상태
+      document.title = g.name + ' | 소울푸드';
+
+      // 태그
+      let tags = '';
+      g.tags.forEach(function (t) {
+        let cls = 'tag';
+        if (t === 'HACCP') cls += ' haccp';
+        else if (t !== 'BOX') cls += ' origin';
+        tags += '<span class="' + cls + '">' + esc(t) + '</span>';
+      });
+
+      // 가격 (data.js 의 SHOW_PRICE 가 true 일 때만 보임)
+      let price = '';
+      if (SHOW_PRICE) {
+        price = '<div class="price-box"><p class="now">';
+        if (g.rate) price += '<em class="rate">' + g.rate + '%</em>';
+        price += won(g.price) + '<small>원</small>';
+        if (g.was) price += '<del>' + won(g.was) + '원</del>';
+        price += '</p>';
+        if (g.box && g.boxUnit === '봉') price += '<p class="unit">1봉당 약 ' + won(Math.round(g.price / g.box)) + '원</p>';
+        price += '</div>';
+      }
+
+      // 상품 정보 줄
+      let rows = '';
+      if (g.box) rows += '<div><dt>포장</dt><dd>1박스 ' + g.box + g.boxUnit + (g.ice ? ' (아이스박스)' : '') + '</dd></div>';
+      if (g.ice) rows += '<div><dt>보관</dt><dd>❄ 냉동 · 냉장 (아이스박스 포장)</dd></div>';
+
+      // 같은 마켓 다른 상품 4개
+      const related = m.goods.filter(function (x) { return x.no !== g.no && isListed(x); }).slice(0, 4);
+
+      const mailHref = 'mailto:lys3888@soulfd.co.kr?subject=' + encodeURIComponent('[상품 문의] ' + g.name) +
+        '&body=' + encodeURIComponent('상품명: ' + g.name + '\n상품번호: ' + g.no + '\n\n문의 내용:\n');
+
+      page.innerHTML =
+        '<p class="breadcrumb"><a href="index.html">홈</a> › <a href="catalog.html?market=' + g.market + '">' + m.name + '</a> › <b>' + esc(g.brand || m.name) + '</b></p>' +
+        '<section class="detail">' +
+          '<div class="photo"><img src="' + imgUrl(g) + '" alt="' + esc(g.name) + '" data-ph="' + m.icon + '" onerror="imgFail(this)">' +
+            (st.buy ? '' : '<div class="status-cover ' + st.cls + '"><span>' + st.text + '</span></div>') + '</div>' +
+          '<div class="buy">' +
+            '<a class="market-link" href="catalog.html?market=' + g.market + '">' + m.icon + ' ' + m.name + ' ›</a>' +
+            '<h1>' + (g.brand ? '[' + esc(g.brand) + '] ' : '') + esc(g.name) + '</h1>' +
+            '<div class="tags">' + tags + '</div>' +
+            (g.desc ? '<p class="desc">' + esc(g.desc) + '</p>' : '') +
+            (st.buy ? '' : '<p class="state-note ' + st.cls + '">' + (st.cls === 'restock' ? '🔄 ' : '⛔ ') + st.msg + '</p>') +
+            price +
+            '<dl class="rows">' + rows + '</dl>' +
+            '<div class="actions">' +
+              '<a class="btn btn-primary" href="tel:053-311-1980">📞 전화 문의 053-311-1980</a>' +
+              '<a class="btn" href="' + mailHref + '">✉️ 이메일 문의</a>' +
+            '</div>' +
+            '<p class="inquiry-note">거래 조건과 가격은 문의해 주세요. 평일 10:00 ~ 18:00 (주말·공휴일 휴무)</p>' +
+          '</div>' +
+        '</section>' +
+
+        '<section class="tab-panel on" id="tab-info">' +
+          '<h4>상품명</h4><p>' + esc(g.name) + '</p>' +
+          (g.desc ? '<h4>생산 · 인증 정보</h4><p>' + esc(g.desc) + '</p>' : '') +
+        '</section>' +
+
+        (related.length ?
+          '<section class="section"><div class="section-head"><h3>' + m.name + '의 <em>다른 상품</em></h3><a href="catalog.html?market=' + g.market + '">전체보기 ›</a></div>' +
+          '<ul class="goods">' + related.map(function (x) { return goodsCardHTML(x); }).join('') + '</ul></section>' : '');
+    }
+  </script>
+</body>
+</html>

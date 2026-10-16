@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  소울푸드 리뉴얼 시안 : 메인 페이지
+  - 공통 모양은 common.css, 공통 동작은 common.js 에 있어요.
+  - 상품 카드는 data.js 의 상품 정보로 자동으로 채워져요.
+  ============================================================
+-->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="식자재 전문 제조·무역·유통 법인 (주)소울푸드. 직수입 식자재, 떡·어묵·튀김, 건어물 등 업소용 식자재 상품 소개.">
+  <title>소울마켓 | 음식은 맛으로 먹는 것이 아니라 기억으로 먹는다</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="common.css">
+
+  <style>
+    /* ===== 메인 페이지에만 있는 모양 ===== */
+
+    /* 1. 메인 배너 슬라이드 */
+    .hero { margin-top: 20px; position: relative; }
+    .hero-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      border-radius: 16px;
+      scrollbar-width: none;
+    }
+    .hero-track::-webkit-scrollbar { display: none; }
+    .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      min-height: 320px;
+      padding: 48px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-1 { background: linear-gradient(120deg, #D7282F, #8E1519); }
+    .slide-2 { background: linear-gradient(120deg, #2F4A3A, #1B2B21); }
+    .slide-3 { background: linear-gradient(120deg, #E8913A, #C45A1C); }
+    .slide small { display: inline-block; background: rgba(255,255,255,.2); padding: 4px 12px; border-radius: 999px; font-size: 13px; margin-bottom: 14px; width: fit-content; }
+    .slide h2 { font-size: 34px; line-height: 1.3; font-weight: 800; letter-spacing: -1px; }
+    .slide p { margin-top: 10px; opacity: .85; }
+    .slide .go { margin-top: 18px; font-weight: 700; font-size: 14px; }
+    .slide:hover .go { text-decoration: underline; }
+    .slide .deco { position: absolute; right: 64px; bottom: -10px; font-size: 180px; opacity: .25; }
+
+    /* 배너 좌우 화살표 */
+    .hero-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.9); font-size: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .hero-arrow:hover { background: var(--white); }
+    .hero-arrow.prev { left: 28px; }
+    .hero-arrow.next { right: 28px; }
+
+    /* 배너 아래 점 */
+    .hero-dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+    .hero-dots button { width: 8px; height: 8px; border-radius: 999px; background: #D5D5D5; transition: width .2s; }
+    .hero-dots button.on { width: 24px; background: var(--brand); }
+
+    /* 2. 둥근 바로가기 */
+    .quick { margin: 36px auto; }
+    .quick ul { display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; text-align: center; }
+    .quick .circle {
+      width: 72px; height: 72px; margin: 0 auto 8px; border-radius: 50%;
+      background: var(--bg); display: grid; place-items: center; font-size: 32px;
+      transition: transform .2s;
+    }
+    .quick a:hover .circle { transform: translateY(-4px); background: var(--brand-soft); }
+    .quick span { font-size: 13px; font-weight: 600; }
+
+    /* 3. 업소용 BOX 특집 (가로로 밀기) */
+    .box-zone { background: var(--brand-soft); padding: 40px 0; }
+    .box-zone .section { margin: 0 auto; }
+    .scroll-row { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; }
+    .scroll-row .card { flex: 0 0 220px; background: var(--white); border-radius: 14px; padding: 10px 10px 14px; }
+
+    /* 4. 안내 3칸 */
+    .info-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .info-boxes a { border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: block; transition: border-color .2s; }
+    .info-boxes a:hover { border-color: var(--brand); }
+    .info-boxes h4 { font-size: 15px; margin-bottom: 8px; }
+    .info-boxes p { font-size: 13px; color: var(--text-sub); }
+    .info-boxes .tel { font-size: 22px; font-weight: 800; color: var(--brand); }
+    .info-boxes .more { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 600; color: var(--text); }
+
+    @media (max-width: 768px) {
+      .slide { min-height: 220px; padding: 28px; }
+      .slide h2 { font-size: 24px; }
+      .slide .deco { font-size: 110px; right: 16px; }
+      .hero-arrow { display: none; }   /* 모바일은 손가락으로 밀기 */
+      .quick ul { grid-template-columns: repeat(4, 1fr); row-gap: 18px; }
+      .quick .circle { width: 60px; height: 60px; font-size: 26px; }
+      .info-boxes { grid-template-columns: 1fr; }
+      .scroll-row .card { flex-basis: 170px; }
+    }
+  </style>
+</head>
+
+<body data-current="home">
+  <!-- 헤더는 common.js 가 여기에 그려 줘요 -->
+  <div id="site-header"></div>
+
+  <main>
+    <!-- 메인 배너: 슬라이드 하나하나가 링크예요 -->
+    <section class="hero inner">
+      <div class="hero-track" id="hero-track">
+        <a class="slide slide-1" href="info.html?p=company">
+          <small>SOUL FOOD</small>
+          <h2>음식은 맛으로 먹는 게 아니라<br>기억으로 먹는다</h2>
+          <p>식자재 전문 제조 · 무역 · 유통 법인 (주)소울푸드</p>
+          <span class="go">회사 소개 보기 ›</span>
+          <span class="deco">🍲</span>
+        </a>
+        <a class="slide slide-2" href="catalog.html?list=box">
+          <small>BOX 판매</small>
+          <h2>업소용 대용량,<br>박스 단위로 합리적으로</h2>
+          <p>아이스박스 포장으로 신선하게 보내드립니다</p>
+          <span class="go">박스 상품 보기 ›</span>
+          <span class="deco">📦</span>
+        </a>
+        <a class="slide slide-3" href="product.html?no=617">
+          <small>NEW</small>
+          <h2>까칠한홍여사<br>부산어묵 입고</h2>
+          <p>샤브샤브 · 마라탕 · 어묵전골용</p>
+          <span class="go">상품 보러 가기 ›</span>
+          <span class="deco">🍢</span>
+        </a>
+      </div>
+      <button class="hero-arrow prev" id="hero-prev" aria-label="이전 배너">‹</button>
+      <button class="hero-arrow next" id="hero-next" aria-label="다음 배너">›</button>
+      <div class="hero-dots" id="hero-dots"></div>
+    </section>
+
+    <!-- 둥근 바로가기 -->
+    <section class="quick inner">
+      <ul>
+        <li><a href="catalog.html?market=0001"><div class="circle">🌏</div><span>직수입마켓</span></a></li>
+        <li><a href="catalog.html?market=0002"><div class="circle">🧊</div><span>소울마켓</span></a></li>
+        <li><a href="catalog.html?market=0004"><div class="circle">🗺️</div><span>홍여사마켓</span></a></li>
+        <li><a href="catalog.html?market=0005"><div class="circle">🥟</div><span>취화당</span></a></li>
+        <li><a href="catalog.html?market=0003"><div class="circle">🧂</div><span>허브마켓</span></a></li>
+        <li><a href="catalog.html?market=0006"><div class="circle">🌰</div><span>맛깔지기마켓</span></a></li>
+        <li><a href="catalog.html?market=0007"><div class="circle">🤝</div><span>상생마켓</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 신상품 (자바스크립트가 채움) -->
+    <section class="section inner">
+      <div class="section-head">
+        <h3><em>새로 들어온</em> 상품</h3>
+        <a href="catalog.html?list=new">전체보기 ›</a>
+      </div>
+      <ul class="goods five" id="new-goods"></ul>
+    </section>
+
+    <!-- 베스트 (자바스크립트가 채움) -->
+    <section class="section inner">
+      <div class="section-head">
+        <h3>사장님들이 <em>많이 찾는</em> 상품</h3>
+        <a href="catalog.html?list=best">전체보기 ›</a>
+      </div>
+      <ul class="goods five" id="best-goods"></ul>
+    </section>
+
+    <!-- 업소용 BOX 특집 (자바스크립트가 채움) -->
+    <div class="box-zone">
+      <section class="section inner">
+        <div class="section-head">
+          <h3>사장님을 위한 <em>업소용 BOX</em></h3>
+          <a href="catalog.html?list=box">전체보기 ›</a>
+        </div>
+        <ul class="scroll-row" id="box-goods"></ul>
+      </section>
+    </div>
+
+    <!-- 안내 박스: 칸 전체가 링크 -->
+    <section class="section inner">
+      <div class="info-boxes">
+        <a href="tel:053-311-1980">
+          <h4>고객센터</h4>
+          <p class="tel">053-311-1980</p>
+          <p>평일 10:00 ~ 18:00 · 주말/공휴일 휴무</p>
+          <span class="more">전화 걸기 ›</span>
+        </a>
+        <a href="mailto:lys3888@soulfd.co.kr">
+          <h4>이메일 문의</h4>
+          <p class="tel" style="font-size:18px">lys3888@soulfd.co.kr</p>
+          <p>거래 · 제품 문의를 보내 주세요</p>
+          <span class="more">메일 보내기 ›</span>
+        </a>
+        <a href="cs.html">
+          <h4>오시는 길</h4>
+          <p>경상북도 칠곡군 지천면 칠곡대로 2233-45 (주)소울푸드</p>
+          <span class="more">문의 안내 ›</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터는 common.js 가 여기에 그려 줘요 -->
+  <div id="site-footer"></div>
+
+  <!-- 순서 중요: 데이터 → 공통 동작 → 이 페이지 동작 -->
+  <script src="data.js"></script>
+  <script src="common.js"></script>
+  <script>
+    // ---------------------------------------------------------
+    // 1. 상품 칸 채우기
+    // ---------------------------------------------------------
+    const goods = listedGoods();   // 판매중지 상품은 빼고
+
+    // 신상품: 상품 번호가 클수록 최근에 등록된 상품
+    const newest = goods.slice().sort(function (a, b) { return b.no - a.no; }).slice(0, 5);
+    document.getElementById('new-goods').innerHTML = newest.map(function (g) { return goodsCardHTML(g); }).join('');
+
+    // 베스트: 구매 수가 많은 순
+    const best = goods.slice().sort(function (a, b) { return (b.sold || 0) - (a.sold || 0); }).slice(0, 5);
+    document.getElementById('best-goods').innerHTML = best.map(function (g, i) { return goodsCardHTML(g, i + 1); }).join('');
+
+    // 업소용 BOX: 아이스박스 박스 상품 중 8개
+    const boxes = goods.filter(function (g) { return g.box && g.ice && canBuy(g); }).slice(0, 8);
+    document.getElementById('box-goods').innerHTML = boxes.map(function (g) { return goodsCardHTML(g); }).join('');
+
+    // ---------------------------------------------------------
+    // 2. 배너 슬라이드: 화살표, 점, 자동 넘김
+    // ---------------------------------------------------------
+    const track = document.getElementById('hero-track');
+    const slides = track.querySelectorAll('.slide');
+    const dots = document.getElementById('hero-dots');
+    let index = 0;
+
+    // 슬라이드 수만큼 점 만들기
+    slides.forEach(function (s, i) {
+      const dot = document.createElement('button');
+      dot.setAttribute('aria-label', (i + 1) + '번째 배너');
+      dot.addEventListener('click', function () { goTo(i); });
+      dots.appendChild(dot);
+    });
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;   // 끝에서 다음 → 처음으로
+      track.scrollTo({ left: track.clientWidth * index });
+      paintDots();
+    }
+    function paintDots() {
+      dots.querySelectorAll('button').forEach(function (d, i) { d.classList.toggle('on', i === index); });
+    }
+
+    document.getElementById('hero-prev').addEventListener('click', function () { goTo(index - 1); });
+    document.getElementById('hero-next').addEventListener('click', function () { goTo(index + 1); });
+
+    // 손가락으로 밀었을 때도 점 맞추기
+    track.addEventListener('scroll', function () {
+      const i = Math.round(track.scrollLeft / track.clientWidth);
+      if (i !== index) { index = i; paintDots(); }
+    });
+
+    // 5초마다 자동으로 다음 배너 (마우스를 올리면 멈춤)
+    let auto = setInterval(function () { goTo(index + 1); }, 5000);
+    const hero = track.parentElement;
+    hero.addEventListener('mouseenter', function () { clearInterval(auto); });
+    hero.addEventListener('mouseleave', function () { auto = setInterval(function () { goTo(index + 1); }, 5000); });
+
+    paintDots();
+  </script>
+</body>
+</html>
