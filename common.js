@@ -15,9 +15,9 @@ const CONTACT = {
   email: 'soul1980@soulfd.co.kr',
   hours: '평일 10:00 ~ 18:00 · 주말/공휴일 휴무'
 };
-// 전화번호 링크 묶음 (sep: 사이에 넣을 글자)
+// 전화번호 묶음 (sep: 사이에 넣을 글자)
 function phoneLinks(sep) {
-  return CONTACT.phones.map(function (p) { return '<a href="tel:' + p + '">' + p + '</a>'; }).join(sep || ' / ');
+  return CONTACT.phones.join(sep || ' / ');   // 링크 없이 글자로만 표시
 }
 
 // ---------------------------------------------------------
@@ -173,7 +173,7 @@ function renderHeader() {
       '</ul>' +
     '</div></div>' +
     '<header class="header"><div class="inner">' +
-      '<a href="index.html" class="logo"><strong>소울푸드<img class="logo-mark" src="images/logo-mark.png" alt="SOUL FOOD"></strong><span>음식은 맛으로 먹는 것이 아니라 기억으로 먹는다.</span></a>' +
+      '<a href="index.html" class="logo"><strong>소울푸드<img class="logo-mark" src="images/logo-mark.svg" alt="SOUL FOOD"></strong><span>음식은 맛으로 먹는 것이 아니라 기억으로 먹는다.</span></a>' +
       '<form class="search" id="search-form">' +
         '<input type="search" name="q" placeholder="국산멸치, 납작만두, 편육을 검색해 보세요" value="' + esc(param('q') || '') + '">' +
         '<button type="submit">검색</button>' +
@@ -209,10 +209,10 @@ function renderFooter() {
         '<li>회사명 : (주)소울푸드</li>' +
         '<li>대표자 : 임양섭</li>' +
         '<li>주소 : 경상북도 칠곡군 지천면 칠곡대로 2233-45</li>' +
-        '<li>전화 : ' + phoneLinks() + '</li>' +
+        '<li>전화 : ' + CONTACT.phones.join(' / ') + '</li>' +
         '<li>사업자등록번호 : 504-81-82217</li>' +
         '<li>통신판매업신고 : 제2017 경북칠곡 0030호</li>' +
-        '<li>이메일 : <a href="mailto:' + CONTACT.email + '">' + CONTACT.email + '</a></li>' +
+        '<li>이메일 : ' + CONTACT.email + '</li>' +
       '</ul>' +
       '<p class="copy">COPYRIGHT © (주)소울푸드 ALL RIGHTS RESERVED.</p>' +
     '</div></footer>';

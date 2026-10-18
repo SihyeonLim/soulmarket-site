@@ -93,12 +93,9 @@
     /* 4. 안내 3칸 */
     .info-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .info-boxes .phone-box { border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
-    .info-boxes a { border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: block; transition: border-color .2s; }
-    .info-boxes a:hover { border-color: var(--brand); }
     .info-boxes h4 { font-size: 15px; margin-bottom: 8px; }
     .info-boxes p { font-size: 13px; color: var(--text-sub); }
     .info-boxes .tel { font-size: 22px; font-weight: 800; color: var(--brand); }
-    .info-boxes .more { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 600; color: var(--text); }
 
     @media (max-width: 768px) {
       .slide { min-height: 220px; padding: 28px; }
@@ -204,16 +201,15 @@
       <div class="info-boxes">
         <div class="phone-box">
           <h4>고객센터</h4>
-          <p class="tel"><a href="tel:053-311-1980">053-311-1980</a></p>
-          <p class="tel"><a href="tel:010-8388-8823">010-8388-8823</a></p>
+          <p class="tel">053-311-1980</p>
+          <p class="tel">010-8388-8823</p>
           <p>평일 10:00 ~ 18:00 · 주말/공휴일 휴무</p>
         </div>
-        <a href="mailto:soul1980@soulfd.co.kr">
+        <div class="phone-box">
           <h4>이메일 문의</h4>
           <p class="tel" style="font-size:18px">soul1980@soulfd.co.kr</p>
           <p>거래 · 제품 문의를 보내 주세요</p>
-          <span class="more">메일 보내기 ›</span>
-        </a>
+        </div>
         <div class="phone-box">
           <h4>오시는 길</h4>
           <p>경상북도 칠곡군 지천면 칠곡대로 2233-45 (주)소울푸드</p>
