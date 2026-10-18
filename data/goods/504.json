@@ -17,5 +17,17 @@
   "price": 54200,
   "was": 64200,
   "rate": 16,
-  "sold": 4
+  "sold": 4,
+  "detail_images": [
+    "images/detail/504/01.jpg",
+    "images/detail/504/02.jpg",
+    "images/detail/504/03.jpg",
+    "images/detail/504/04.jpg",
+    "images/detail/504/05.jpg",
+    "images/detail/504/06.jpg",
+    "images/detail/504/07.jpg",
+    "images/detail/504/08.jpg",
+    "images/detail/504/09.jpg",
+    "images/detail/504/10.jpg"
+  ]
 }

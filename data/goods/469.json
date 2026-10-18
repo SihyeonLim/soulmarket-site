@@ -9,5 +9,15 @@
     "HACCP"
   ],
   "desc": "HACCP인증/오뚜기제유 대구경북총판대리점",
-  "price": 22980
+  "price": 22980,
+  "detail_images": [
+    "images/detail/469/01.jpg",
+    "images/detail/469/02.jpg",
+    "images/detail/469/03.jpg",
+    "images/detail/469/04.jpg",
+    "images/detail/469/05.jpg",
+    "images/detail/469/06.jpg",
+    "images/detail/469/07.jpg",
+    "images/detail/469/08.jpg"
+  ]
 }

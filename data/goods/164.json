@@ -9,5 +9,11 @@
     "터키"
   ],
   "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 9900
+  "price": 9900,
+  "detail_images": [
+    "images/detail/164/01.jpg",
+    "images/detail/164/02.jpg",
+    "images/detail/164/03.jpg",
+    "images/detail/164/04.jpg"
+  ]
 }

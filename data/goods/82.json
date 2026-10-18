@@ -9,5 +9,19 @@
     "수입산"
   ],
   "desc": "[대구광역시 수성구]지역사회공헌 / 자갈치회수산 식당의 특별식재료를 대표님의허락하에 상품화함",
-  "price": 999999
+  "price": 999999,
+  "detail_images": [
+    "images/detail/82/01.jpg",
+    "images/detail/82/02.jpg",
+    "images/detail/82/03.jpg",
+    "images/detail/82/04.jpg",
+    "images/detail/82/05.jpg",
+    "images/detail/82/06.jpg",
+    "images/detail/82/07.jpg",
+    "images/detail/82/08.jpg",
+    "images/detail/82/09.jpg",
+    "images/detail/82/10.jpg",
+    "images/detail/82/11.jpg",
+    "images/detail/82/12.jpg"
+  ]
 }

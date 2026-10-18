@@ -10,5 +10,12 @@
   ],
   "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
   "price": 15100,
-  "sold": 4
+  "sold": 4,
+  "detail_images": [
+    "images/detail/145/01.jpg",
+    "images/detail/145/02.jpg",
+    "images/detail/145/03.jpg",
+    "images/detail/145/04.jpg",
+    "images/detail/145/05.jpg"
+  ]
 }

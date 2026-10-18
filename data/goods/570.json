@@ -7,5 +7,13 @@
   "img": "images/goods/2026/08/570_temp_17873813561944list1.png",
   "tags": [],
   "desc": "(주)소울푸드가 월남관을 OEM납품하는 제품",
-  "price": 999999
+  "price": 999999,
+  "detail_images": [
+    "images/detail/570/01.jpg",
+    "images/detail/570/02.jpg",
+    "images/detail/570/03.jpg",
+    "images/detail/570/04.jpg",
+    "images/detail/570/05.jpg",
+    "images/detail/570/06.jpg"
+  ]
 }

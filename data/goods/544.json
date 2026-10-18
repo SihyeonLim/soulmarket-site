@@ -10,5 +10,11 @@
     "중국"
   ],
   "desc": "[경기도 성남시] 농우 대구,경북 독점공급업체,수입업체",
-  "price": 28000
+  "price": 28000,
+  "detail_images": [
+    "images/detail/544/01.jpg",
+    "images/detail/544/02.jpg",
+    "images/detail/544/03.jpg",
+    "images/detail/544/04.jpg"
+  ]
 }

@@ -7,5 +7,9 @@
   "img": "images/goods/2021/07/67_2021071111552122.png",
   "tags": [],
   "desc": "PB전용(구매문의070-7018-8811 (주)랜시푸드)",
-  "price": 999999
+  "price": 999999,
+  "detail_images": [
+    "images/detail/67/01.jpg",
+    "images/detail/67/02.jpg"
+  ]
 }

@@ -15,5 +15,17 @@
   "ice": true,
   "price": 95000,
   "was": 110000,
-  "rate": 14
+  "rate": 14,
+  "detail_images": [
+    "images/detail/372/01.jpg",
+    "images/detail/372/02.jpg",
+    "images/detail/372/03.jpg",
+    "images/detail/372/04.jpg",
+    "images/detail/372/05.jpg",
+    "images/detail/372/06.jpg",
+    "images/detail/372/07.jpg",
+    "images/detail/372/08.jpg",
+    "images/detail/372/09.jpg",
+    "images/detail/372/10.jpg"
+  ]
 }

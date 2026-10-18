@@ -13,6 +13,13 @@
   <link rel="stylesheet" href="common.css">
 
   <style>
+    /* 0. 제목 + 오른쪽 위 닫기(홈으로) */
+    .cs-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 32px 0 20px; }
+    .cs-head .page-title { margin: 0; }
+    .close-btn { flex-shrink: 0; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%;
+      border: 1px solid var(--line); font-size: 20px; color: var(--text-sub); line-height: 1; transition: all .2s; }
+    .close-btn:hover { border-color: var(--text); color: var(--text); background: var(--bg); }
+
     /* 1. 연락처 3칸 */
     .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .contact > a, .contact > div { border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: block; }
@@ -67,11 +74,14 @@
   <div id="site-header"></div>
 
   <main class="inner">
-    <h1 class="page-title">문의하기</h1>
+    <div class="cs-head">
+      <h1 class="page-title">문의하기</h1>
+      <a class="close-btn" href="index.html" aria-label="홈으로 돌아가기" title="홈으로">✕</a>
+    </div>
 
     <div class="contact">
-      <div><div class="icon">📞</div><h3>전화 상담</h3><b><a href="tel:053-311-1980">053-311-1980</a></b><br><b><a href="tel:010-8388-8823">010-8388-8823</a></b><p>평일 10:00 ~ 18:00 · 주말/공휴일 휴무</p></div>
-      <a href="mailto:soul1980@soulfd.co.kr"><div class="icon">✉️</div><h3>이메일 문의</h3><b style="font-size:16px">soul1980@soulfd.co.kr</b><p>보내주시면 영업일 기준으로 답변드려요</p></a>
+      <div><div class="icon">📞</div><h3>전화 상담</h3><b>053-311-1980</b><br><b>010-8388-8823</b><p>평일 10:00 ~ 18:00 · 주말/공휴일 휴무</p></div>
+      <div><div class="icon">✉️</div><h3>이메일 문의</h3><b style="font-size:16px">soul1980@soulfd.co.kr</b><p>보내주시면 영업일 기준으로 답변드려요</p></div>
       <div><div class="icon">📍</div><h3>오시는 길</h3><b style="font-size:16px">경북 칠곡군 지천면</b><p>칠곡대로 2233-45 (주)소울푸드</p></div>
     </div>
 

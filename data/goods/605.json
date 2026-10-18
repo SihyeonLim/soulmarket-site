@@ -13,5 +13,28 @@
   "box": 12,
   "boxUnit": "봉",
   "ice": true,
-  "price": 132000
+  "price": 132000,
+  "detail_images": [
+    "images/detail/605/01.jpg",
+    "images/detail/605/02.jpg",
+    "images/detail/605/03.jpg",
+    "images/detail/605/04.jpg",
+    "images/detail/605/05.jpg",
+    "images/detail/605/06.jpg",
+    "images/detail/605/07.jpg",
+    "images/detail/605/08.jpg",
+    "images/detail/605/09.jpg",
+    "images/detail/605/10.jpg",
+    "images/detail/605/11.jpg",
+    "images/detail/605/12.jpg",
+    "images/detail/605/13.jpg",
+    "images/detail/605/14.jpg",
+    "images/detail/605/15.jpg",
+    "images/detail/605/16.jpg",
+    "images/detail/605/17.jpg",
+    "images/detail/605/18.jpg",
+    "images/detail/605/19.jpg",
+    "images/detail/605/20.jpg",
+    "images/detail/605/21.jpg"
+  ]
 }

@@ -12,5 +12,13 @@
   "desc": "[경상북도 칠곡군] (주)소울푸드 AGENCY 통한 직수입 제품(최고의 경쟁력,최고의품질)",
   "box": 12,
   "boxUnit": "봉",
-  "price": 186000
+  "price": 186000,
+  "detail_images": [
+    "images/detail/590/01.jpg",
+    "images/detail/590/02.jpg",
+    "images/detail/590/03.jpg",
+    "images/detail/590/04.jpg",
+    "images/detail/590/05.jpg",
+    "images/detail/590/06.jpg"
+  ]
 }

@@ -7,5 +7,13 @@
   "img": "images/goods/2024/12/_temp_17341586065474list1.PNG",
   "tags": [],
   "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
-  "price": 11980
+  "price": 11980,
+  "detail_images": [
+    "images/detail/494/01.jpg",
+    "images/detail/494/02.jpg",
+    "images/detail/494/03.jpg",
+    "images/detail/494/04.jpg",
+    "images/detail/494/05.jpg",
+    "images/detail/494/06.jpg"
+  ]
 }

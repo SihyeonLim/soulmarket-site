@@ -13,5 +13,13 @@
   "box": 20,
   "boxUnit": "봉",
   "ice": true,
-  "price": 116000
+  "price": 116000,
+  "detail_images": [
+    "images/detail/611/01.jpg",
+    "images/detail/611/02.jpg",
+    "images/detail/611/03.jpg",
+    "images/detail/611/04.jpg",
+    "images/detail/611/05.jpg",
+    "images/detail/611/06.jpg"
+  ]
 }

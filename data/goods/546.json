@@ -9,5 +9,12 @@
     "HACCP"
   ],
   "desc": "[경상북도 영천시] 에 위치한 지역사회공헌 제품을 상품화함/재래시장명물/HACCP인증",
-  "price": 99999
+  "price": 99999,
+  "detail_images": [
+    "images/detail/546/01.jpg",
+    "images/detail/546/02.jpg",
+    "images/detail/546/03.jpg",
+    "images/detail/546/04.jpg",
+    "images/detail/546/05.jpg"
+  ]
 }

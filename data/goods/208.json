@@ -9,5 +9,16 @@
     "벨기에"
   ],
   "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 10500
+  "price": 10500,
+  "detail_images": [
+    "images/detail/208/01.jpg",
+    "images/detail/208/02.jpg",
+    "images/detail/208/03.jpg",
+    "images/detail/208/04.jpg",
+    "images/detail/208/05.jpg",
+    "images/detail/208/06.jpg",
+    "images/detail/208/07.jpg",
+    "images/detail/208/08.jpg",
+    "images/detail/208/09.jpg"
+  ]
 }
