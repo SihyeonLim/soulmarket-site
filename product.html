@@ -140,9 +140,6 @@
         // 같은 마켓 다른 상품 4개
         const related = m.goods.filter(function (x) { return x.no !== g.no && isListed(x); }).slice(0, 4);
 
-        const mailHref = 'mailto:' + CONTACT.email + '?subject=' + encodeURIComponent('[상품 문의] ' + g.name) +
-          '&body=' + encodeURIComponent('상품명: ' + g.name + '\n상품번호: ' + g.no + '\n\n문의 내용:\n');
-
         page.innerHTML =
           '<p class="breadcrumb"><a href="index.html">홈</a> › <a href="catalog.html?market=' + g.market + '">' + m.name + '</a> › <b>' + esc(g.brand || m.name) + '</b></p>' +
           '<section class="detail">' +
@@ -159,7 +156,7 @@
               '<div class="actions">' +
                 '<span class="btn btn-primary">📞 ' + CONTACT.phones[0] + '</span>' +
                 '<span class="btn btn-primary">📱 ' + CONTACT.phones[1] + '</span>' +
-                '<a class="btn mail" href="' + mailHref + '">✉️ 이메일 문의 · ' + CONTACT.email + '</a>' +
+                '<span class="btn mail">✉️ 이메일 문의 · ' + CONTACT.email + '</span>' +
               '</div>' +
               '<p class="inquiry-note">거래 조건과 가격은 문의해 주세요. ' + CONTACT.hours + '</p>' +
             '</div>' +
