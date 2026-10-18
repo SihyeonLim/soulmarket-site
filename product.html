@@ -55,6 +55,7 @@
     /* 상품 페이지에서는 마우스를 올려도 모양이 바뀌지 않게 (버튼 · 링크 · 아래 다른 상품 카드) */
     #page .btn:hover { border-color: var(--line); }
     #page .btn-primary:hover { background: var(--brand); border-color: var(--brand); }
+    #page .actions span.btn { cursor: default; }   /* 전화번호는 안내용 (누르는 링크 아님) */
     #page .breadcrumb a:hover, #page .section-head a:hover { color: inherit; }
     #page .card:hover .thumb img { transform: none; }
     #page .card .info:hover .name { text-decoration: none; }
@@ -156,8 +157,8 @@
               price +
               '<dl class="rows">' + rows + '</dl>' +
               '<div class="actions">' +
-                '<a class="btn btn-primary" href="tel:' + CONTACT.phones[0] + '">📞 ' + CONTACT.phones[0] + '</a>' +
-                '<a class="btn btn-primary" href="tel:' + CONTACT.phones[1] + '">📱 ' + CONTACT.phones[1] + '</a>' +
+                '<span class="btn btn-primary">📞 ' + CONTACT.phones[0] + '</span>' +
+                '<span class="btn btn-primary">📱 ' + CONTACT.phones[1] + '</span>' +
                 '<a class="btn mail" href="' + mailHref + '">✉️ 이메일 문의 · ' + CONTACT.email + '</a>' +
               '</div>' +
               '<p class="inquiry-note">거래 조건과 가격은 문의해 주세요. ' + CONTACT.hours + '</p>' +
