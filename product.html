@@ -21,7 +21,6 @@
     .photo .ph { width: 100%; height: 100%; display: grid; place-items: center; font-size: 120px; opacity: .5; }
 
     .buy .market-link { font-size: 13px; color: var(--text-sub); font-weight: 600; }
-    .buy .market-link:hover { color: var(--brand); }
     .buy h1 { font-size: 24px; line-height: 1.4; font-weight: 700; margin: 6px 0 10px; letter-spacing: -.5px; }
     .buy .tags { display: flex; gap: 4px; flex-wrap: wrap; }
     .buy .desc { font-size: 13px; color: var(--text-sub); margin-top: 10px; }
@@ -52,6 +51,13 @@
     .detail-imgs { margin-top: 28px; }
     .detail-imgs img { display: block; width: 100%; max-width: 860px; margin: 0 auto; }   /* 상세 사진은 이어 붙여서 한 장처럼 */
     @media (max-width: 480px) { .actions { grid-template-columns: 1fr; } }
+
+    /* 상품 페이지에서는 마우스를 올려도 모양이 바뀌지 않게 (버튼 · 링크 · 아래 다른 상품 카드) */
+    #page .btn:hover { border-color: var(--line); }
+    #page .btn-primary:hover { background: var(--brand); border-color: var(--brand); }
+    #page .breadcrumb a:hover, #page .section-head a:hover { color: inherit; }
+    #page .card:hover .thumb img { transform: none; }
+    #page .card .info:hover .name { text-decoration: none; }
 
     /* 2. 아래쪽 탭 */
     .inquiry-note { margin-top: 12px; font-size: 13px; color: var(--text-sub); }
