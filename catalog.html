@@ -22,11 +22,14 @@
 
   <style>
     /* 1. 카테고리 배너 (색은 자바스크립트가 마켓마다 바꿔 줌) */
-    .cate-hero { margin-top: 14px; border-radius: 16px; padding: 36px 40px; color: var(--white); position: relative; overflow: hidden; }
-    .cate-hero small { display: inline-block; background: rgba(255,255,255,.18); padding: 3px 12px; border-radius: 999px; font-size: 12px; }
-    .cate-hero h1 { font-size: 30px; font-weight: 800; letter-spacing: -1px; }
-    .cate-hero p { opacity: .85; margin-top: 4px; }
-    .cate-hero .deco { position: absolute; right: 36px; top: 50%; transform: translateY(-50%); font-size: 120px; opacity: .25; }
+    /* 마켓 배너: 큰 제목 + 마켓 색 밑줄 + 오른쪽 취급 상품 수 */
+    .cate-hero { margin-top: 14px; padding: 32px 0 24px; border-bottom: 4px solid var(--accent, var(--brand)); display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+    .cate-hero h1 { font-size: 40px; font-weight: 800; letter-spacing: -1.5px; color: #1A1A1A; line-height: 1.25; }
+    .cate-hero p { font-size: 16px; color: #555; margin-top: 10px; }
+    .cate-hero p:empty { display: none; }
+    .cate-count { flex-shrink: 0; text-align: right; }
+    .cate-count b { display: block; font-size: 40px; font-weight: 800; line-height: 1; color: var(--accent, var(--brand)); }
+    .cate-count span { font-size: 13px; color: var(--text-sub); }
 
     /* 2. 필터 칩 */
     .chips { display: flex; gap: 8px; margin-top: 20px; overflow-x: auto; scrollbar-width: none; }
@@ -62,9 +65,10 @@
     .suggest a:hover { border-color: var(--brand); color: var(--brand); }
 
     @media (max-width: 768px) {
-      .cate-hero { padding: 24px; }
-      .cate-hero h1 { font-size: 24px; }
-      .cate-hero .deco { font-size: 72px; right: 16px; }
+      .cate-hero { padding: 20px 0 16px; }
+      .cate-hero h1 { font-size: 26px; }
+      .cate-hero p { font-size: 14px; }
+      .cate-count b { font-size: 28px; }
       .toolbar { flex-direction: column; align-items: flex-start; }
       .sort { overflow-x: auto; max-width: 100%; white-space: nowrap; }
     }
@@ -78,9 +82,11 @@
     <p class="breadcrumb"><a href="index.html">홈</a> › <b id="crumb"></b></p>
 
     <section class="cate-hero" id="hero">
-      <h1 id="hero-title"></h1>
-      <p id="hero-desc"></p>
-      <span class="deco" id="hero-deco"></span>
+      <div>
+        <h1 id="hero-title"></h1>
+        <p id="hero-desc"></p>
+      </div>
+      <div class="cate-count"><b id="hero-count"></b><span id="hero-count-label">취급 상품</span></div>
     </section>
 
     <nav class="chips" id="chips"></nav>
@@ -200,8 +206,9 @@
       document.getElementById('crumb').textContent = info.name;
       document.getElementById('hero-title').textContent = info.name;
       document.getElementById('hero-desc').textContent = info.desc;
-      document.getElementById('hero-deco').textContent = info.emoji;
-      document.getElementById('hero').style.background = 'linear-gradient(120deg, ' + info.colors[0] + ', ' + info.colors[1] + ')';
+      document.getElementById('hero-count').textContent = total;
+      document.getElementById('hero-count-label').textContent = mode === 'search' ? '검색된 상품' : (mode === 'market' ? '취급 상품' : '상품');
+      document.getElementById('hero').style.setProperty('--accent', (info.colors && info.colors[1]) || '#D7282F');   // 마켓 색 중 진한 쪽
       document.getElementById('count').textContent = total;
 
       // ---------------------------------------------------------
