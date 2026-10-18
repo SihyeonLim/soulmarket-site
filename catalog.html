@@ -24,7 +24,7 @@
     /* 1. 카테고리 배너 (색은 자바스크립트가 마켓마다 바꿔 줌) */
     .cate-hero { margin-top: 14px; border-radius: 16px; padding: 36px 40px; color: var(--white); position: relative; overflow: hidden; }
     .cate-hero small { display: inline-block; background: rgba(255,255,255,.18); padding: 3px 12px; border-radius: 999px; font-size: 12px; }
-    .cate-hero h1 { font-size: 30px; font-weight: 800; letter-spacing: -1px; margin-top: 10px; }
+    .cate-hero h1 { font-size: 30px; font-weight: 800; letter-spacing: -1px; }
     .cate-hero p { opacity: .85; margin-top: 4px; }
     .cate-hero .deco { position: absolute; right: 36px; top: 50%; transform: translateY(-50%); font-size: 120px; opacity: .25; }
 
@@ -78,7 +78,6 @@
     <p class="breadcrumb"><a href="index.html">홈</a> › <b id="crumb"></b></p>
 
     <section class="cate-hero" id="hero">
-      <small id="hero-label"></small>
       <h1 id="hero-title"></h1>
       <p id="hero-desc"></p>
       <span class="deco" id="hero-deco"></span>
@@ -199,7 +198,6 @@
       // ---------------------------------------------------------
       document.title = info.name + ' | 소울푸드';
       document.getElementById('crumb').textContent = info.name;
-      document.getElementById('hero-label').textContent = info.label;
       document.getElementById('hero-title').textContent = info.name;
       document.getElementById('hero-desc').textContent = info.desc;
       document.getElementById('hero-deco').textContent = info.emoji;

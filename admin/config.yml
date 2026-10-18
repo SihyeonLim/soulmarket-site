@@ -173,10 +173,6 @@ collections:
               - name: name
                 label: 마켓 이름
                 widget: string
-              - name: label
-                label: 영문 라벨
-                widget: string
-                required: false
               - name: desc
                 label: 설명
                 widget: string
