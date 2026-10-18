@@ -14,12 +14,9 @@
   "boxUnit": "박스",
   "price": 150000,
   "detail_images": [
-    "images/detail/584/01.jpg",
     "images/detail/584/02.jpg",
     "images/detail/584/03.jpg",
     "images/detail/584/04.jpg",
-    "images/detail/584/05.jpg",
-    "images/detail/584/06.jpg",
-    "images/detail/584/07.jpg"
+    "images/detail/584/05.jpg"
   ]
 }

@@ -17,14 +17,11 @@
   "was": 45000,
   "rate": 20,
   "detail_images": [
-    "images/detail/577/01.jpg",
     "images/detail/577/02.jpg",
     "images/detail/577/03.jpg",
     "images/detail/577/04.jpg",
     "images/detail/577/05.jpg",
     "images/detail/577/06.jpg",
-    "images/detail/577/07.jpg",
-    "images/detail/577/08.jpg",
-    "images/detail/577/09.jpg"
+    "images/detail/577/07.jpg"
   ]
 }

@@ -15,14 +15,11 @@
   "ice": true,
   "price": 119780,
   "detail_images": [
-    "images/detail/607/01.jpg",
     "images/detail/607/02.jpg",
     "images/detail/607/03.jpg",
     "images/detail/607/04.jpg",
     "images/detail/607/05.jpg",
     "images/detail/607/06.jpg",
-    "images/detail/607/07.jpg",
-    "images/detail/607/08.jpg",
-    "images/detail/607/09.jpg"
+    "images/detail/607/07.jpg"
   ]
 }

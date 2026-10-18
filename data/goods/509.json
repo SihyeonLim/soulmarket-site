@@ -12,9 +12,6 @@
   "status": "재고확보중",
   "price": 7570,
   "detail_images": [
-    "images/detail/509/01.jpg",
-    "images/detail/509/02.jpg",
-    "images/detail/509/03.jpg",
-    "images/detail/509/04.jpg"
+    "images/detail/509/02.jpg"
   ]
 }

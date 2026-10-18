@@ -18,15 +18,12 @@
   "rate": 20,
   "sold": 4,
   "detail_images": [
-    "images/detail/566/01.jpg",
     "images/detail/566/02.jpg",
     "images/detail/566/03.jpg",
     "images/detail/566/04.jpg",
     "images/detail/566/05.jpg",
     "images/detail/566/06.jpg",
     "images/detail/566/07.jpg",
-    "images/detail/566/08.jpg",
-    "images/detail/566/09.jpg",
-    "images/detail/566/10.jpg"
+    "images/detail/566/08.jpg"
   ]
 }

@@ -12,13 +12,10 @@
   "desc": "[경기도 광주시] (주)소울푸드는 맥케인(새안푸드)경북총판 입니다.",
   "price": 110000,
   "detail_images": [
-    "images/detail/572/01.jpg",
     "images/detail/572/02.jpg",
     "images/detail/572/03.jpg",
     "images/detail/572/04.jpg",
     "images/detail/572/05.jpg",
-    "images/detail/572/06.jpg",
-    "images/detail/572/07.jpg",
-    "images/detail/572/08.jpg"
+    "images/detail/572/06.jpg"
   ]
 }

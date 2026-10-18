@@ -60,6 +60,21 @@
     #page .card:hover .thumb img { transform: none; }
     #page .card .info:hover .name { text-decoration: none; }
 
+    /* 배송 · 교환 · 반품 안내 표 */
+    .policy { margin-top: 56px; padding-top: 32px; border-top: 2px solid var(--text); }
+    .policy-title { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+    .policy h4 { font-size: 16px; font-weight: 700; margin: 28px 0 10px; }
+    .policy-note { font-size: 14px; color: var(--text-sub); margin-bottom: 10px; }
+    .policy-table { width: 100%; border-collapse: collapse; border-top: 1px solid var(--line); font-size: 14px; word-break: keep-all; }
+    .policy-list { word-break: keep-all; }
+    .policy-table th { width: 170px; background: #F7F7F7; color: var(--text-sub); font-weight: 500; text-align: left; vertical-align: top; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+    .policy-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); color: #333; white-space: pre-line; line-height: 1.7; }
+    .policy-list { font-size: 14px; color: #333; line-height: 1.8; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 14px 16px 14px 34px; list-style: disc; }
+    @media (max-width: 768px) {
+      .policy-table th { width: 96px; padding: 12px 10px; }
+      .policy-table td { padding: 12px 10px; }
+    }
+
     /* 2. 아래쪽 탭 */
     .inquiry-note { margin-top: 12px; font-size: 13px; color: var(--text-sub); }
     .tabs { display: flex; border-bottom: 2px solid var(--text); margin-top: 64px; position: sticky; top: 52px; background: var(--white); z-index: 5; }
@@ -92,6 +107,22 @@
   <script src="data.js"></script>
   <script src="common.js"></script>
   <script>
+    // 배송 · 교환 · 반품 안내 표 (모든 상품 공통, 관리자 '마켓 · 사이트 설정'에서 수정)
+    function policyHTML() {
+      if (!POLICY || POLICY.show === false || !(POLICY.sections || []).length) return '';
+      return '<section class="policy"><h3 class="policy-title">' + esc(POLICY.title || '배송 · 교환 · 반품 안내') + '</h3>' +
+        POLICY.sections.map(function (sec) {
+          const rows = (sec.rows || []).filter(function (r) { return r && (r.label || r.text); });
+          const bullets = (sec.bullets || []).filter(Boolean);
+          return '<h4>' + esc(sec.title || '') + '</h4>' +
+            (sec.note ? '<p class="policy-note">' + esc(sec.note) + '</p>' : '') +
+            (rows.length ? '<table class="policy-table">' + rows.map(function (r) {
+              return '<tr><th>' + esc(r.label || '') + '</th><td>' + esc(r.text || '') + '</td></tr>';
+            }).join('') + '</table>' : '') +
+            (bullets.length ? '<ul class="policy-list">' + bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>' : '');
+        }).join('') + '</section>';
+    }
+
     onData(function () {
       // 메뉴 밑줄: 이 상품이 속한 마켓
       const g = findGoods(new URLSearchParams(location.search).get('no'));
@@ -171,7 +202,9 @@
             }).join('') + '</div>' : '') +
           '</section>' +
 
-          (related.length ?
+          policyHTML() +
+
+        (related.length ?
             '<section class="section"><div class="section-head"><h3>' + m.name + '의 <em>다른 상품</em></h3><a href="catalog.html?market=' + g.market + '">전체보기 ›</a></div>' +
             '<ul class="goods">' + related.map(function (x) { return goodsCardHTML(x); }).join('') + '</ul></section>' : '');
       }

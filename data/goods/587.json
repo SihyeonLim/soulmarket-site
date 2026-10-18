@@ -14,11 +14,8 @@
   "boxUnit": "봉",
   "price": 87000,
   "detail_images": [
-    "images/detail/587/01.jpg",
     "images/detail/587/02.jpg",
     "images/detail/587/03.jpg",
-    "images/detail/587/04.jpg",
-    "images/detail/587/05.jpg",
-    "images/detail/587/06.jpg"
+    "images/detail/587/04.jpg"
   ]
 }

@@ -18,7 +18,6 @@
   "was": 55000,
   "rate": 19,
   "detail_images": [
-    "images/detail/555/01.jpg",
     "images/detail/555/02.jpg",
     "images/detail/555/03.jpg",
     "images/detail/555/04.jpg",
@@ -26,8 +25,6 @@
     "images/detail/555/06.jpg",
     "images/detail/555/07.jpg",
     "images/detail/555/08.jpg",
-    "images/detail/555/09.jpg",
-    "images/detail/555/10.jpg",
-    "images/detail/555/11.jpg"
+    "images/detail/555/09.jpg"
   ]
 }

@@ -4,6 +4,7 @@
        data/markets.json  마켓(카테고리) 목록 · 순서 · 색 · 필터 버튼
        data/goods.json    상품 목록 (data/goods/번호.json 들을 배포 때 자동으로 모은 파일)
        data/site.json     사이트 설정 (가격 표시 여부)
+       data/policy.json   상품 페이지 아래 '배송 · 교환 · 반품 안내' 표
    - 관리자 페이지(/admin)에서 고치면 이 JSON 파일들이 바뀌고,
      1~2분 뒤 사이트에 반영돼요. 직접 JSON 을 고쳐도 돼요.
    - 상품 항목
@@ -17,6 +18,7 @@
 let MARKET_ORDER = [];   // 메뉴 순서
 let MARKETS = {};        // { '0001': { name, ..., goods: [...] } }
 let SHOW_PRICE = false;  // 가격 표시 여부 (data/site.json)
+let POLICY = null;       // 배송 · 교환 · 반품 안내 (data/policy.json, 없어도 됨)
 
 function loadJSON(path) {
   // no-cache: 관리자가 고친 내용이 바로 보이도록 매번 최신인지 확인
@@ -29,8 +31,10 @@ function loadJSON(path) {
 const DATA_READY = Promise.all([
   loadJSON('data/markets.json'),
   loadJSON('data/goods.json'),
-  loadJSON('data/site.json')
+  loadJSON('data/site.json'),
+  loadJSON('data/policy.json').catch(function () { return null; })   // 없어도 사이트는 정상
 ]).then(function (res) {
+  POLICY = res[3];
   const markets = res[0].markets || [];
   const goods = res[1].goods || [];
   const site = res[2] || {};

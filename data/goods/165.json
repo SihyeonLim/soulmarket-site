@@ -12,10 +12,7 @@
   "price": 7200,
   "sold": 1,
   "detail_images": [
-    "images/detail/165/01.jpg",
     "images/detail/165/02.jpg",
-    "images/detail/165/03.jpg",
-    "images/detail/165/04.jpg",
-    "images/detail/165/05.jpg"
+    "images/detail/165/03.jpg"
   ]
 }
