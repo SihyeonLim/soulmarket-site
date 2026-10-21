@@ -1,19 +1,26 @@
 {
-  "no": 146,
-  "market": "0003",
-  "order": 740,
   "name": "생강분말(순도:100%) 300G",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2021/07/146_temp_16270409495416list1.PNG",
-  "tags": [
-    "페루"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 14500,
-  "sold": 3,
   "detail_images": [
     "images/detail/146/02.jpg",
     "images/detail/146/03.jpg",
     "images/detail/146/04.jpg"
-  ]
+  ],
+  "no": 146,
+  "brand": "허브마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [
+    "페루"
+  ],
+  "box": null,
+  "boxUnit": "",
+  "ice": false,
+  "status": "",
+  "order": 740,
+  "price": 0,
+  "was": null,
+  "rate": null,
+  "sold": 0
 }
