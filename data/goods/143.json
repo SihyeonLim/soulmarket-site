@@ -1,18 +1,25 @@
 {
-  "no": 143,
-  "market": "0003",
-  "order": 770,
   "name": "표고버섯분말(순도:100%) 180G",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2021/07/_temp_16267515759975list1.PNG",
-  "tags": [
-    "국산"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 12500,
-  "sold": 1,
   "detail_images": [
     "images/detail/143/02.jpg",
     "images/detail/143/03.jpg"
-  ]
+  ],
+  "no": 143,
+  "brand": "허브마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [
+    "국산"
+  ],
+  "box": null,
+  "boxUnit": "",
+  "ice": false,
+  "status": "",
+  "order": 770,
+  "price": 0,
+  "was": null,
+  "rate": null,
+  "sold": 0
 }
