@@ -1,19 +1,7 @@
 {
-  "no": 607,
-  "market": "0001",
-  "order": 70,
   "name": "감자채전 1KG(개당50g/20ea-길이8cm)",
-  "brand": "월남관",
+  "market": "0001",
   "img": "images/goods/2026/07/607_2026072419234624.PNG",
-  "tags": [
-    "BOX",
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
-  "box": 12,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 119780,
   "detail_images": [
     "images/detail/607/02.jpg",
     "images/detail/607/03.jpg",
@@ -21,5 +9,22 @@
     "images/detail/607/05.jpg",
     "images/detail/607/06.jpg",
     "images/detail/607/07.jpg"
-  ]
+  ],
+  "no": 607,
+  "brand": "월남관",
+  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
+  "detail": "",
+  "tags": [
+    "BOX",
+    "베트남"
+  ],
+  "box": 5,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 70,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
