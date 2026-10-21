@@ -11,14 +11,16 @@
   "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
   "detail": "",
   "tags": [
-    "국산"
+    "국산",
+    "바코드:8809408-220117",
+    "소비기한:24개월이내"
   ],
   "box": 9,
-  "boxUnit": "",
+  "boxUnit": "봉",
   "ice": false,
   "status": "",
   "order": 770,
-  "price": 0,
+  "price": null,
   "was": null,
   "rate": null,
   "sold": 0
