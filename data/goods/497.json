@@ -1,17 +1,25 @@
 {
-  "no": 497,
-  "market": "0007",
-  "order": 1060,
   "name": "플레인 매쉬드포테이토 1KG",
-  "brand": "루토사",
+  "market": "0007",
   "img": "images/goods/2024/12/497_2024121416053324.png",
-  "tags": [
-    "벨기에"
-  ],
-  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
-  "price": 9250,
   "detail_images": [
     "images/detail/497/02.jpg",
     "images/detail/497/03.jpg"
-  ]
+  ],
+  "no": 497,
+  "brand": "루토사",
+  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
+  "detail": "",
+  "tags": [
+    "벨기에"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 1060,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
