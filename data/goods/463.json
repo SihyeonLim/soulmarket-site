@@ -1,15 +1,7 @@
 {
-  "no": 463,
-  "market": "0007",
-  "order": 1150,
   "name": "통통고구마튀김 1KG",
-  "brand": "세진",
+  "market": "0007",
   "img": "images/goods/2024/07/463_2024070912093721.png",
-  "tags": [
-    "HACCP"
-  ],
-  "desc": "HACCP인증/(주)소울푸드 세진에프엔에스 통통 대구경북 로열 대리점",
-  "price": 8800,
   "detail_images": [
     "images/detail/463/02.jpg",
     "images/detail/463/03.jpg",
@@ -19,5 +11,21 @@
     "images/detail/463/07.jpg",
     "images/detail/463/08.jpg",
     "images/detail/463/09.jpg"
-  ]
+  ],
+  "no": 463,
+  "brand": "세진",
+  "desc": "HACCP인증/(주)소울푸드 세진에프엔에스 통통 대구경북 로열 대리점",
+  "detail": "",
+  "tags": [
+    "HACCP"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 1150,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
