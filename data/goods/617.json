@@ -1,18 +1,7 @@
 {
-  "no": 617,
-  "market": "0004",
-  "order": 460,
   "name": "야시장상천부산어묵(개당6g~8g) 1KG(어묵함량75.43%)-[샤브샤브,마라탕,어묵전골,어묵볶음전용]",
-  "brand": "까칠한홍여사",
+  "market": "0004",
   "img": "images/goods/2026/09/617_temp_17888528890576list1.PNG",
-  "tags": [
-    "HACCP"
-  ],
-  "desc": "[충청북도 음성군] HACCP인증, GS리테일 편의점 입점업체",
-  "box": 12,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 59000,
   "detail_images": [
     "images/detail/617/01.jpg",
     "images/detail/617/02.jpg",
@@ -24,5 +13,21 @@
     "images/detail/617/08.jpg",
     "images/detail/617/09.jpg",
     "images/detail/617/10.jpg"
-  ]
+  ],
+  "no": 617,
+  "brand": "까칠한홍여사",
+  "desc": "[충청북도 음성군] HACCP인증, GS리테일 편의점 입점업체",
+  "detail": "",
+  "tags": [
+    "HACCP"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 460,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
