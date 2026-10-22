@@ -1,17 +1,25 @@
 {
-  "no": 546,
-  "market": "0004",
-  "order": 510,
   "name": "칠성시장명물 빨간양념돼지껍데기 600g(HMR)",
-  "brand": "까칠한홍여사",
+  "market": "0004",
   "img": "images/goods/2025/07/546_2025073011282823.png",
-  "tags": [
-    "HACCP"
-  ],
-  "desc": "[경상북도 영천시] 에 위치한 지역사회공헌 제품을 상품화함/재래시장명물/HACCP인증",
-  "price": 99999,
   "detail_images": [
     "images/detail/546/02.jpg",
     "images/detail/546/03.jpg"
-  ]
+  ],
+  "no": 546,
+  "brand": "까칠한홍여사",
+  "desc": "[경상북도 영천시] 에 위치한 지역사회공헌 제품을 상품화함/재래시장명물/HACCP인증",
+  "detail": "",
+  "tags": [
+    "HACCP"
+  ],
+  "box": 20,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 510,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
