@@ -14,13 +14,13 @@
   "tags": [
     "페루"
   ],
-  "box": null,
-  "boxUnit": "",
+  "box": 9,
+  "boxUnit": "개",
   "ice": false,
   "status": "",
   "order": 740,
-  "price": 0,
+  "price": null,
   "was": null,
   "rate": null,
-  "sold": 0
+  "sold": null
 }
