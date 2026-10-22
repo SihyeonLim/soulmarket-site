@@ -1,16 +1,24 @@
 {
-  "no": 164,
-  "market": "0003",
-  "order": 690,
   "name": "월계수잎100%(터키/PET) 20G (3개 묶음판매)",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2021/07/164_2021072013002722.PNG",
+  "detail_images": [
+    "images/detail/164/02.jpg"
+  ],
+  "no": 164,
+  "brand": "허브마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "터키"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 9900,
-  "detail_images": [
-    "images/detail/164/02.jpg"
-  ]
+  "box": 9,
+  "boxUnit": "개",
+  "ice": false,
+  "status": "",
+  "order": 690,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
