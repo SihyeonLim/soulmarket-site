@@ -1,16 +1,24 @@
 {
-  "no": 392,
-  "market": "0006",
-  "order": 820,
   "name": "호두살1/4 1KG",
-  "brand": "맛깔지기",
+  "market": "0006",
   "img": "images/goods/2023/11/392_2023112109544928.png",
+  "detail_images": [
+    "images/detail/392/02.jpg"
+  ],
+  "no": 392,
+  "brand": "맛깔지기",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "미국"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 15500,
-  "detail_images": [
-    "images/detail/392/02.jpg"
-  ]
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 820,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
