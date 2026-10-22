@@ -1,14 +1,22 @@
 {
-  "no": 498,
-  "market": "0007",
-  "order": 1050,
   "name": "반달감자(포테이토웨지)(유탕) 2KG",
-  "brand": "루토사",
+  "market": "0007",
   "img": "images/goods/2024/12/498_2024121416055526.png",
-  "tags": [],
-  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
-  "price": 11700,
   "detail_images": [
     "images/detail/498/02.jpg"
-  ]
+  ],
+  "no": 498,
+  "brand": "루토사",
+  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
+  "detail": "",
+  "tags": [],
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 1050,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
