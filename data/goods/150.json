@@ -13,12 +13,12 @@
   "tags": [
     "인도"
   ],
-  "box": null,
-  "boxUnit": "",
+  "box": 9,
+  "boxUnit": "개",
   "ice": false,
   "status": "",
   "order": 720,
-  "price": 0,
+  "price": null,
   "was": null,
   "rate": null,
   "sold": null
