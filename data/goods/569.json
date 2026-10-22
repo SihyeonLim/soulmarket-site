@@ -11,7 +11,9 @@
   "brand": "척척밥상",
   "desc": "(주)소울푸드가 월남관을 OEM납품하는 제품",
   "detail": "",
-  "tags": [],
+  "tags": [
+    "베트남"
+  ],
   "box": 20,
   "boxUnit": "봉",
   "ice": false,
