@@ -10,15 +10,14 @@
   "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
   "detail": "",
   "tags": [
-    "BOX",
     "중국"
   ],
   "box": 18,
   "boxUnit": "봉",
-  "ice": true,
+  "ice": false,
   "status": "",
   "order": 270,
-  "price": 69900,
+  "price": null,
   "was": null,
   "rate": null,
   "sold": null
