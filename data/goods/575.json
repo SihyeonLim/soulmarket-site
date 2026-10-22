@@ -1,19 +1,26 @@
 {
-  "no": 575,
-  "market": "0007",
-  "order": 970,
   "name": "스마일포테이토감자 1.8KG",
-  "brand": "맥케인",
+  "market": "0007",
   "img": "images/goods/2026/04/575_2026041114083425.PNG",
-  "tags": [
-    "BOX",
-    "미국"
-  ],
-  "desc": "[경기도 광주시] (주)소울푸드는 맥케인(새안푸드)경북총판 입니다.",
-  "price": 82800,
   "detail_images": [
     "images/detail/575/02.jpg",
     "images/detail/575/03.jpg",
     "images/detail/575/04.jpg"
-  ]
+  ],
+  "no": 575,
+  "brand": "맥케인",
+  "desc": "[경기도 광주시] (주)소울푸드는 맥케인(새안푸드)경북총판 입니다.",
+  "detail": "",
+  "tags": [
+    "미국"
+  ],
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 970,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
