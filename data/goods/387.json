@@ -1,16 +1,24 @@
 {
-  "no": 387,
-  "market": "0006",
-  "order": 860,
   "name": "아몬드슬라이스 1KG",
-  "brand": "맛깔지기",
+  "market": "0006",
   "img": "images/goods/2023/11/387_2023112109530725.png",
+  "detail_images": [
+    "images/detail/387/02.jpg"
+  ],
+  "no": 387,
+  "brand": "맛깔지기",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "미국"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 18800,
-  "detail_images": [
-    "images/detail/387/02.jpg"
-  ]
+  "box": 8,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 860,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
