@@ -1,15 +1,23 @@
 {
-  "no": 378,
-  "market": "0003",
-  "order": 660,
   "name": "통백후추(순도100%/PET) 350G",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2023/11/378_2023111710040122.PNG",
-  "tags": [],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 11750,
   "detail_images": [
     "images/detail/378/02.jpg",
     "images/detail/378/03.jpg"
-  ]
+  ],
+  "no": 378,
+  "brand": "허브마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [],
+  "box": 9,
+  "boxUnit": "개",
+  "ice": false,
+  "status": "",
+  "order": 660,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
