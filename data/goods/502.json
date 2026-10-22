@@ -1,25 +1,27 @@
 {
-  "no": 502,
-  "market": "0005",
-  "order": 600,
   "name": "교자만두 2.7KG(개당13.5g/200ea)",
-  "brand": "취화당",
+  "market": "0005",
   "img": "images/goods/2026/05/502_temp_17787425057693list1.PNG",
-  "tags": [
-    "BOX",
-    "국내가공",
-    "HACCP"
-  ],
-  "desc": "[경상북도 경산시]지역사회공헌 / HACCP인증(30년전통의 구.서울만두 제품)",
-  "box": 4,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 39600,
-  "was": 49600,
-  "rate": 21,
   "detail_images": [
     "images/detail/502/02.jpg",
     "images/detail/502/03.jpg",
     "images/detail/502/04.jpg"
-  ]
+  ],
+  "no": 502,
+  "brand": "취화당",
+  "desc": "[경상북도 경산시]지역사회공헌 / HACCP인증(30년전통의 구.서울만두 제품)",
+  "detail": "",
+  "tags": [
+    "국내가공",
+    "HACCP"
+  ],
+  "box": 3,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 600,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
