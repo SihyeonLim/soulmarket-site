@@ -1,19 +1,27 @@
 {
-  "no": 380,
-  "market": "0003",
-  "order": 640,
   "name": "굵은후추분말[크러쉬](순도:100%) 330G",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2023/11/380_2023111710045829.PNG",
-  "tags": [
-    "외국산"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 9980,
   "detail_images": [
     "images/detail/380/02.jpg",
     "images/detail/380/03.jpg",
     "images/detail/380/04.jpg",
     "images/detail/380/05.jpg"
-  ]
+  ],
+  "no": 380,
+  "brand": "허브마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [
+    "외국산"
+  ],
+  "box": 9,
+  "boxUnit": "개",
+  "ice": false,
+  "status": "",
+  "order": 640,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
