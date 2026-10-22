@@ -1,21 +1,28 @@
 {
-  "no": 574,
-  "market": "0007",
-  "order": 980,
   "name": "크링클컷감자 2KG",
-  "brand": "맥케인",
+  "market": "0007",
   "img": "images/goods/2026/04/574_2026041114080124.PNG",
-  "tags": [
-    "BOX",
-    "중국"
-  ],
-  "desc": "[경기도 광주시] (주)소울푸드는 맥케인(새안푸드)경북총판 입니다.",
-  "price": 48900,
   "detail_images": [
     "images/detail/574/02.jpg",
     "images/detail/574/03.jpg",
     "images/detail/574/04.jpg",
     "images/detail/574/05.jpg",
     "images/detail/574/06.jpg"
-  ]
+  ],
+  "no": 574,
+  "brand": "맥케인",
+  "desc": "[경기도 광주시] (주)소울푸드는 맥케인(새안푸드)경북총판 입니다.",
+  "detail": "",
+  "tags": [
+    "중국"
+  ],
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 980,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
