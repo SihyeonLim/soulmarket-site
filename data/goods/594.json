@@ -1,19 +1,7 @@
 {
-  "no": 594,
-  "market": "0001",
-  "order": 160,
   "name": "냉동빵가루헤드온통살새우튀김 500G(개당50g/10ea)",
-  "brand": "월남관",
+  "market": "0001",
   "img": "images/goods/2026/07/594_2026072419160029.PNG",
-  "tags": [
-    "BOX",
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 NHA TRANG 직수입 제품",
-  "box": 10,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 69900,
   "detail_images": [
     "images/detail/594/02.jpg",
     "images/detail/594/03.jpg",
@@ -21,5 +9,21 @@
     "images/detail/594/05.jpg",
     "images/detail/594/06.jpg",
     "images/detail/594/07.jpg"
-  ]
+  ],
+  "no": 594,
+  "brand": "월남관",
+  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 NHA TRANG 직수입 제품",
+  "detail": "",
+  "tags": [
+    "베트남"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 160,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
