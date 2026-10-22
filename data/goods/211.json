@@ -1,16 +1,24 @@
 {
-  "no": 211,
-  "market": "0002",
-  "order": 430,
   "name": "스마일감자튀김 1.3KG",
-  "brand": "소울마켓",
+  "market": "0002",
   "img": "images/goods/2021/08/_temp_16286544669522list1.png",
+  "detail_images": [
+    "images/detail/211/02.jpg"
+  ],
+  "no": 211,
+  "brand": "소울마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "미국"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 15500,
-  "detail_images": [
-    "images/detail/211/02.jpg"
-  ]
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 430,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
