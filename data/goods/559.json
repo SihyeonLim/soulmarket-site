@@ -1,17 +1,25 @@
 {
-  "no": 559,
-  "market": "0007",
-  "order": 960,
   "name": "생선까스(개당60G 20ea) 1.2KG",
-  "brand": "랜시푸드",
+  "market": "0007",
   "img": "images/goods/2025/11/_temp_17623230581770list1.PNG",
-  "tags": [
-    "중국"
-  ],
-  "desc": "[서울특별시 구로구] (주)랜시푸드 직수입 제품",
-  "price": 8800,
   "detail_images": [
     "images/detail/559/02.jpg",
     "images/detail/559/03.jpg"
-  ]
+  ],
+  "no": 559,
+  "brand": "랜시푸드",
+  "desc": "[서울특별시 구로구] (주)랜시푸드 직수입 제품",
+  "detail": "",
+  "tags": [
+    "중국"
+  ],
+  "box": 5,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 960,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
