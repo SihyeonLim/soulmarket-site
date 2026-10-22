@@ -12,7 +12,6 @@
   "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
   "detail": "",
   "tags": [
-    "BOX",
     "베트남"
   ],
   "box": 20,
@@ -20,7 +19,7 @@
   "ice": true,
   "status": "",
   "order": 30,
-  "price": 210000,
+  "price": null,
   "was": null,
   "rate": null,
   "sold": null
