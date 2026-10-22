@@ -1,16 +1,24 @@
 {
-  "no": 543,
-  "market": "0003",
-  "order": 630,
   "name": "백후추분말(순도:100%) 340G",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2025/06/_temp_17496941885270list1.PNG",
+  "detail_images": [
+    "images/detail/543/02.jpg"
+  ],
+  "no": 543,
+  "brand": "허브마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "베트남"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 16900,
-  "detail_images": [
-    "images/detail/543/02.jpg"
-  ]
+  "box": 9,
+  "boxUnit": "개",
+  "ice": false,
+  "status": "",
+  "order": 630,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
