@@ -1,23 +1,26 @@
 {
-  "no": 421,
-  "market": "0002",
-  "order": 390,
   "name": "분식집모둠튀김 800G[오징어튀김,고추튀김,깻잎튀김,고구마튀김,야채튀김,김말이,핫김말이]",
-  "brand": "소울마켓",
+  "market": "0002",
   "img": "images/goods/2024/04/_temp_17134067696869list1.png",
-  "tags": [
-    "BOX"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "box": 12,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 95760,
-  "was": 110000,
-  "rate": 13,
   "detail_images": [
     "images/detail/421/02.jpg",
     "images/detail/421/03.jpg",
     "images/detail/421/04.jpg"
-  ]
+  ],
+  "no": 421,
+  "brand": "소울마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [
+    "BOX"
+  ],
+  "box": 12,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 390,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
