@@ -1,21 +1,28 @@
 {
-  "no": 572,
-  "market": "0007",
-  "order": 1000,
   "name": "해쉬브라운감자 1.3KG",
-  "brand": "맥케인",
+  "market": "0007",
   "img": "images/goods/2026/04/572_2026041114070828.PNG",
-  "tags": [
-    "BOX",
-    "네덜란드"
-  ],
-  "desc": "[경기도 광주시] (주)소울푸드는 맥케인(새안푸드)경북총판 입니다.",
-  "price": 110000,
   "detail_images": [
     "images/detail/572/02.jpg",
     "images/detail/572/03.jpg",
     "images/detail/572/04.jpg",
     "images/detail/572/05.jpg",
     "images/detail/572/06.jpg"
-  ]
+  ],
+  "no": 572,
+  "brand": "맥케인",
+  "desc": "[경기도 광주시] (주)소울푸드는 맥케인(새안푸드)경북총판 입니다.",
+  "detail": "",
+  "tags": [
+    "네덜란드"
+  ],
+  "box": 12,
+  "boxUnit": "팩",
+  "ice": false,
+  "status": "",
+  "order": 1000,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
