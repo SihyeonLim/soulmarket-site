@@ -1,16 +1,25 @@
 {
-  "no": 571,
-  "market": "0003",
-  "order": 620,
   "name": "순후추(순도100%/파우치) 1KG",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2026/08/571_temp_17863231368997list1.png",
-  "tags": [
-    "HACCP"
-  ],
-  "desc": "[경기도 의왕시] 오뚜기제유 제조/HACCP인증",
-  "price": 21000,
   "detail_images": [
     "images/detail/571/02.jpg"
-  ]
+  ],
+  "no": 571,
+  "brand": "허브마켓",
+  "desc": "[경기도 의왕시] 오뚜기제유 제조/HACCP인증",
+  "detail": "",
+  "tags": [
+    "HACCP",
+    "베트남"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 620,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
