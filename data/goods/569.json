@@ -1,16 +1,24 @@
 {
-  "no": 569,
-  "market": "0007",
-  "order": 940,
   "name": "오징어튀김 400G [OEM생산 납품]",
-  "brand": "척척밥상",
+  "market": "0008",
   "img": "images/goods/2026/08/569_temp_17873814174806list1.png",
-  "tags": [],
-  "desc": "(주)소울푸드가 월남관을 OEM납품하는 제품",
-  "price": 999999,
   "detail_images": [
     "images/detail/569/02.jpg",
     "images/detail/569/03.jpg",
     "images/detail/569/04.jpg"
-  ]
+  ],
+  "no": 569,
+  "brand": "척척밥상",
+  "desc": "(주)소울푸드가 월남관을 OEM납품하는 제품",
+  "detail": "",
+  "tags": [],
+  "box": null,
+  "boxUnit": "",
+  "ice": false,
+  "status": "",
+  "order": 940,
+  "price": 999999,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
