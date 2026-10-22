@@ -1,22 +1,7 @@
 {
-  "no": 555,
-  "market": "0005",
-  "order": 540,
   "name": "칠성시장명물수제납작만두 600G(개당15g/20ea)",
-  "brand": "취화당",
+  "market": "0005",
   "img": "images/goods/2025/10/555_2025101618154325.PNG",
-  "tags": [
-    "BOX",
-    "국내가공",
-    "HACCP"
-  ],
-  "desc": "[대구광역시 중구] 에 위치한 지역사회공헌 제품을 상품화함/HACCP인증",
-  "box": 10,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 45000,
-  "was": 55000,
-  "rate": 19,
   "detail_images": [
     "images/detail/555/02.jpg",
     "images/detail/555/03.jpg",
@@ -26,5 +11,22 @@
     "images/detail/555/07.jpg",
     "images/detail/555/08.jpg",
     "images/detail/555/09.jpg"
-  ]
+  ],
+  "no": 555,
+  "brand": "취화당",
+  "desc": "[대구광역시 중구] 에 위치한 지역사회공헌 제품을 상품화함/HACCP인증",
+  "detail": "",
+  "tags": [
+    "국내가공",
+    "HACCP"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 540,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
