@@ -1,15 +1,7 @@
 {
-  "no": 208,
-  "market": "0002",
-  "order": 440,
   "name": "바삭코팅슈스트링감자튀김 1.4KG",
-  "brand": "소울마켓",
+  "market": "0002",
   "img": "images/goods/2021/08/_temp_16286523677529list1.png",
-  "tags": [
-    "벨기에"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 10500,
   "detail_images": [
     "images/detail/208/02.jpg",
     "images/detail/208/03.jpg",
@@ -17,5 +9,21 @@
     "images/detail/208/05.jpg",
     "images/detail/208/06.jpg",
     "images/detail/208/07.jpg"
-  ]
+  ],
+  "no": 208,
+  "brand": "소울마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [
+    "벨기에"
+  ],
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 440,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
