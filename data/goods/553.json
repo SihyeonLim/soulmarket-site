@@ -1,26 +1,27 @@
 {
-  "no": 553,
-  "market": "0004",
-  "order": 480,
   "name": "눈꽃 일식돈까스 1.6KG(개당160g/10ea)",
-  "brand": "까칠한홍여사",
+  "market": "0004",
   "img": "images/goods/2026/08/553_temp_17858880488605list1.png",
-  "tags": [
-    "BOX",
-    "국내산",
-    "HACCP"
-  ],
-  "desc": "[경상남도 양산시] HACCP인증,(주)소울푸드 개발 레시피",
-  "box": 6,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 111000,
-  "was": 131000,
-  "rate": 16,
-  "sold": 17,
   "detail_images": [
     "images/detail/553/02.jpg",
     "images/detail/553/03.jpg",
     "images/detail/553/04.jpg"
-  ]
+  ],
+  "no": 553,
+  "brand": "까칠한홍여사",
+  "desc": "[경상남도 양산시] HACCP인증,(주)소울푸드 개발 레시피",
+  "detail": "",
+  "tags": [
+    "국내산",
+    "HACCP"
+  ],
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 480,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
