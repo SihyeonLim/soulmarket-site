@@ -1,21 +1,7 @@
 {
-  "no": 577,
-  "market": "0002",
-  "order": 300,
   "name": "탱글단호박떡 1KG(12g/83ea~86ea)-직접 쌀을 불린후 제조",
-  "brand": "소울마켓",
+  "market": "0002",
   "img": "images/goods/2026/05/577_temp_17788293833029list1.png",
-  "tags": [
-    "BOX",
-    "HACCP"
-  ],
-  "desc": "[부산광역시 사하구] HACCP인증,대기업 OEM생산업체,굳지않는 치즈떡볶이",
-  "box": 8,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 36000,
-  "was": 45000,
-  "rate": 20,
   "detail_images": [
     "images/detail/577/02.jpg",
     "images/detail/577/03.jpg",
@@ -23,5 +9,21 @@
     "images/detail/577/05.jpg",
     "images/detail/577/06.jpg",
     "images/detail/577/07.jpg"
-  ]
+  ],
+  "no": 577,
+  "brand": "소울마켓",
+  "desc": "[부산광역시 사하구] HACCP인증,대기업 OEM생산업체,굳지않는 치즈떡볶이",
+  "detail": "",
+  "tags": [
+    "HACCP"
+  ],
+  "box": 8,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 300,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
