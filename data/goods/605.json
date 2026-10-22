@@ -1,19 +1,7 @@
 {
-  "no": 605,
-  "market": "0001",
-  "order": 90,
   "name": "해물파전 1KG(개당50g/20ea-길이8cm)",
-  "brand": "월남관",
+  "market": "0001",
   "img": "images/goods/2026/07/605_2026072419230420.PNG",
-  "tags": [
-    "BOX",
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
-  "box": 12,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 132000,
   "detail_images": [
     "images/detail/605/02.jpg",
     "images/detail/605/03.jpg",
@@ -33,5 +21,21 @@
     "images/detail/605/17.jpg",
     "images/detail/605/18.jpg",
     "images/detail/605/19.jpg"
-  ]
+  ],
+  "no": 605,
+  "brand": "월남관",
+  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
+  "detail": "",
+  "tags": [
+    "베트남"
+  ],
+  "box": 5,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 90,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
