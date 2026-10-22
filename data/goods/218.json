@@ -1,16 +1,7 @@
 {
-  "no": 218,
-  "market": "0002",
-  "order": 420,
   "name": "모둠감자8종(벨기에,미국) 1.4KG-[유탕]",
-  "brand": "소울마켓",
+  "market": "0002",
   "img": "images/goods/2021/08/_temp_16286744028344list1.png",
-  "tags": [
-    "미국"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 13400,
-  "sold": 32,
   "detail_images": [
     "images/detail/218/02.jpg",
     "images/detail/218/03.jpg",
@@ -20,5 +11,21 @@
     "images/detail/218/07.jpg",
     "images/detail/218/08.jpg",
     "images/detail/218/09.jpg"
-  ]
+  ],
+  "no": 218,
+  "brand": "소울마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [
+    "미국"
+  ],
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 420,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
