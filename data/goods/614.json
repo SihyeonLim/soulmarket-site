@@ -1,20 +1,25 @@
 {
-  "no": 614,
-  "market": "0002",
-  "order": 290,
   "name": "케이준감자 500g",
-  "brand": "맥케인",
+  "market": "0008",
   "img": "images/goods/2026/07/_temp_17851433220463list1.PNG",
+  "detail_images": [
+    "images/detail/614/02.jpg"
+  ],
+  "no": 614,
+  "brand": "맥케인",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "BOX",
     "미국"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
   "box": 18,
   "boxUnit": "봉",
   "ice": true,
+  "status": "",
+  "order": 290,
   "price": 107000,
-  "detail_images": [
-    "images/detail/614/02.jpg"
-  ]
+  "was": null,
+  "rate": null,
+  "sold": null
 }
