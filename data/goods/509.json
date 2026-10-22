@@ -12,10 +12,10 @@
   "tags": [
     "미국"
   ],
-  "box": 11,
+  "box": 10,
   "boxUnit": "봉",
   "ice": false,
-  "status": "재고확보중",
+  "status": "",
   "order": 810,
   "price": null,
   "was": null,
