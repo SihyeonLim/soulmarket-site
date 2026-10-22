@@ -1,20 +1,25 @@
 {
-  "no": 589,
-  "market": "0001",
-  "order": 210,
   "name": "건표고버섯 슬라이스 1KG",
-  "brand": "맛깔지기",
+  "market": "0001",
   "img": "images/goods/2026/07/589_2026072419141120.png",
-  "tags": [
-    "BOX",
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사.(주)소울푸드 AGENCY 통한 직수입 제품(최고의 경쟁력,최고의품질)",
-  "box": 10,
-  "boxUnit": "봉",
-  "price": 157500,
   "detail_images": [
     "images/detail/589/02.jpg",
     "images/detail/589/03.jpg"
-  ]
+  ],
+  "no": 589,
+  "brand": "맛깔지기",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사.(주)소울푸드 AGENCY 통한 직수입 제품(최고의 경쟁력,최고의품질)",
+  "detail": "",
+  "tags": [
+    "베트남"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 210,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
