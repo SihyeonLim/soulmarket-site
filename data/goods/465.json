@@ -1,15 +1,7 @@
 {
-  "no": 465,
-  "market": "0007",
-  "order": 1130,
   "name": "통통오징어튀김 1KG",
-  "brand": "세진",
+  "market": "0007",
   "img": "images/goods/2024/07/465_2024070912100020.png",
-  "tags": [
-    "HACCP"
-  ],
-  "desc": "HACCP인증/(주)소울푸드 세진에프엔에스 통통 대구경북 로열 대리점",
-  "price": 16980,
   "detail_images": [
     "images/detail/465/02.jpg",
     "images/detail/465/03.jpg",
@@ -18,5 +10,21 @@
     "images/detail/465/06.jpg",
     "images/detail/465/07.jpg",
     "images/detail/465/08.jpg"
-  ]
+  ],
+  "no": 465,
+  "brand": "세진",
+  "desc": "HACCP인증/(주)소울푸드 세진에프엔에스 통통 대구경북 로열 대리점",
+  "detail": "",
+  "tags": [
+    "HACCP"
+  ],
+  "box": 8,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 1130,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
