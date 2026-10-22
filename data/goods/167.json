@@ -1,16 +1,24 @@
 {
-  "no": 167,
-  "market": "0003",
-  "order": 670,
   "name": "파슬리100%(독일/PET) 75G",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2021/07/167_2021072013050521.png",
+  "detail_images": [
+    "images/detail/167/02.jpg"
+  ],
+  "no": 167,
+  "brand": "허브마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "독일"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 3980,
-  "detail_images": [
-    "images/detail/167/02.jpg"
-  ]
+  "box": 9,
+  "boxUnit": "개",
+  "ice": false,
+  "status": "",
+  "order": 670,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
