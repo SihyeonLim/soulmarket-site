@@ -1,22 +1,27 @@
 {
-  "no": 610,
-  "market": "0001",
-  "order": 10,
   "name": "생감자채전 400G(개당50g정도)",
-  "brand": "월남관",
+  "market": "0008",
   "img": "images/goods/2026/07/_temp_17848892032913list1.PNG",
-  "tags": [
-    "BOX",
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
-  "box": 20,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 110000,
   "detail_images": [
     "images/detail/610/02.jpg",
     "images/detail/610/03.jpg",
     "images/detail/610/04.jpg"
-  ]
+  ],
+  "no": 610,
+  "brand": "월남관",
+  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
+  "detail": "",
+  "tags": [
+    "BOX",
+    "베트남"
+  ],
+  "box": 20,
+  "boxUnit": "봉",
+  "ice": true,
+  "status": "",
+  "order": 10,
+  "price": 110000,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
