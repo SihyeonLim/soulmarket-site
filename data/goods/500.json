@@ -1,17 +1,25 @@
 {
-  "no": 500,
-  "market": "0007",
-  "order": 1030,
   "name": "슈스트링(엑스트라크리스피슈스트링)(유탕) 2KG",
-  "brand": "루토사",
+  "market": "0007",
   "img": "images/goods/2024/12/500_2024121416062229.png",
-  "tags": [],
-  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
-  "price": 11600,
   "detail_images": [
     "images/detail/500/02.jpg",
     "images/detail/500/03.jpg",
     "images/detail/500/04.jpg",
     "images/detail/500/05.jpg"
-  ]
+  ],
+  "no": 500,
+  "brand": "루토사",
+  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
+  "detail": "",
+  "tags": [],
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 1030,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
