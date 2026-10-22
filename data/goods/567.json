@@ -1,22 +1,7 @@
 {
-  "no": 567,
-  "market": "0002",
-  "order": 310,
   "name": "탱글롱치즈떡 1KG(25g~28g/35ea~40ea)-모짜렐라20%함유",
-  "brand": "소울마켓",
+  "market": "0002",
   "img": "images/goods/2025/11/567_temp_17643033317316list1.PNG",
-  "tags": [
-    "BOX",
-    "HACCP"
-  ],
-  "desc": "[대구광역시 북구] HACCP인증",
-  "box": 8,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 44000,
-  "was": 55000,
-  "rate": 20,
-  "sold": 3,
   "detail_images": [
     "images/detail/567/02.jpg",
     "images/detail/567/03.jpg",
@@ -25,5 +10,21 @@
     "images/detail/567/06.jpg",
     "images/detail/567/07.jpg",
     "images/detail/567/08.jpg"
-  ]
+  ],
+  "no": 567,
+  "brand": "소울마켓",
+  "desc": "[대구광역시 북구] HACCP인증",
+  "detail": "",
+  "tags": [
+    "HACCP"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 310,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
