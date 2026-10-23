@@ -8,12 +8,14 @@
   "desc": "PB전용(구매문의)070-7018-8811 (주)랜시푸드",
   "detail": "",
   "tags": [
-    "HACCP",
-    "바코드 : 8809180-657811",
-    "소비기한 : 12개월이내"
+    "HACCP"
   ],
   "box": 8,
   "boxUnit": "봉",
+  "storage": "",
+  "shelf_life": 12,
+  "shelf_life_unit": "개월",
+  "barcode": "8809180-657811",
   "ice": false,
   "status": "",
   "order": 1180,
