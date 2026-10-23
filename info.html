@@ -17,7 +17,15 @@
     .info-tabs { display: flex; gap: 8px; margin: 24px 0; flex-wrap: wrap; }
     .info-tabs a { border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px; font-weight: 600; font-size: 14px; }
     .info-tabs a.on { background: var(--text); border-color: var(--text); color: var(--white); }
-    .company-hero { background: linear-gradient(120deg, #D7282F, #8E1519); color: var(--white); border-radius: 18px; padding: 56px 48px; }
+    .company-hero { background: linear-gradient(120deg, #D7282F, #8E1519); color: var(--white); border-radius: 18px; padding: 48px; margin-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .company-hero .brand { flex-shrink: 0; width: 200px; height: 170px; background: var(--white); border-radius: 18px; display: grid; place-items: center; }
+    .company-hero .brand img { width: 150px; height: auto; }
+    /* 함께하는 나눔 (초록우산 어린이재단) */
+    .donate { margin: 40px 0 8px; border: 1px solid var(--line); border-radius: 14px; padding: 28px 32px; display: flex; align-items: center; gap: 32px; }
+    .donate img { width: 190px; height: auto; flex-shrink: 0; }
+    .donate small { font-size: 13px; font-weight: 700; color: #3A8D2E; }
+    .donate h3 { font-size: 19px; margin: 4px 0 6px; }
+    .donate p { font-size: 14px; color: var(--text-sub); line-height: 1.7; }
     .company-hero small { opacity: .8; }
     .company-hero h1 { font-size: 32px; line-height: 1.35; margin-top: 8px; letter-spacing: -1px; }
     .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
@@ -31,7 +39,11 @@
     .doc { border: 1px solid var(--line); border-radius: 14px; padding: 28px; min-height: 240px; color: var(--text-sub); }
     @media (max-width: 768px) {
       .facts { grid-template-columns: 1fr; }
-      .company-hero { padding: 32px 24px; }
+      .company-hero { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+      .company-hero .brand { width: 140px; height: 116px; }
+      .company-hero .brand img { width: 104px; }
+      .donate { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px; }
+      .donate img { width: 160px; }
       .company-hero h1 { font-size: 24px; }
       .table th { width: 110px; }
     }
@@ -54,7 +66,8 @@
       company: {
         title: '회사소개',
         html:
-          '<section class="company-hero"><h1>음식은 맛으로 먹는 게 아니라<br>기억으로 먹는다</h1></section>' +
+          '<section class="company-hero"><h1>음식은 맛으로 먹는 게 아니라<br>기억으로 먹는다</h1>' +
+            '<div class="brand"><img src="images/logo-mark.png" alt="SOUL FOOD 로고"></div></section>' +
           '<div class="facts">' +
             '<div><span class="icon">🏭</span><b>제조</b><p>식자재를 직접 만들고 고릅니다</p></div>' +
             '<div><span class="icon">🚢</span><b>무역</b><p>해외 식자재를 직접 들여옵니다</p></div>' +
@@ -68,7 +81,13 @@
             '<tr><th>이메일</th><td>soul1980@soulfd.co.kr</td></tr>' +
             '<tr><th>사업자등록번호</th><td>504-81-82217</td></tr>' +
             '<tr><th>통신판매업신고</th><td>제2017 경북칠곡 0030호</td></tr>' +
-          '</table>'
+          '</table>' +
+          '<section class="donate">' +
+            '<img src="images/green-umbrella.png" alt="초록우산 어린이재단">' +
+            '<div><small>함께하는 나눔</small>' +
+            '<h3>초록우산 어린이재단 후원 기업</h3>' +
+            '<p>(주)소울푸드는 초록우산 어린이재단을 후원하며<br>아이들이 꿈을 키울 수 있는 따뜻한 세상을 함께 만들어 갑니다.</p></div>' +
+          '</section>'
       }
     };
 
