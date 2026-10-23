@@ -33,6 +33,9 @@ body { background: #fff; }
 .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
 .actions .btn { text-align: center; }
 .actions .mail { grid-column: 1 / -1; }
+.barcode { margin-top: 20px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; display: flex; justify-content: center; }
+.barcode-svg { width: 220px; height: auto; display: block; }
+.barcode-num { font-family: monospace; font-size: 15px; }
 .tab-panel { padding: 28px 0 0; font-size: 15px; border-top: 2px solid var(--text); margin-top: 32px; }
 .tab-panel h4 { font-size: 17px; margin: 20px 0 8px; }
 .tab-panel h4:first-child { margin-top: 0; }

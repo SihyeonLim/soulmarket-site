@@ -32,6 +32,40 @@
     .then(function (d) { showPrice = d.show_price === true; }).catch(function () {});
 
   function won(n) { return Number(n).toLocaleString('ko-KR'); }
+
+  // 보관 방법 · 바코드 (사이트 common.js 와 같은 규칙)
+  var STORAGE_TEXT = { '냉동': '❄ 냉동 보관 (아이스박스 포장)', '냉장': '냉장 보관 (아이스박스 포장)', '상온': '상온 보관', '냉동 · 냉장': '❄ 냉동 · 냉장 (아이스박스 포장)' };
+  function barcodeSVG(code) {
+    let d = String(code || '').replace(/\D/g, '');
+    if (d.length !== 12 && d.length !== 13) return null;
+    const n = d.slice(0, 12).split('').map(Number);
+    const check = (10 - n.reduce(function (s, v, i) { return s + v * (i % 2 ? 3 : 1); }, 0) % 10) % 10;
+    if (d.length === 13 && Number(d[12]) !== check) return null;   // 잘못된 번호
+    d = d.slice(0, 12) + check;
+    const L = ['0001101','0011001','0010011','0111101','0100011','0110001','0101111','0111011','0110111','0001011'];
+    const G = ['0100111','0110011','0011011','0100001','0011101','0111001','0000101','0010001','0001001','0010111'];
+    const R = ['1110010','1100110','1101100','1000010','1011100','1001110','1010000','1000100','1001000','1110100'];
+    const P = ['LLLLLL','LLGLGG','LLGGLG','LLGGGL','LGLLGG','LGGLLG','LGGGLL','LGLGLG','LGLGGL','LGGLGL'][d[0]];
+    let bits = '101';
+    for (let i = 1; i <= 6; i++) bits += (P[i - 1] === 'L' ? L : G)[d[i]];
+    bits += '01010';
+    for (let i = 7; i <= 12; i++) bits += R[d[i]];
+    bits += '101';
+    const W = 2, X0 = 22, H = 64;   // 막대 1칸 2px, 왼쪽 여백 22px
+    let rects = '';
+    for (let i = 0; i < bits.length; i++) {
+      if (bits[i] !== '1') continue;
+      const guard = i < 3 || (i >= 45 && i < 50) || i >= 92;
+      rects += '<rect x="' + (X0 + i * W) + '" y="0" width="' + W + '" height="' + (guard ? H + 8 : H) + '"/>';
+    }
+    const t = function (x, s) { return '<text x="' + x + '" y="' + (H + 20) + '" text-anchor="middle">' + s + '</text>'; };
+    return '<svg class="barcode-svg" viewBox="0 0 ' + (X0 * 2 + 95 * W) + ' ' + (H + 24) + '" role="img" aria-label="바코드 ' + d + '">' +
+      '<g fill="#111">' + rects + '</g>' +
+      '<g fill="#111" font-size="14" font-family="monospace">' +
+        t(X0 - 10, d[0]) + t(X0 + (3 + 21) * W, d.slice(1, 7)) + t(X0 + (50 + 21) * W, d.slice(7)) +
+      '</g></svg>';
+  }
+
   function toJS(v) { return v && typeof v.toJS === 'function' ? v.toJS() : v; }
 
   // 사진 주소: 방금 올린 사진(아직 저장 전)도 보이게 getAsset 먼저
@@ -65,8 +99,17 @@
     var details = (d.detail_images || []).map(function (p) { return imageUrl(getAsset, p); }).filter(Boolean);
 
     var rows = [];
-    if (d.box) rows.push(h('div', { key: 'box' }, h('dt', null, '포장'), h('dd', null, '1박스 ' + d.box + (d.boxUnit || '') + (d.ice ? ' (아이스박스)' : ''))));
-    if (d.ice) rows.push(h('div', { key: 'ice' }, h('dt', null, '보관'), h('dd', null, '❄ 냉동 · 냉장 (아이스박스 포장)')));
+    var storage = d.storage || (d.ice ? '냉동 · 냉장' : '');
+    var cold = storage.indexOf('냉') !== -1;
+    if (d.box) rows.push(h('div', { key: 'box' }, h('dt', null, '포장'), h('dd', null, '1박스 ' + d.box + (d.boxUnit || '') + (cold ? ' (아이스박스)' : ''))));
+    if (storage) rows.push(h('div', { key: 'st' }, h('dt', null, '보관'), h('dd', null, STORAGE_TEXT[storage] || storage)));
+    var barcode = null;
+    if (d.barcode) {
+      var svg = barcodeSVG(d.barcode);
+      barcode = svg
+        ? h('div', { className: 'barcode', dangerouslySetInnerHTML: { __html: svg } })
+        : h('div', { className: 'barcode' }, h('span', { className: 'barcode-num' }, d.barcode + ' (13자리 바코드 번호가 아니에요)'));
+    }
 
     var priceBox = null;
     if (d.price) {
@@ -98,6 +141,7 @@
           st ? h('p', { className: 'state-note ' + st.cls }, st.msg) : null,
           priceBox,
           rows.length ? h('dl', { className: 'rows' }, rows) : null,
+          barcode,
           h('div', { className: 'actions' },
             h('span', { className: 'btn btn-primary' }, '📞 ' + CONTACT.phones[0]),
             h('span', { className: 'btn btn-primary' }, '📱 ' + CONTACT.phones[1]),

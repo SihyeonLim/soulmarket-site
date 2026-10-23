@@ -17,8 +17,11 @@
     .info-tabs { display: flex; gap: 8px; margin: 24px 0; flex-wrap: wrap; }
     .info-tabs a { border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px; font-weight: 600; font-size: 14px; }
     .info-tabs a.on { background: var(--text); border-color: var(--text); color: var(--white); }
-    .company-hero { background: var(--white); color: var(--text); border: 1px solid var(--line); border-radius: 18px; padding: 48px 56px; margin-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-    .company-hero .brand { flex-shrink: 0; width: 200px; height: 170px; display: grid; place-items: center; }
+    .company-hero { background: var(--white); color: var(--text); border: 1px solid var(--line); border-radius: 18px; margin-top: 24px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) 300px; }
+    .company-hero .hero-text { padding: 52px 56px; }
+    .company-hero .company { font-size: 15px; font-weight: 700; color: var(--brand); }
+    .company-hero .lead { margin-top: 14px; font-size: 16px; color: var(--text-sub); }
+    .company-hero .brand { background: #FAFAF7; border-left: 1px solid var(--line); display: grid; place-items: center; padding: 32px; }
     .company-hero .brand img { width: 150px; height: auto; }
     /* 함께하는 나눔 (초록우산 어린이재단) */
     .donate { margin: 40px 0 8px; border: 1px solid var(--line); border-radius: 14px; padding: 28px 32px; display: flex; align-items: center; gap: 32px; }
@@ -26,8 +29,15 @@
     .donate small { font-size: 13px; font-weight: 700; color: #3A8D2E; }
     .donate h3 { font-size: 19px; margin: 4px 0 6px; }
     .donate p { font-size: 14px; color: var(--text-sub); line-height: 1.7; }
+    /* 인증 (메인비즈) : 초록우산 칸과 같은 모양 */
+    .certs { margin: 16px 0 8px; }
+    .cert { border: 1px solid var(--line); border-radius: 14px; padding: 28px 32px; display: flex; align-items: center; gap: 32px; }
+    .cert img { width: 190px; height: auto; flex-shrink: 0; }
+    .cert small { font-size: 13px; font-weight: 700; color: #1F67B1; }
+    .cert h3 { font-size: 19px; margin: 4px 0 6px; }
+    .cert p { font-size: 14px; color: var(--text-sub); line-height: 1.6; }
     .company-hero small { opacity: .8; }
-    .company-hero h1 { font-size: 32px; line-height: 1.35; margin-top: 8px; letter-spacing: -1px; }
+    .company-hero h1 { font-size: 32px; line-height: 1.35; margin-top: 12px; letter-spacing: -1px; }
     .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
     .facts div { background: var(--bg); border-radius: 14px; padding: 22px; }
     .facts .icon { font-size: 28px; }
@@ -36,15 +46,20 @@
     .table { width: 100%; border-collapse: collapse; font-size: 14px; }
     .table th, .table td { border-bottom: 1px solid var(--line); padding: 14px 12px; text-align: left; }
     .table th { width: 160px; background: var(--bg); font-weight: 600; }
+    #content { word-break: keep-all; }
     .doc { border: 1px solid var(--line); border-radius: 14px; padding: 28px; min-height: 240px; color: var(--text-sub); }
     @media (max-width: 768px) {
       .facts { grid-template-columns: 1fr; }
-      .company-hero { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
-      .company-hero { gap: 20px; }
-      .company-hero .brand { width: auto; height: auto; }
-      .company-hero .brand img { width: 104px; }
+      .company-hero { grid-template-columns: 1fr; }
+      .company-hero .hero-text { padding: 28px 24px; }
+      .company-hero .lead { font-size: 14px; }
+      .company-hero .brand { border-left: 0; border-top: 1px solid var(--line); padding: 20px; }
+      .company-hero .brand img { width: 90px; }
       .donate { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px; }
       .donate img { width: 160px; }
+      .cert p br, .donate p br { display: none; }
+      .cert { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px; }
+      .cert img { width: 160px; }
       .company-hero h1 { font-size: 24px; }
       .table th { width: 110px; }
     }
@@ -67,8 +82,12 @@
       company: {
         title: '회사소개',
         html:
-          '<section class="company-hero"><h1>음식은 맛으로 먹는 게 아니라<br>기억으로 먹는다</h1>' +
-            '<div class="brand"><img src="images/logo-mark.png" alt="SOUL FOOD 로고"></div></section>' +
+          '<section class="company-hero">' +
+            '<div class="hero-text"><p class="company">(주)소울푸드</p>' +
+            '<h1>음식은 맛으로 먹는 게 아니라<br>기억으로 먹는다</h1>' +
+            '<p class="lead">식자재 전문 제조 · 무역 · 유통 법인</p></div>' +
+            '<div class="brand"><img src="images/logo-mark.png" alt="SOUL FOOD 로고"></div>' +
+          '</section>' +
           '<div class="facts">' +
             '<div><span class="icon">🏭</span><b>제조</b><p>식자재를 직접 만들고 고릅니다</p></div>' +
             '<div><span class="icon">🚢</span><b>무역</b><p>해외 식자재를 직접 들여옵니다</p></div>' +
@@ -87,8 +106,12 @@
             '<img src="images/green-umbrella.png" alt="초록우산 어린이재단">' +
             '<div><small>함께하는 나눔</small>' +
             '<h3>초록우산 어린이재단 후원 기업</h3>' +
-            '<p>(주)소울푸드는 초록우산 어린이재단을 후원하며<br>아이들이 꿈을 키울 수 있는 따뜻한 세상을 함께 만들어 갑니다.</p></div>' +
-          '</section>'
+            '<p>(주)소울푸드는 초록우산 어린이재단을 후원하며 <br>아이들이 꿈을 키울 수 있는 따뜻한 세상을 함께 만들어 갑니다.</p></div>' +
+          '</section>' +
+          '<div class="certs">' +
+            '<section class="cert mainbiz"><img src="images/mainbiz.png" alt="메인비즈 경영혁신형 중소기업">' +
+              '<div><small>경영 혁신</small><h3>메인비즈(MAINBIZ) 인증 기업</h3><p>(주)소울푸드는 중소벤처기업부가 인증하는 <br>경영혁신형 중소기업입니다.</p></div></section>' +
+          '</div>'
       }
     };
 

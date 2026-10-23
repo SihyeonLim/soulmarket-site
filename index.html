@@ -253,7 +253,7 @@
       document.getElementById('best-goods').innerHTML = best.map(function (g, i) { return goodsCardHTML(g, i + 1); }).join('');
 
       // 업소용 BOX: 아이스박스 박스 상품 중 8개
-      const boxes = goods.filter(function (g) { return g.box && g.ice && canBuy(g); }).slice(0, 8);
+      const boxes = goods.filter(function (g) { return g.box && canBuy(g); }).slice(0, 8);
       document.getElementById('box-goods').innerHTML = boxes.map(function (g) { return goodsCardHTML(g); }).join('');
 
       // 슬라이드 오른쪽 대표 상품 사진 (사진 있는 상품만)

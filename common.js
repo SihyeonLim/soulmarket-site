@@ -53,6 +53,54 @@ function imgFail(img) {
 }
 
 // ---------------------------------------------------------
+// 2-0. 보관 방법 (냉동 / 냉장 / 상온) · 바코드
+//      예전 상품의 "아이스박스 포장" 체크(ice)는 냉동 · 냉장으로 봐요.
+// ---------------------------------------------------------
+function storageOf(g) {
+  if (g.storage) return g.storage;
+  return g.ice ? '냉동 · 냉장' : '';
+}
+function isCold(g) { return storageOf(g).indexOf('냉') !== -1; }
+const STORAGE_TEXT = {
+  '냉동': '❄ 냉동 보관 (아이스박스 포장)',
+  '냉장': '냉장 보관 (아이스박스 포장)',
+  '상온': '상온 보관',
+  '냉동 · 냉장': '❄ 냉동 · 냉장 (아이스박스 포장)'
+};
+
+// 바코드 번호 → EAN-13 바코드 그림(SVG). 13자리(또는 12자리)가 아니면 null
+function barcodeSVG(code) {
+  let d = String(code || '').replace(/\D/g, '');
+  if (d.length !== 12 && d.length !== 13) return null;
+  const n = d.slice(0, 12).split('').map(Number);
+  const check = (10 - n.reduce(function (s, v, i) { return s + v * (i % 2 ? 3 : 1); }, 0) % 10) % 10;
+  if (d.length === 13 && Number(d[12]) !== check) return null;   // 잘못된 번호
+  d = d.slice(0, 12) + check;
+  const L = ['0001101','0011001','0010011','0111101','0100011','0110001','0101111','0111011','0110111','0001011'];
+  const G = ['0100111','0110011','0011011','0100001','0011101','0111001','0000101','0010001','0001001','0010111'];
+  const R = ['1110010','1100110','1101100','1000010','1011100','1001110','1010000','1000100','1001000','1110100'];
+  const P = ['LLLLLL','LLGLGG','LLGGLG','LLGGGL','LGLLGG','LGGLLG','LGGGLL','LGLGLG','LGLGGL','LGGLGL'][d[0]];
+  let bits = '101';
+  for (let i = 1; i <= 6; i++) bits += (P[i - 1] === 'L' ? L : G)[d[i]];
+  bits += '01010';
+  for (let i = 7; i <= 12; i++) bits += R[d[i]];
+  bits += '101';
+  const W = 2, X0 = 22, H = 64;   // 막대 1칸 2px, 왼쪽 여백 22px
+  let rects = '';
+  for (let i = 0; i < bits.length; i++) {
+    if (bits[i] !== '1') continue;
+    const guard = i < 3 || (i >= 45 && i < 50) || i >= 92;
+    rects += '<rect x="' + (X0 + i * W) + '" y="0" width="' + W + '" height="' + (guard ? H + 8 : H) + '"/>';
+  }
+  const t = function (x, s) { return '<text x="' + x + '" y="' + (H + 20) + '" text-anchor="middle">' + s + '</text>'; };
+  return '<svg class="barcode-svg" viewBox="0 0 ' + (X0 * 2 + 95 * W) + ' ' + (H + 24) + '" role="img" aria-label="바코드 ' + d + '">' +
+    '<g fill="#111">' + rects + '</g>' +
+    '<g fill="#111" font-size="14" font-family="monospace">' +
+      t(X0 - 10, d[0]) + t(X0 + (3 + 21) * W, d.slice(1, 7)) + t(X0 + (50 + 21) * W, d.slice(7)) +
+    '</g></svg>';
+}
+
+// ---------------------------------------------------------
 // 2-1. 상품 상태 (data.js 의 status: 품절 / 재고확보중 / 판매중지)
 //      없으면 '정상'. 판매중지 상품은 목록·검색에 나오지 않아요.
 // ---------------------------------------------------------
@@ -103,7 +151,7 @@ function goodsCardHTML(g, rank) {
   });
 
   let price = '', unit = '';
-  if (SHOW_PRICE) {
+  if (SHOW_PRICE && g.price) {   // 가격이 0 이거나 비어 있으면 표시하지 않음
     price = '<p class="price">';
     if (g.rate) price += '<em class="rate">' + g.rate + '%</em>';
     price += won(g.price) + '<small>원</small>';

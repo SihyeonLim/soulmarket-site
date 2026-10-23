@@ -47,6 +47,9 @@
     .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
     .actions .btn { text-align: center; }
     .actions .mail { grid-column: 1 / -1; }
+    .barcode { margin-top: 20px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; display: flex; justify-content: center; }
+    .barcode-svg { width: 220px; height: auto; display: block; }
+    .barcode-num { font-family: monospace; font-size: 18px; letter-spacing: 2px; }
     .detail-text { white-space: pre-line; color: #444; }
     .detail-imgs { margin-top: 28px; }
     .detail-imgs img { display: block; width: 100%; max-width: 860px; margin: 0 auto; }   /* 상세 사진은 이어 붙여서 한 장처럼 */
@@ -153,7 +156,7 @@
 
         // 가격 (data.js 의 SHOW_PRICE 가 true 일 때만 보임)
         let price = '';
-        if (SHOW_PRICE) {
+        if (SHOW_PRICE && g.price) {   // 가격이 0 이거나 비어 있으면 표시하지 않음
           price = '<div class="price-box"><p class="now">';
           if (g.rate) price += '<em class="rate">' + g.rate + '%</em>';
           price += won(g.price) + '<small>원</small>';
@@ -165,8 +168,15 @@
 
         // 상품 정보 줄
         let rows = '';
-        if (g.box) rows += '<div><dt>포장</dt><dd>1박스 ' + g.box + g.boxUnit + (g.ice ? ' (아이스박스)' : '') + '</dd></div>';
-        if (g.ice) rows += '<div><dt>보관</dt><dd>❄ 냉동 · 냉장 (아이스박스 포장)</dd></div>';
+        if (g.box) rows += '<div><dt>포장</dt><dd>1박스 ' + g.box + (g.boxUnit || '') + (isCold(g) ? ' (아이스박스)' : '') + '</dd></div>';
+        if (storageOf(g)) rows += '<div><dt>보관</dt><dd>' + (STORAGE_TEXT[storageOf(g)] || esc(storageOf(g))) + '</dd></div>';
+
+        // 바코드 (관리자 페이지에서 입력한 번호로 그려요)
+        let barcode = '';
+        if (g.barcode) {
+          const svg = barcodeSVG(g.barcode);
+          barcode = '<div class="barcode">' + (svg || '<span class="barcode-num">' + esc(g.barcode) + '</span>') + '</div>';
+        }
 
         // 같은 마켓 다른 상품 4개
         const related = m.goods.filter(function (x) { return x.no !== g.no && isListed(x); }).slice(0, 4);
@@ -184,6 +194,7 @@
               (st.buy ? '' : '<p class="state-note ' + st.cls + '">' + (st.cls === 'restock' ? '🔄 ' : '⛔ ') + st.msg + '</p>') +
               price +
               '<dl class="rows">' + rows + '</dl>' +
+              barcode +
               '<div class="actions">' +
                 '<span class="btn btn-primary">📞 ' + CONTACT.phones[0] + '</span>' +
                 '<span class="btn btn-primary">📱 ' + CONTACT.phones[1] + '</span>' +

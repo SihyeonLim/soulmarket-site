@@ -107,11 +107,21 @@ collections:
         widget: select
         required: false
         options: ["봉", "박스", "개", "팩", "kg"]
-      - name: ice
-        label: 아이스박스 포장 (냉동 · 냉장)
-        widget: boolean
+      - name: storage
+        label: 보관 방법
+        widget: select
         required: false
-        default: false
+        options: ["냉동", "냉장", "상온"]
+        hint: "냉동 · 냉장을 고르면 아이스박스 포장으로 표시돼요."
+      - name: barcode
+        label: 바코드 번호
+        widget: string
+        required: false
+        hint: "상품 포장의 바코드 숫자 13자리 (예: 8809408230321). 입력하면 상품 페이지 전화번호 버튼 위에 바코드 그림으로 나와요."
+      - name: ice
+        label: (예전) 아이스박스 포장
+        widget: hidden
+        required: false
       - name: status
         label: 상품 상태
         widget: select
