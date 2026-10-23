@@ -1,16 +1,24 @@
 {
-  "no": 383,
-  "market": "0006",
-  "order": 900,
   "name": "땅콩가루(중국:중간입자) 1KG",
-  "brand": "맛깔지기",
+  "market": "0006",
   "img": "images/goods/2023/11/383_2023112109505727.png",
+  "detail_images": [
+    "images/detail/383/02.jpg"
+  ],
+  "no": 383,
+  "brand": "맛깔지기",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "중국"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 9500,
-  "detail_images": [
-    "images/detail/383/02.jpg"
-  ]
+  "box": 8,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 900,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

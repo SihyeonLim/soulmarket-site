@@ -1,16 +1,24 @@
 {
-  "no": 384,
-  "market": "0006",
-  "order": 890,
   "name": "땅콩가루(중국:가는입자)1KG",
-  "brand": "맛깔지기",
+  "market": "0006",
   "img": "images/goods/2023/11/384_2023112109513522.png",
+  "detail_images": [
+    "images/detail/384/02.jpg"
+  ],
+  "no": 384,
+  "brand": "맛깔지기",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "중국"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 9500,
-  "detail_images": [
-    "images/detail/384/02.jpg"
-  ]
+  "box": 8,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 890,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

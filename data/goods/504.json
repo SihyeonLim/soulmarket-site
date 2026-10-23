@@ -1,23 +1,7 @@
 {
-  "no": 504,
-  "market": "0005",
-  "order": 580,
   "name": "고기손만두 2.8KG(개당28g/100ea)",
-  "brand": "취화당",
+  "market": "0005",
   "img": "images/goods/2024/12/504_2024121913391427.png",
-  "tags": [
-    "BOX",
-    "국내가공",
-    "HACCP"
-  ],
-  "desc": "[경상북도 경산시]지역사회공헌 / HACCP인증(30년전통의 구.서울만두 제품)",
-  "box": 4,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 54200,
-  "was": 64200,
-  "rate": 16,
-  "sold": 4,
   "detail_images": [
     "images/detail/504/02.jpg",
     "images/detail/504/03.jpg",
@@ -26,5 +10,22 @@
     "images/detail/504/06.jpg",
     "images/detail/504/07.jpg",
     "images/detail/504/08.jpg"
-  ]
+  ],
+  "no": 504,
+  "brand": "취화당",
+  "desc": "[경상북도 경산시]지역사회공헌 / HACCP인증(30년전통의 구.서울만두 제품)",
+  "detail": "",
+  "tags": [
+    "국내가공",
+    "HACCP"
+  ],
+  "box": 3,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 580,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

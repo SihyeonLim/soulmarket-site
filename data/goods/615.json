@@ -1,20 +1,24 @@
 {
-  "no": 615,
-  "market": "0002",
-  "order": 280,
   "name": "슈스트링감자튀김 500G",
-  "brand": "맥케인",
+  "market": "0008",
   "img": "images/goods/2026/07/615_temp_17851437017461list1.PNG",
-  "tags": [
-    "BOX",
-    "중국"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "box": 18,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 69900,
   "detail_images": [
     "images/detail/615/02.jpg"
-  ]
+  ],
+  "no": 615,
+  "brand": "맥케인",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [
+    "중국"
+  ],
+  "box": 18,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 280,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

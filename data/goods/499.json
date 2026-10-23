@@ -1,15 +1,23 @@
 {
-  "no": 499,
-  "market": "0007",
-  "order": 1040,
   "name": "맛감자(포테이토크런치)(유탕) 2KG",
-  "brand": "루토사",
+  "market": "0007",
   "img": "images/goods/2024/12/499_2024121416061123.png",
-  "tags": [],
-  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
-  "price": 12600,
   "detail_images": [
     "images/detail/499/02.jpg",
     "images/detail/499/03.jpg"
-  ]
+  ],
+  "no": 499,
+  "brand": "루토사",
+  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
+  "detail": "",
+  "tags": [],
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 1040,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

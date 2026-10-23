@@ -1,15 +1,7 @@
 {
-  "no": 82,
+  "name": "자갈치모둠해물9종 1.5KG",
   "market": "0004",
-  "order": 520,
-  "name": "자갈치모둠해물9종 1.5KG[택배불가]",
-  "brand": "까칠한홍여사",
   "img": "images/goods/2021/07/_temp_16265684213904list1.png",
-  "tags": [
-    "수입산"
-  ],
-  "desc": "[대구광역시 수성구]지역사회공헌 / 자갈치회수산 식당의 특별식재료를 대표님의허락하에 상품화함",
-  "price": 999999,
   "detail_images": [
     "images/detail/82/02.jpg",
     "images/detail/82/03.jpg",
@@ -20,5 +12,23 @@
     "images/detail/82/08.jpg",
     "images/detail/82/09.jpg",
     "images/detail/82/10.jpg"
-  ]
+  ],
+  "no": 82,
+  "brand": "까칠한홍여사",
+  "desc": "[대구광역시 수성구]지역사회공헌 / 자갈치회수산 식당의 특별식재료를 대표님의허락하에 상품화함",
+  "detail": "",
+  "tags": [
+    "외국산:중국,베트남",
+    "바코드:8809264-322888",
+    "소비기한:12개월이내"
+  ],
+  "box": 8,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 520,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

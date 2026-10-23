@@ -1,20 +1,28 @@
 {
-  "no": 469,
-  "market": "0007",
-  "order": 1100,
   "name": "참기름 1.5L [참깨분100%]",
-  "brand": "옛골",
+  "market": "0007",
   "img": "images/goods/2024/07/469_2024070912104322.png",
-  "tags": [
-    "HACCP"
-  ],
-  "desc": "HACCP인증/오뚜기제유 대구경북총판대리점",
-  "price": 22980,
   "detail_images": [
     "images/detail/469/02.jpg",
     "images/detail/469/03.jpg",
     "images/detail/469/04.jpg",
     "images/detail/469/05.jpg",
     "images/detail/469/06.jpg"
-  ]
+  ],
+  "no": 469,
+  "brand": "옛골",
+  "desc": "HACCP인증/오뚜기제유 대구경북총판대리점",
+  "detail": "",
+  "tags": [
+    "HACCP"
+  ],
+  "box": 6,
+  "boxUnit": "개",
+  "ice": false,
+  "status": "",
+  "order": 1100,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

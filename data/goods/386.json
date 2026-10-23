@@ -1,16 +1,24 @@
 {
-  "no": 386,
-  "market": "0006",
-  "order": 870,
   "name": "땅콩초코볼 1KG",
-  "brand": "맛깔지기",
+  "market": "0006",
   "img": "images/goods/2023/11/386_2023112109524728.png",
+  "detail_images": [
+    "images/detail/386/02.jpg"
+  ],
+  "no": 386,
+  "brand": "맛깔지기",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "중국"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 7570,
-  "detail_images": [
-    "images/detail/386/02.jpg"
-  ]
+  "box": 12,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 870,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

@@ -1,21 +1,7 @@
 {
-  "no": 372,
-  "market": "0002",
-  "order": 400,
   "name": "치즈스틱(모짜렐라65%)(유탕) 1KG(개당25g/39ea~41ea)",
-  "brand": "소울마켓",
+  "market": "0002",
   "img": "images/goods/2023/11/372_2023111709541629.png",
-  "tags": [
-    "BOX",
-    "HACCP"
-  ],
-  "desc": "[인천광역시 강화군] HACCP인증/모짜렐라65%함유한 대형유명프랜차이즈에 납품하는 제조회사가 생산~",
-  "box": 10,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 95000,
-  "was": 110000,
-  "rate": 14,
   "detail_images": [
     "images/detail/372/02.jpg",
     "images/detail/372/03.jpg",
@@ -24,5 +10,22 @@
     "images/detail/372/06.jpg",
     "images/detail/372/07.jpg",
     "images/detail/372/08.jpg"
-  ]
+  ],
+  "no": 372,
+  "brand": "소울마켓",
+  "desc": "[인천광역시 강화군] HACCP인증/모짜렐라65%함유한 대형유명프랜차이즈에 납품하는 제조회사가 생산~",
+  "detail": "",
+  "tags": [
+    "BOX",
+    "HACCP"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 400,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

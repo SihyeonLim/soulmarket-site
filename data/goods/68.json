@@ -1,11 +1,24 @@
 {
-  "no": 68,
+  "name": "랜시푸드 고구마떡 1KG(12G/83~86EA) PB전용",
   "market": "0007",
-  "order": 1170,
-  "name": "고구마떡 1KG(12G/83~86EA) PB전용",
-  "brand": "랜시푸드",
   "img": "images/goods/2021/07/68_2021071112014523.png",
-  "tags": [],
-  "desc": "PB전용(구매문의070-7018-8811 (주)랜시푸드)",
-  "price": 999999
+  "detail_images": [],
+  "no": 68,
+  "brand": "랜시푸드",
+  "desc": "PB전용(구매문의)070-7018-8811 (주)랜시푸드",
+  "detail": "",
+  "tags": [
+    "HACCP",
+    "바코드 : \t8809180-657828",
+    "소비기한 : 12개월이내"
+  ],
+  "box": 8,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 1170,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

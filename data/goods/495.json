@@ -1,20 +1,26 @@
 {
-  "no": 495,
-  "market": "0007",
-  "order": 1080,
   "name": "벨지안모둠감자 400G",
-  "brand": "루토사",
+  "market": "0007",
   "img": "images/goods/2024/12/_temp_17341591137770list1.PNG",
+  "detail_images": [
+    "images/detail/495/02.jpg",
+    "images/detail/495/03.jpg"
+  ],
+  "no": 495,
+  "brand": "루토사",
+  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
+  "detail": "",
   "tags": [
     "BOX",
     "벨기에"
   ],
-  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
   "box": 20,
   "boxUnit": "봉",
-  "price": 99600,
-  "detail_images": [
-    "images/detail/495/02.jpg",
-    "images/detail/495/03.jpg"
-  ]
+  "ice": false,
+  "status": "",
+  "order": 1080,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

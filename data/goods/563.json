@@ -1,21 +1,7 @@
 {
-  "no": 563,
-  "market": "0002",
-  "order": 350,
   "name": "굳지않는치즈떡볶이 1KG(개당14g/75ea~79ea)-직접 쌀을 불린후 제조",
-  "brand": "소울마켓",
+  "market": "0002",
   "img": "images/goods/2025/11/563_temp_17643034811407list1.PNG",
-  "tags": [
-    "BOX",
-    "HACCP"
-  ],
-  "desc": "[부산광역시 금정구] HACCP인증 / 대기업 OEM생산업체",
-  "box": 8,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 36000,
-  "was": 46000,
-  "rate": 22,
   "detail_images": [
     "images/detail/563/02.jpg",
     "images/detail/563/03.jpg",
@@ -24,5 +10,21 @@
     "images/detail/563/06.jpg",
     "images/detail/563/07.jpg",
     "images/detail/563/08.jpg"
-  ]
+  ],
+  "no": 563,
+  "brand": "소울마켓",
+  "desc": "[부산광역시 금정구] HACCP인증 / 대기업 OEM생산업체",
+  "detail": "",
+  "tags": [
+    "HACCP"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 350,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

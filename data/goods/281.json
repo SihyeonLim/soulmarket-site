@@ -1,16 +1,24 @@
 {
-  "no": 281,
-  "market": "0002",
-  "order": 410,
   "name": "냉동자숙번데기 1.5KG",
-  "brand": "맛깔지기",
+  "market": "0002",
   "img": "images/goods/2021/12/_temp_16399670927448list1.png",
+  "detail_images": [
+    "images/detail/281/02.jpg"
+  ],
+  "no": 281,
+  "brand": "맛깔지기",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
   "tags": [
     "중국"
   ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 13500,
-  "detail_images": [
-    "images/detail/281/02.jpg"
-  ]
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 410,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

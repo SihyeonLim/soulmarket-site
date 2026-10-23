@@ -1,19 +1,7 @@
 {
-  "no": 593,
-  "market": "0001",
-  "order": 170,
   "name": "냉동빵가루통살새우튀김 300G(개당30g/10ea)",
-  "brand": "월남관",
+  "market": "0001",
   "img": "images/goods/2026/07/593_2026072419154328.PNG",
-  "tags": [
-    "BOX",
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 NHA TRANG 직수입 제품",
-  "box": 20,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 65000,
   "detail_images": [
     "images/detail/593/02.jpg",
     "images/detail/593/03.jpg",
@@ -21,5 +9,22 @@
     "images/detail/593/05.jpg",
     "images/detail/593/06.jpg",
     "images/detail/593/07.jpg"
-  ]
+  ],
+  "no": 593,
+  "brand": "월남관",
+  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 NHA TRANG 직수입 제품",
+  "detail": "",
+  "tags": [
+    "BOX",
+    "베트남"
+  ],
+  "box": 20,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 170,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

@@ -3,7 +3,6 @@
     {
       "code": "0001",
       "name": "직수입마켓",
-      "label": "DIRECT IMPORT",
       "desc": "해외에서 직.간접 수입한 전문 식자재",
       "colors": [
         "#1F3A5F",
@@ -53,12 +52,12 @@
             "파전"
           ]
         }
-      ]
+      ],
+      "label": "DIRECT IMPORT"
     },
     {
       "code": "0002",
       "name": "소울마켓",
-      "label": "SOUL MARKET",
       "desc": "업소용 대용량 식자재를 위한 냉동식품 브랜드",
       "colors": [
         "#D7282F",
@@ -92,12 +91,12 @@
             "치즈스틱"
           ]
         }
-      ]
+      ],
+      "label": "SOUL MARKET"
     },
     {
       "code": "0004",
       "name": "까칠한홍여사마켓",
-      "label": "HONG'S PICK",
       "desc": "까다로운 홍여사가 전국에서 찾아낸 지역 특화 음식",
       "colors": [
         "#E8913A",
@@ -119,12 +118,12 @@
             "자갈치"
           ]
         }
-      ]
+      ],
+      "label": "HONG'S PICK"
     },
     {
       "code": "0005",
-      "name": "취화당",
-      "label": "CHWIHWADANG",
+      "name": "취화당 마켓",
       "desc": "전통 만두 전문 브랜드",
       "colors": [
         "#5B3A29",
@@ -159,12 +158,12 @@
             "어묵"
           ]
         }
-      ]
+      ],
+      "label": "CHWIHWADANG"
     },
     {
       "code": "0003",
       "name": "허브마켓",
-      "label": "HERB MARKET",
       "desc": "후추 · 향신료 · 분말류, 요리의 맛을 살리는 기본 재료",
       "colors": [
         "#B5873A",
@@ -193,12 +192,12 @@
             "고추"
           ]
         }
-      ]
+      ],
+      "label": "HERB MARKET"
     },
     {
       "code": "0006",
       "name": "맛깔지기마켓",
-      "label": "MATKKALJIGI",
       "desc": "견과 · 농산 · 수산, 자연 그대로의 1차 식품 브랜드",
       "colors": [
         "#5A7D2A",
@@ -234,12 +233,12 @@
             "크랜베리"
           ]
         }
-      ]
+      ],
+      "label": "MATKKALJIGI"
     },
     {
       "code": "0007",
       "name": "상생마켓",
-      "label": "WIN-WIN MARKET",
       "desc": "함께 성장하는 파트너들의 상품 브랜드",
       "colors": [
         "#3B5BA5",
@@ -277,12 +276,12 @@
             "참기름"
           ]
         }
-      ]
+      ],
+      "label": "WIN-WIN MARKET"
     },
     {
       "code": "0008",
       "name": "B2C마켓",
-      "label": "B2C MARKET",
       "desc": "가정에서도 편하게 즐기는 소포장 상품",
       "colors": [
         "#7A3E9D",
@@ -290,7 +289,8 @@
       ],
       "emoji": "🛍️",
       "icon": "🛍️",
-      "chips": []
+      "chips": [],
+      "label": "B2C MARKET"
     }
   ]
 }

@@ -1,26 +1,29 @@
 {
-  "no": 473,
-  "market": "0002",
-  "order": 380,
   "name": "통통꼬마핫김말이 1KG(개당25g±5/40ea~46ea)",
-  "brand": "소울마켓",
+  "market": "0002",
   "img": "images/goods/2024/09/473_2024092615033921.PNG",
-  "tags": [
-    "BOX",
-    "HACCP"
-  ],
-  "desc": "[경상남도 함안군] HACCP인증",
-  "box": 12,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 66000,
-  "was": 76000,
-  "rate": 14,
   "detail_images": [
     "images/detail/473/02.jpg",
     "images/detail/473/03.jpg",
     "images/detail/473/04.jpg",
     "images/detail/473/05.jpg",
     "images/detail/473/06.jpg"
-  ]
+  ],
+  "no": 473,
+  "brand": "소울마켓",
+  "desc": "[경상남도 함안군] HACCP인증",
+  "detail": "",
+  "tags": [
+    "BOX",
+    "HACCP"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 380,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

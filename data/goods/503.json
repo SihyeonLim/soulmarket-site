@@ -1,22 +1,7 @@
 {
-  "no": 503,
-  "market": "0005",
-  "order": 590,
   "name": "왕물만두 2.75KG(개당11g/250ea)",
-  "brand": "취화당",
+  "market": "0005",
   "img": "images/goods/2024/12/503_2024121913390320.png",
-  "tags": [
-    "BOX",
-    "국내가공",
-    "HACCP"
-  ],
-  "desc": "[경상북도 경산시]지역사회공헌 / HACCP인증(30년전통의 구.서울만두 제품)",
-  "box": 4,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 59920,
-  "was": 69920,
-  "rate": 15,
   "detail_images": [
     "images/detail/503/02.jpg",
     "images/detail/503/03.jpg",
@@ -25,5 +10,22 @@
     "images/detail/503/06.jpg",
     "images/detail/503/07.jpg",
     "images/detail/503/08.jpg"
-  ]
+  ],
+  "no": 503,
+  "brand": "취화당",
+  "desc": "[경상북도 경산시]지역사회공헌 / HACCP인증(30년전통의 구.서울만두 제품)",
+  "detail": "",
+  "tags": [
+    "국내가공",
+    "HACCP"
+  ],
+  "box": 3,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 590,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

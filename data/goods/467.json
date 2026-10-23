@@ -1,17 +1,24 @@
 {
-  "no": 467,
-  "market": "0007",
-  "order": 1110,
   "name": "통통야채튀김 3kg",
-  "brand": "세진",
+  "market": "0007",
   "img": "images/goods/2024/07/467_2024070912102321.PNG",
+  "detail_images": [
+    "images/detail/467/02.jpg"
+  ],
+  "no": 467,
+  "brand": "세진",
+  "desc": "[경남 함안군] HACCP인증/(주)소울푸드 세진에프엔에스 통통 대구경북 로열 대리점",
+  "detail": "",
   "tags": [
     "HACCP"
   ],
-  "desc": "[경남 함안군] HACCP인증/(주)소울푸드 세진에프엔에스 통통 대구경북 로열 대리점",
-  "price": 27000,
-  "sold": 1,
-  "detail_images": [
-    "images/detail/467/02.jpg"
-  ]
+  "box": 1,
+  "boxUnit": "",
+  "ice": false,
+  "status": "",
+  "order": 1110,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

@@ -1,18 +1,25 @@
 {
-  "no": 163,
-  "market": "0003",
-  "order": 700,
   "name": "월남건고추100%(베트남땡초/PET) 75G (2개 묶음판매)",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2021/07/163_2021072012591325.PNG",
-  "tags": [
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 11200,
-  "sold": 1,
   "detail_images": [
     "images/detail/163/02.jpg",
     "images/detail/163/03.jpg"
-  ]
+  ],
+  "no": 163,
+  "brand": "허브마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [
+    "베트남"
+  ],
+  "box": 9,
+  "boxUnit": "개",
+  "ice": false,
+  "status": "",
+  "order": 700,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

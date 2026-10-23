@@ -1,23 +1,7 @@
 {
-  "no": 506,
-  "market": "0005",
-  "order": 560,
   "name": "바삭군만두 2.6KG(개당26g/100ea)",
-  "brand": "취화당",
+  "market": "0005",
   "img": "images/goods/2024/12/506_2024121913394229.PNG",
-  "tags": [
-    "BOX",
-    "국내가공",
-    "HACCP"
-  ],
-  "desc": "[경상북도 경산시]지역사회공헌 / HACCP인증(30년전통의 구.서울만두 제품)",
-  "box": 4,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 39960,
-  "was": 49960,
-  "rate": 21,
-  "sold": 30,
   "detail_images": [
     "images/detail/506/02.jpg",
     "images/detail/506/03.jpg",
@@ -27,5 +11,22 @@
     "images/detail/506/07.jpg",
     "images/detail/506/08.jpg",
     "images/detail/506/09.jpg"
-  ]
+  ],
+  "no": 506,
+  "brand": "취화당",
+  "desc": "[경상북도 경산시]지역사회공헌 / HACCP인증(30년전통의 구.서울만두 제품)",
+  "detail": "",
+  "tags": [
+    "국내가공",
+    "HACCP"
+  ],
+  "box": 3,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 560,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

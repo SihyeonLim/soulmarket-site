@@ -1,18 +1,27 @@
 {
-  "no": 144,
-  "market": "0003",
-  "order": 760,
   "name": "계피분말(순도:100%) 280G",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2021/07/144_2021072012264020.png",
-  "tags": [
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 6200,
-  "sold": 1,
   "detail_images": [
     "images/detail/144/02.jpg",
     "images/detail/144/03.jpg"
-  ]
+  ],
+  "no": 144,
+  "brand": "허브마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [
+    "베트남",
+    "바코드:\t8809408-220216",
+    "소비기한:24개월이내"
+  ],
+  "box": 9,
+  "boxUnit": "개",
+  "ice": false,
+  "status": "",
+  "order": 760,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": 0
 }

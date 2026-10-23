@@ -1,17 +1,25 @@
 {
-  "no": 560,
-  "market": "0007",
-  "order": 950,
   "name": "생선까스(개당60G 50ea) 3KG",
-  "brand": "랜시푸드",
+  "market": "0007",
   "img": "images/goods/2025/11/_temp_17623246323766list1.PNG",
-  "tags": [
-    "중국"
-  ],
-  "desc": "[서울특별시 구로구] (주)랜시푸드 직수입 제품",
-  "price": 21700,
   "detail_images": [
     "images/detail/560/02.jpg",
     "images/detail/560/03.jpg"
-  ]
+  ],
+  "no": 560,
+  "brand": "랜시푸드",
+  "desc": "[서울특별시 구로구] (주)랜시푸드 직수입 제품",
+  "detail": "",
+  "tags": [
+    "중국"
+  ],
+  "box": 3,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 950,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

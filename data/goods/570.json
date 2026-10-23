@@ -1,16 +1,26 @@
 {
-  "no": 570,
-  "market": "0007",
-  "order": 930,
   "name": "고추튀김 400G [OEM생산 납품]",
-  "brand": "척척밥상",
+  "market": "0008",
   "img": "images/goods/2026/08/570_temp_17873813561944list1.png",
-  "tags": [],
-  "desc": "(주)소울푸드가 월남관을 OEM납품하는 제품",
-  "price": 999999,
   "detail_images": [
     "images/detail/570/02.jpg",
     "images/detail/570/03.jpg",
     "images/detail/570/04.jpg"
-  ]
+  ],
+  "no": 570,
+  "brand": "척척밥상",
+  "desc": "(주)소울푸드가 월남관을 OEM납품하는 제품",
+  "detail": "",
+  "tags": [
+    "베트남"
+  ],
+  "box": 20,
+  "boxUnit": "",
+  "ice": false,
+  "status": "",
+  "order": 930,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

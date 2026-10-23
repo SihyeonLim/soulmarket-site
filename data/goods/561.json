@@ -1,17 +1,25 @@
 {
-  "no": 561,
-  "market": "0003",
-  "order": 610,
   "name": "순후추분말(순도:100%) 340G",
-  "brand": "허브마켓",
+  "market": "0003",
   "img": "images/goods/2025/11/_temp_17628479914521list1.PNG",
-  "tags": [
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
-  "price": 12900,
   "detail_images": [
     "images/detail/561/02.jpg",
     "images/detail/561/03.jpg"
-  ]
+  ],
+  "no": 561,
+  "brand": "허브마켓",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
+  "detail": "",
+  "tags": [
+    "베트남"
+  ],
+  "box": 9,
+  "boxUnit": "개",
+  "ice": false,
+  "status": "",
+  "order": 610,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

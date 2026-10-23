@@ -1,19 +1,7 @@
 {
-  "no": 599,
-  "market": "0001",
-  "order": 150,
   "name": "오징어튀김 1KG(개당40g이상/25개이상)",
-  "brand": "월남관",
+  "market": "0001",
   "img": "images/goods/2026/07/599_2026072419210223.PNG",
-  "tags": [
-    "BOX",
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
-  "box": 12,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 214290,
   "detail_images": [
     "images/detail/599/02.jpg",
     "images/detail/599/03.jpg",
@@ -27,5 +15,21 @@
     "images/detail/599/11.jpg",
     "images/detail/599/12.jpg",
     "images/detail/599/13.jpg"
-  ]
+  ],
+  "no": 599,
+  "brand": "월남관",
+  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
+  "detail": "",
+  "tags": [
+    "베트남"
+  ],
+  "box": 5,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 150,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

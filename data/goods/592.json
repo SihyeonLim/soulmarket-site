@@ -1,16 +1,7 @@
 {
-  "no": 592,
-  "market": "0001",
-  "order": 180,
   "name": "냉동통살새우해물링 1KG(개당30g/33ea~34ea) [개당 지름 6.5cm정도]",
-  "brand": "",
+  "market": "0001",
   "img": "images/goods/2026/07/592_2026072419152624.PNG",
-  "tags": [
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 NHA TRANG 직수입 제품",
-  "status": "재고확보중",
-  "price": 22000,
   "detail_images": [
     "images/detail/592/02.jpg",
     "images/detail/592/03.jpg",
@@ -27,5 +18,21 @@
     "images/detail/592/14.jpg",
     "images/detail/592/15.jpg",
     "images/detail/592/16.jpg"
-  ]
+  ],
+  "no": 592,
+  "brand": "월남관",
+  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 NHA TRANG 직수입 제품",
+  "detail": "",
+  "tags": [
+    "베트남"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 180,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

@@ -1,22 +1,7 @@
 {
-  "no": 554,
-  "market": "0004",
-  "order": 470,
   "name": "야시장부산어묵꼬치(32g 25ea) 800G(어묵함량75%)",
-  "brand": "까칠한홍여사",
+  "market": "0004",
   "img": "images/goods/2025/10/554_2025101618085726.PNG",
-  "tags": [
-    "BOX",
-    "HACCP"
-  ],
-  "desc": "[충청북도 음성군] HACCP인증, GS리테일 편의점 입점업체",
-  "box": 8,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 47840,
-  "was": 57840,
-  "rate": 18,
-  "sold": 2,
   "detail_images": [
     "images/detail/554/02.jpg",
     "images/detail/554/03.jpg",
@@ -25,5 +10,21 @@
     "images/detail/554/06.jpg",
     "images/detail/554/07.jpg",
     "images/detail/554/08.jpg"
-  ]
+  ],
+  "no": 554,
+  "brand": "까칠한홍여사",
+  "desc": "[충청북도 음성군] HACCP인증, GS리테일 편의점 입점업체",
+  "detail": "",
+  "tags": [
+    "HACCP"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 470,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

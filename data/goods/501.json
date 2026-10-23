@@ -1,15 +1,25 @@
 {
-  "no": 501,
-  "market": "0007",
-  "order": 1020,
   "name": "줄무늬감자(크링클컷)(유탕) 2KG",
-  "brand": "루토사",
+  "market": "0007",
   "img": "images/goods/2024/12/501_2024121416063221.png",
-  "tags": [],
-  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
-  "price": 11000,
   "detail_images": [
     "images/detail/501/02.jpg",
     "images/detail/501/03.jpg"
-  ]
+  ],
+  "no": 501,
+  "brand": "루토사",
+  "desc": "[서울시 강남구] NON-GMO(유전자변형 없음)/(주)소울푸드는 벨기에 루토사 경북총판 입니다.",
+  "detail": "",
+  "tags": [
+    "벨기에"
+  ],
+  "box": 6,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 1020,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

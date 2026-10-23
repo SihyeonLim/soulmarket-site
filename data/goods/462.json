@@ -1,18 +1,26 @@
 {
-  "no": 462,
-  "market": "0007",
-  "order": 1160,
   "name": "통통단호박튀김 1KG",
-  "brand": "세진",
+  "market": "0007",
   "img": "images/goods/2024/07/462_2024070912092720.png",
-  "tags": [
-    "HACCP"
-  ],
-  "desc": "HACCP인증/(주)소울푸드 세진에프엔에스 통통 대구경북 로열 대리점",
-  "price": 8800,
   "detail_images": [
     "images/detail/462/02.jpg",
     "images/detail/462/03.jpg",
     "images/detail/462/04.jpg"
-  ]
+  ],
+  "no": 462,
+  "brand": "세진",
+  "desc": "HACCP인증/(주)소울푸드 세진에프엔에스 통통 대구경북 로열 대리점",
+  "detail": "",
+  "tags": [
+    "HACCP"
+  ],
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 1160,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

@@ -1,19 +1,7 @@
 {
-  "no": 604,
-  "market": "0001",
-  "order": 100,
   "name": "편감자튀김 1KG(개당27G±5)",
-  "brand": "월남관",
+  "market": "0001",
   "img": "images/goods/2026/07/604_2026072419224624.PNG",
-  "tags": [
-    "BOX",
-    "베트남"
-  ],
-  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
-  "box": 12,
-  "boxUnit": "봉",
-  "ice": true,
-  "price": 119800,
   "detail_images": [
     "images/detail/604/02.jpg",
     "images/detail/604/03.jpg",
@@ -24,5 +12,21 @@
     "images/detail/604/08.jpg",
     "images/detail/604/09.jpg",
     "images/detail/604/10.jpg"
-  ]
+  ],
+  "no": 604,
+  "brand": "월남관",
+  "desc": "[경상북도 칠곡군] (주)소울푸드 베트남 KANGLIN 직수입 제품",
+  "detail": "",
+  "tags": [
+    "베트남"
+  ],
+  "box": 5,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 100,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }

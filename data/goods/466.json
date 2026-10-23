@@ -1,16 +1,24 @@
 {
-  "no": 466,
-  "market": "0007",
-  "order": 1120,
   "name": "통통부산사각어묵꼬치 800G",
-  "brand": "세진",
+  "market": "0007",
   "img": "images/goods/2024/07/466_2024070912101224.png",
+  "detail_images": [
+    "images/detail/466/02.jpg"
+  ],
+  "no": 466,
+  "brand": "세진",
+  "desc": "HACCP인증/(주)소울푸드 세진에프엔에스 통통 대구경북 로열 대리점",
+  "detail": "",
   "tags": [
     "HACCP"
   ],
-  "desc": "HACCP인증/(주)소울푸드 세진에프엔에스 통통 대구경북 로열 대리점",
-  "price": 8800,
-  "detail_images": [
-    "images/detail/466/02.jpg"
-  ]
+  "box": 10,
+  "boxUnit": "봉",
+  "ice": false,
+  "status": "",
+  "order": 1120,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
 }
