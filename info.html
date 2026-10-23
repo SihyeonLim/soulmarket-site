@@ -17,8 +17,8 @@
     .info-tabs { display: flex; gap: 8px; margin: 24px 0; flex-wrap: wrap; }
     .info-tabs a { border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px; font-weight: 600; font-size: 14px; }
     .info-tabs a.on { background: var(--text); border-color: var(--text); color: var(--white); }
-    .company-hero { background: linear-gradient(120deg, #D7282F, #8E1519); color: var(--white); border-radius: 18px; padding: 48px; margin-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-    .company-hero .brand { flex-shrink: 0; width: 200px; height: 170px; background: var(--white); border-radius: 18px; display: grid; place-items: center; }
+    .company-hero { background: var(--white); color: var(--text); border: 1px solid var(--line); border-radius: 18px; padding: 48px 56px; margin-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .company-hero .brand { flex-shrink: 0; width: 200px; height: 170px; display: grid; place-items: center; }
     .company-hero .brand img { width: 150px; height: auto; }
     /* 함께하는 나눔 (초록우산 어린이재단) */
     .donate { margin: 40px 0 8px; border: 1px solid var(--line); border-radius: 14px; padding: 28px 32px; display: flex; align-items: center; gap: 32px; }
@@ -40,7 +40,8 @@
     @media (max-width: 768px) {
       .facts { grid-template-columns: 1fr; }
       .company-hero { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
-      .company-hero .brand { width: 140px; height: 116px; }
+      .company-hero { gap: 20px; }
+      .company-hero .brand { width: auto; height: auto; }
       .company-hero .brand img { width: 104px; }
       .donate { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px; }
       .donate img { width: 160px; }
