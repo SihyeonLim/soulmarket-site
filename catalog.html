@@ -37,6 +37,8 @@
     .chips a { flex-shrink: 0; border: 1px solid var(--line); border-radius: 999px; padding: 7px 16px; font-size: 14px; font-weight: 600; }
     .chips a:hover { border-color: var(--brand); color: var(--brand); }
     .chips a.on { background: var(--text); border-color: var(--text); color: var(--white); }
+    .chips a { display: inline-flex; align-items: center; gap: 6px; }
+    .chips .flag { width: 20px; height: 13px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.08); }
 
     /* 3. 개수 + 정렬 */
     .toolbar { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; padding-bottom: 14px; border-bottom: 1px solid var(--line); gap: 12px; }
@@ -224,11 +226,20 @@
         return 'catalog.html?' + next.toString();
       }
 
+      // 국기 이모지(🇺🇸 등)는 윈도우에서 'US'처럼 글자로 보여서 국기 그림으로 바꿔요
+      //   그림 파일: images/flags/us.svg (나라 코드 소문자). 파일이 없으면 그림 없이 글자만 보여요.
+      function flagify(text) {
+        return text.replace(/([\u{1F1E6}-\u{1F1FF}]{2})/gu, function (f) {
+          const code = Array.from(f).map(function (ch) { return String.fromCharCode(ch.codePointAt(0) - 0x1F1E6 + 97); }).join('');
+          return '<img class="flag" src="images/flags/' + code + '.svg" alt="" onerror="this.remove()">';
+        });
+      }
+
       // 칩 그리기
       if (chips.length) {
         let html = '<a href="' + urlWith({ chip: null, page: 1 }) + '"' + (activeChip ? '' : ' class="on"') + '>전체</a>';
         chips.forEach(function (c, i) {
-          html += '<a href="' + urlWith({ chip: i, page: 1 }) + '"' + (i === chipIndex ? ' class="on"' : '') + '>' + c.label + '</a>';
+          html += '<a href="' + urlWith({ chip: i, page: 1 }) + '"' + (i === chipIndex ? ' class="on"' : '') + '>' + flagify(esc(c.label)) + '</a>';
         });
         document.getElementById('chips').innerHTML = html;
       }
