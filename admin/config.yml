@@ -111,8 +111,15 @@ collections:
         label: 보관 방법
         widget: select
         required: false
-        options: ["냉동", "냉장", "상온"]
-        hint: "냉동 · 냉장을 고르면 아이스박스 포장으로 표시돼요."
+        default: "없음"
+        options: ["없음", "냉동", "냉장", "상온"]
+        hint: "'없음'이면 상품 페이지에 보관 줄이 나오지 않아요."
+      - name: ice
+        label: 아이스박스 포장
+        widget: boolean
+        required: false
+        default: false
+        hint: "켜면 상품 페이지 포장 줄에 '아이스박스 포장'이 표시돼요. 보관 방법과 따로 정해요."
       - name: shelf_life
         label: 소비기한 (숫자)
         widget: number
@@ -131,10 +138,6 @@ collections:
         widget: string
         required: false
         hint: "상품 포장의 바코드 숫자 13자리 (예: 8809408230321). 입력하면 상품 페이지 전화번호 버튼 위에 바코드 그림으로 나와요."
-      - name: ice
-        label: (예전) 아이스박스 포장
-        widget: hidden
-        required: false
       - name: status
         label: 상품 상태
         widget: select

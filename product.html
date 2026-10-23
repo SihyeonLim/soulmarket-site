@@ -168,7 +168,11 @@
 
         // 상품 정보 줄
         let rows = '';
-        if (g.box) rows += '<div><dt>포장</dt><dd>1박스 ' + g.box + (g.boxUnit || '') + (isCold(g) ? ' (아이스박스)' : '') + '</dd></div>';
+        // 포장: "1박스 12봉 · 아이스박스 포장" (아이스박스는 관리자에서 따로 체크)
+        const pack = [];
+        if (g.box) pack.push('1박스 ' + g.box + (g.boxUnit || ''));
+        if (g.ice) pack.push('아이스박스 포장');
+        if (pack.length) rows += '<div><dt>포장</dt><dd>' + pack.join(' · ') + '</dd></div>';
         if (storageOf(g)) rows += '<div><dt>보관</dt><dd>' + (STORAGE_TEXT[storageOf(g)] || esc(storageOf(g))) + '</dd></div>';
         if (shelfLifeOf(g)) rows += '<div><dt>소비기한</dt><dd>' + esc(shelfLifeOf(g)) + '</dd></div>';
 

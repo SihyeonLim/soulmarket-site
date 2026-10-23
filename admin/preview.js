@@ -34,7 +34,7 @@
   function won(n) { return Number(n).toLocaleString('ko-KR'); }
 
   // 보관 방법 · 바코드 (사이트 common.js 와 같은 규칙)
-  var STORAGE_TEXT = { '냉동': '❄ 냉동 보관 (아이스박스 포장)', '냉장': '냉장 보관 (아이스박스 포장)', '상온': '상온 보관', '냉동 · 냉장': '❄ 냉동 · 냉장 (아이스박스 포장)' };
+  var STORAGE_TEXT = { '냉동': '❄ 냉동 보관', '냉장': '냉장 보관', '상온': '상온 보관' };
   function barcodeSVG(code) {
     let d = String(code || '').replace(/\D/g, '');
     if (d.length !== 12 && d.length !== 13) return null;
@@ -99,9 +99,11 @@
     var details = (d.detail_images || []).map(function (p) { return imageUrl(getAsset, p); }).filter(Boolean);
 
     var rows = [];
-    var storage = d.storage || (d.ice ? '냉동 · 냉장' : '');
-    var cold = storage.indexOf('냉') !== -1;
-    if (d.box) rows.push(h('div', { key: 'box' }, h('dt', null, '포장'), h('dd', null, '1박스 ' + d.box + (d.boxUnit || '') + (cold ? ' (아이스박스)' : ''))));
+    var storage = d.storage && d.storage !== '없음' ? d.storage : '';
+    var pack = [];
+    if (d.box) pack.push('1박스 ' + d.box + (d.boxUnit || ''));
+    if (d.ice) pack.push('아이스박스 포장');
+    if (pack.length) rows.push(h('div', { key: 'box' }, h('dt', null, '포장'), h('dd', null, pack.join(' · '))));
     if (storage) rows.push(h('div', { key: 'st' }, h('dt', null, '보관'), h('dd', null, STORAGE_TEXT[storage] || storage)));
     if (Number(d.shelf_life) > 0) rows.push(h('div', { key: 'sl' }, h('dt', null, '소비기한'), h('dd', null, Number(d.shelf_life) + (d.shelf_life_unit || '개월'))));
     var barcode = null;
