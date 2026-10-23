@@ -45,6 +45,14 @@
       overflow: hidden;
     }
     .slide-1 { background: #FDEEEE; --accent: #C0222A; }
+    /* 1번 슬라이드 (회사 소개): 왼쪽 로고 칸 + 오른쪽 슬로건 */
+    .slide.slide-company { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 0; gap: 0; display: grid; grid-template-columns: 340px minmax(0, 1fr); align-items: stretch; }
+    .slide-company .brand { background: #FAFAF7; border-right: 1px solid var(--line); display: grid; place-items: center; }
+    .slide-company .brand img { width: 200px; height: auto; }
+    .slide-company .slide-text { justify-content: center; padding: 0 64px; }
+    .slide-company .company { font-size: 15px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
+    .slide-company .pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+    .slide-company .pills span { border: 1px solid #E2E2E2; border-radius: 999px; padding: 6px 16px; font-size: 14px; font-weight: 600; color: #444; }
     .slide-2 { background: #EEF5EF; --accent: #2F6B3A; }
     .slide-3 { background: #FFF1E4; --accent: #B24E14; }
     .slide-text { display: flex; flex-direction: column; min-width: 0; }
@@ -102,6 +110,10 @@
       .slide h2 { font-size: 24px; }
       .slide { flex-direction: column; align-items: flex-start; justify-content: center; padding: 28px 24px 32px; gap: 18px; }
       .slide-imgs { gap: 8px; }
+      .slide.slide-company { grid-template-columns: 1fr; }
+      .slide-company .brand { border-right: 0; border-bottom: 1px solid var(--line); padding: 20px 0; }
+      .slide-company .brand img { width: 120px; }
+      .slide-company .slide-text { padding: 22px 24px 28px; }
       .slide-imgs img, .slide-imgs img:nth-child(2) { width: 84px; height: 84px; border-radius: 10px; }
       .slide .deco { font-size: 110px; right: 16px; }
       .hero-arrow { display: none; }   /* 모바일은 손가락으로 밀기 */
@@ -121,13 +133,14 @@
     <!-- 메인 배너: 슬라이드 하나하나가 링크예요 -->
     <section class="hero inner">
       <div class="hero-track" id="hero-track">
-        <a class="slide slide-1" href="info.html?p=company">
+        <a class="slide slide-1 slide-company" href="info.html?p=company">
+          <div class="brand"><img src="images/logo-mark.png" alt="SOUL FOOD 로고"></div>
           <div class="slide-text">
+            <p class="company">(주)소울푸드</p>
             <h2>음식은 맛으로 먹는 게 아니라<br>기억으로 먹는다</h2>
-            <p>식자재 전문 제조 · 무역 · 유통 법인 (주)소울푸드</p>
+            <div class="pills"><span>제조</span><span>무역</span><span>유통</span></div>
             <span class="go">회사 소개 보기 ›</span>
           </div>
-          <div class="slide-imgs" data-pick="best"></div>
         </a>
         <a class="slide slide-2" href="catalog.html?list=box">
           <div class="slide-text">
