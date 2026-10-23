@@ -65,10 +65,10 @@ const STORAGE_TEXT = {
   '상온': '상온 보관'
 };
 
-// 소비기한: 숫자 + 단위 (예: 12개월). 없으면 ''
+// 소비기한: 숫자 + 단위 + 이내 (예: 12개월 이내). 없으면 ''
 function shelfLifeOf(g) {
   const n = Number(g.shelf_life);
-  return n > 0 ? n + (g.shelf_life_unit || '개월') : '';
+  return n > 0 ? n + (g.shelf_life_unit || '개월') + ' 이내' : '';
 }
 
 // 바코드 번호 → EAN-13 바코드 그림(SVG). 13자리(또는 12자리)가 아니면 null

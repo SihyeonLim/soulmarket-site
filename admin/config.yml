@@ -126,7 +126,7 @@ collections:
         value_type: int
         required: false
         min: 1
-        hint: "예: 12 → 아래에서 단위를 고르면 '12개월'로 표시돼요."
+        hint: "예: 12 → 아래에서 단위를 고르면 '12개월 이내'로 표시돼요."
       - name: shelf_life_unit
         label: 소비기한 단위
         widget: select

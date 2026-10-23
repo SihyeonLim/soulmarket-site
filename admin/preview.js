@@ -105,7 +105,7 @@
     if (d.ice) pack.push('아이스박스 포장');
     if (pack.length) rows.push(h('div', { key: 'box' }, h('dt', null, '포장'), h('dd', null, pack.join(' · '))));
     if (storage) rows.push(h('div', { key: 'st' }, h('dt', null, '보관'), h('dd', null, STORAGE_TEXT[storage] || storage)));
-    if (Number(d.shelf_life) > 0) rows.push(h('div', { key: 'sl' }, h('dt', null, '소비기한'), h('dd', null, Number(d.shelf_life) + (d.shelf_life_unit || '개월'))));
+    if (Number(d.shelf_life) > 0) rows.push(h('div', { key: 'sl' }, h('dt', null, '소비기한'), h('dd', null, Number(d.shelf_life) + (d.shelf_life_unit || '개월') + ' 이내')));
     var barcode = null;
     if (d.barcode) {
       var svg = barcodeSVG(d.barcode);
