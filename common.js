@@ -226,7 +226,7 @@ function renderHeader() {
     '<header class="header"><div class="inner">' +
       '<a href="index.html" class="logo"><strong>소울푸드<img class="logo-mark" src="images/logo-mark.png" alt="SOUL FOOD"></strong><span>음식은 맛으로 먹는 것이 아니라 기억으로 먹는다.</span></a>' +
       '<form class="search" id="search-form">' +
-        '<input type="search" name="q" placeholder="국산멸치, 납작만두, 편육을 검색해 보세요" value="' + esc(param('q') || '') + '">' +
+        '<input type="search" name="q" placeholder="고추튀김, 치즈떡을 검색해 보세요" value="' + esc(param('q') || '') + '">' +
         '<button type="submit">검색</button>' +
       '</form>' +
       '<nav class="header-icons">' +
