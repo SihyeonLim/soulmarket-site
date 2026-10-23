@@ -13,7 +13,7 @@
 const CONTACT = {
   phones: ['053-311-1980', '010-8388-8823'],
   email: 'soul1980@soulfd.co.kr',
-  hours: '평일 10:00 ~ 18:00 · 주말/공휴일 휴무'
+  hours: '평일 07:30 ~ 16:30 · 주말/공휴일 휴무'
 };
 // 전화번호 묶음 (sep: 사이에 넣을 글자)
 function phoneLinks(sep) {
