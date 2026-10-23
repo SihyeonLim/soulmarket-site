@@ -113,6 +113,19 @@ collections:
         required: false
         options: ["냉동", "냉장", "상온"]
         hint: "냉동 · 냉장을 고르면 아이스박스 포장으로 표시돼요."
+      - name: shelf_life
+        label: 소비기한 (숫자)
+        widget: number
+        value_type: int
+        required: false
+        min: 1
+        hint: "예: 12 → 아래에서 단위를 고르면 '12개월'로 표시돼요."
+      - name: shelf_life_unit
+        label: 소비기한 단위
+        widget: select
+        required: false
+        default: "개월"
+        options: ["일", "개월", "년"]
       - name: barcode
         label: 바코드 번호
         widget: string

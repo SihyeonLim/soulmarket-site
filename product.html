@@ -170,6 +170,7 @@
         let rows = '';
         if (g.box) rows += '<div><dt>포장</dt><dd>1박스 ' + g.box + (g.boxUnit || '') + (isCold(g) ? ' (아이스박스)' : '') + '</dd></div>';
         if (storageOf(g)) rows += '<div><dt>보관</dt><dd>' + (STORAGE_TEXT[storageOf(g)] || esc(storageOf(g))) + '</dd></div>';
+        if (shelfLifeOf(g)) rows += '<div><dt>소비기한</dt><dd>' + esc(shelfLifeOf(g)) + '</dd></div>';
 
         // 바코드 (관리자 페이지에서 입력한 번호로 그려요)
         let barcode = '';

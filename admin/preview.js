@@ -103,6 +103,7 @@
     var cold = storage.indexOf('냉') !== -1;
     if (d.box) rows.push(h('div', { key: 'box' }, h('dt', null, '포장'), h('dd', null, '1박스 ' + d.box + (d.boxUnit || '') + (cold ? ' (아이스박스)' : ''))));
     if (storage) rows.push(h('div', { key: 'st' }, h('dt', null, '보관'), h('dd', null, STORAGE_TEXT[storage] || storage)));
+    if (Number(d.shelf_life) > 0) rows.push(h('div', { key: 'sl' }, h('dt', null, '소비기한'), h('dd', null, Number(d.shelf_life) + (d.shelf_life_unit || '개월'))));
     var barcode = null;
     if (d.barcode) {
       var svg = barcodeSVG(d.barcode);
