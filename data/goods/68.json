@@ -12,7 +12,7 @@
   ],
   "box": 8,
   "boxUnit": "봉",
-  "storage": "없음",
+  "storage": "냉동",
   "ice": false,
   "shelf_life": 12,
   "shelf_life_unit": "개월",
