@@ -11,13 +11,15 @@
   "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
   "detail": "",
   "tags": [
-    "베트남",
-    "바코드:\t8809408-220216",
-    "소비기한:24개월이내"
+    "베트남"
   ],
   "box": 9,
   "boxUnit": "개",
+  "storage": "상온",
   "ice": false,
+  "shelf_life": 24,
+  "shelf_life_unit": "개월",
+  "barcode": "8809408-220216",
   "status": "",
   "order": 760,
   "price": null,
