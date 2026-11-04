@@ -1,5 +1,5 @@
 {
-  "name": "탱글치즈떡 1KG(12g/83ea~86ea)-직접 쌀을 불린후 제조",
+  "name": "탱글치즈떡(14G/70~73알)",
   "market": "0002",
   "img": "images/goods/2025/11/565_2025112415505926.PNG",
   "detail_images": [
@@ -12,14 +12,18 @@
   ],
   "no": 565,
   "brand": "소울마켓",
-  "desc": "[부산광역시 사하구] HACCP인증,대기업 OEM생산업체,굳지않는 치즈떡볶이",
+  "desc": "[부산광역시 사하구] HACCP인증,대기업 OEM생산업체",
   "detail": "",
   "tags": [
     "HACCP"
   ],
   "box": 8,
   "boxUnit": "봉",
+  "storage": "냉동",
   "ice": false,
+  "shelf_life": 12,
+  "shelf_life_unit": "개월",
+  "barcode": "8809408-218213",
   "status": "",
   "order": 330,
   "price": null,
