@@ -1,6 +1,6 @@
 {
   "name": "건표고버섯 홀 1KG",
-  "market": "0001",
+  "market": "0006",
   "img": "images/goods/2026/07/588_2026072419135322.png",
   "detail_images": [
     "images/detail/588/02.jpg",
@@ -15,7 +15,11 @@
   ],
   "box": 10,
   "boxUnit": "봉",
+  "storage": "상온",
   "ice": false,
+  "shelf_life": 36,
+  "shelf_life_unit": "개월",
+  "barcode": "8809408-211108",
   "status": "",
   "order": 220,
   "price": null,
