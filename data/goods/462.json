@@ -14,9 +14,13 @@
   "tags": [
     "HACCP"
   ],
-  "box": 10,
+  "box": 8,
   "boxUnit": "봉",
+  "storage": "냉동",
   "ice": false,
+  "shelf_life": 12,
+  "shelf_life_unit": "개월",
+  "barcode": "8809221-644220",
   "status": "",
   "order": 1160,
   "price": null,
