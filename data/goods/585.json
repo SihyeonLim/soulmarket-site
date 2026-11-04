@@ -1,6 +1,6 @@
 {
   "name": "한입 목이버섯 1kg [마라탕 프랜차이즈 매출 상위 제품]",
-  "market": "0001",
+  "market": "0006",
   "img": "images/goods/2026/07/585_2026072419122629.PNG",
   "detail_images": [
     "images/detail/585/02.jpg",
@@ -9,14 +9,18 @@
   ],
   "no": 585,
   "brand": "맛깔지기",
-  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사.(주)소울푸드 AGENCY 통한 직수입 제품(최고의 경쟁력,최고의품질)",
+  "desc": "[경상북도 칠곡군]MAINBIZ인증,초록우산어린이재단후원사",
   "detail": "",
   "tags": [
     "중국"
   ],
   "box": 10,
   "boxUnit": "봉",
+  "storage": "상온",
   "ice": false,
+  "shelf_life": 36,
+  "shelf_life_unit": "개월",
+  "barcode": "8809408-212280",
   "status": "",
   "order": 250,
   "price": null,
