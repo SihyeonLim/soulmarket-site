@@ -31,9 +31,13 @@
   "tags": [
     "베트남"
   ],
-  "box": 4,
+  "box": 5,
   "boxUnit": "봉",
+  "storage": "냉동",
   "ice": false,
+  "shelf_life": 24,
+  "shelf_life_unit": "개월",
+  "barcode": "8809408-219975",
   "status": "",
   "order": 80,
   "price": null,
