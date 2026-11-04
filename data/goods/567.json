@@ -1,5 +1,5 @@
 {
-  "name": "탱글롱치즈떡 1KG(25g~28g/35ea~40ea)-모짜렐라20%함유",
+  "name": "탱글롱치즈떡(38G/37EA/9CM)",
   "market": "0002",
   "img": "images/goods/2025/11/567_temp_17643033317316list1.PNG",
   "detail_images": [
@@ -20,7 +20,11 @@
   ],
   "box": 10,
   "boxUnit": "봉",
+  "storage": "냉동",
   "ice": false,
+  "shelf_life": 9,
+  "shelf_life_unit": "개월",
+  "barcode": "8809408-230093",
   "status": "",
   "order": 310,
   "price": null,
