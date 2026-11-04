@@ -13,9 +13,13 @@
   "tags": [
     "중국"
   ],
-  "box": 3,
+  "box": 2,
   "boxUnit": "봉",
+  "storage": "냉동",
   "ice": false,
+  "shelf_life": 24,
+  "shelf_life_unit": "개월",
+  "barcode": "8809180650706",
   "status": "",
   "order": 950,
   "price": null,
