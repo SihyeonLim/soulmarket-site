@@ -1,0 +1,30 @@
+{
+  "name": "팜프리츠 슈스트링감자튀김(7MM)*2kg*(6)",
+  "market": "0007",
+  "img": "",
+  "detail_images": [
+    "/images/goods/_temp_17919425572144view.png",
+    "/images/goods/7f3d58b193ac4ce8e0730da9d0d6e8ce1049563.png",
+    "/images/goods/678c31e8b371bddc10ee6439d9839e841049503.png",
+    "/images/goods/ed15309095e612491ee3f1f7bd27241b1049423.png",
+    "/images/goods/4517285d30d12c978510261c986ec7731050023.png"
+  ],
+  "no": 2,
+  "brand": "팜프리츠",
+  "desc": "[서울특별시] 유럽감자튀김 판매1위기업",
+  "detail": "",
+  "tags": [],
+  "box": 6,
+  "boxUnit": "봉",
+  "storage": "냉동",
+  "ice": false,
+  "shelf_life": 24,
+  "shelf_life_unit": "개월",
+  "barcode": "8710679-120160",
+  "status": "",
+  "order": 0,
+  "price": null,
+  "was": null,
+  "rate": null,
+  "sold": null
+}
