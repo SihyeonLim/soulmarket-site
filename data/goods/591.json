@@ -1,6 +1,6 @@
 {
   "name": "월남건고추100%(베트남/땡초) 1KG",
-  "market": "0001",
+  "market": "0003",
   "img": "images/goods/2026/07/591_2026072419150322.png",
   "detail_images": [
     "images/detail/591/02.jpg",
@@ -15,7 +15,11 @@
   ],
   "box": 8,
   "boxUnit": "봉",
+  "storage": "상온",
   "ice": false,
+  "shelf_life": 12,
+  "shelf_life_unit": "개월",
+  "barcode": "8809408-220445",
   "status": "",
   "order": 190,
   "price": null,
