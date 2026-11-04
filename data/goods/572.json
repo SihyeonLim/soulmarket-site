@@ -17,8 +17,12 @@
     "네덜란드"
   ],
   "box": 12,
-  "boxUnit": "팩",
+  "boxUnit": "봉",
+  "storage": "냉동",
   "ice": false,
+  "shelf_life": 18,
+  "shelf_life_unit": "개월",
+  "barcode": "",
   "status": "",
   "order": 1000,
   "price": null,
