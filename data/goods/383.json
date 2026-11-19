@@ -1,9 +1,9 @@
 {
   "name": "땅콩가루(중국:중간입자) 1KG",
   "market": "0006",
-  "img": "images/goods/2023/11/383_2023112109505727.png",
+  "img": "/images/goods/1.png",
   "detail_images": [
-    "images/detail/383/02.jpg"
+    "/images/goods/2.png"
   ],
   "no": 383,
   "brand": "맛깔지기",
